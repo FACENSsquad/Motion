@@ -2,6 +2,15 @@
 package motion_;
 
 //matheus
+<<<<<<< Updated upstream
+=======
+
+/**
+ *aaa
+ * @author joaom
+ DASDSAD
+ */
+>>>>>>> Stashed changes
 public class MOTION_ {
 
     /**
