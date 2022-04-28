@@ -85,7 +85,7 @@ public class Jlogin extends javax.swing.JFrame {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 90, 40));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 50, 20));
 
         botao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         jPanel1.add(botao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 90, 40));
