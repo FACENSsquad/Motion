@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
-    public Connection NovaConexao(){
+    public Connection Bd_Conexao(){
         try{
             // Tentar estabelecer conexão
 
