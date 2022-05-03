@@ -5,11 +5,6 @@
  */
 package TELA;
 
-import BEAN.Login_bean;
-import DAO.Login_dao;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author joaom
@@ -32,116 +27,71 @@ public class Jlogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
-        Label_Usuario = new javax.swing.JLabel();
-        Caixa_Usuario = new javax.swing.JTextField();
-        Label_Senha = new javax.swing.JLabel();
-        Caixa_Senha = new javax.swing.JTextField();
-        Boton_Entrar = new javax.swing.JToggleButton();
-        botao = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextPane5 = new javax.swing.JTextPane();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(235, 235, 235));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("MotiON");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(180, 80, 80, 32);
 
-        logo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        logo.setForeground(new java.awt.Color(0, 0, 0));
-        logo.setText("MotiON");
-        jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 12, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Usuario:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(30, 230, 60, 19);
 
-        Label_Usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Label_Usuario.setForeground(new java.awt.Color(0, 0, 0));
-        Label_Usuario.setText("Usuario");
-        jPanel1.add(Label_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 118, -1, -1));
+        jScrollPane3.setViewportView(jTextPane3);
 
-        Caixa_Usuario.setBorder(null);
-        Caixa_Usuario.setOpaque(false);
-        Caixa_Usuario.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(30, 250, 400, 30);
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Senha:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(30, 300, 60, 19);
+
+        jScrollPane5.setViewportView(jTextPane5);
+
+        getContentPane().add(jScrollPane5);
+        jScrollPane5.setBounds(30, 320, 400, 30);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setOpaque(false);
+        jButton1.setRequestFocusEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_UsuarioActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(Caixa_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 143, 358, 28));
+        getContentPane().add(jButton1);
+        jButton1.setBounds(260, 580, 160, 60);
 
-        Label_Senha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Label_Senha.setForeground(new java.awt.Color(0, 0, 0));
-        Label_Senha.setText("Senha");
-        jPanel1.add(Label_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 189, -1, -1));
-
-        Caixa_Senha.setBorder(null);
-        Caixa_Senha.setOpaque(false);
-        Caixa_Senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_SenhaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Caixa_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 214, 358, 28));
-
-        Boton_Entrar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Boton_Entrar.setForeground(new java.awt.Color(0, 0, 0));
-        Boton_Entrar.setText("Entrar");
-        Boton_Entrar.setBorder(null);
-        Boton_Entrar.setOpaque(false);
-        Boton_Entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton_EntrarActionPerformed(evt);
-            }
-        });
-<<<<<<< HEAD
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 50, 20));
-=======
-        jPanel1.add(Boton_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 90, 40));
->>>>>>> eea87e59710c97a6139f34f451d0d2af7c33e5d1
-
-        botao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
-        jPanel1.add(botao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 90, 40));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 600));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fundo_login.png"))); // NOI18N
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 450, 700);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Caixa_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_UsuarioActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Caixa_UsuarioActionPerformed
-
-    private void Caixa_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_SenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caixa_SenhaActionPerformed
-
-    private void Boton_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_EntrarActionPerformed
-        try {
-            String usuario_login, usuario_senha; // Variaveis para receber valores das caixas de texto
-            usuario_login = Caixa_Usuario.getText();
-            usuario_senha = Caixa_Senha.getText();
-            
-            Login_bean loginbean = new Login_bean(); // puxando classe Login_bean para mandar as variaveis para lá
-            loginbean.setUsuario(usuario_login);
-            loginbean.setSenha(usuario_senha);
-            
-            Login_dao logindao = new Login_dao(); //puxando classe Login_dao para usar o metodo de autenticação
-            ResultSet rsLogin_dao = logindao.autenticaUsuario(loginbean);
-            
-            if(rsLogin_dao.next()){   // Se usuario correto
-                Jhome home = new Jhome();
-                home.setVisible(true);
-                dispose();
-            
-            } else { // Se usuario incorreto
-                 JOptionPane.showMessageDialog(null,"Usuario ou senha incorretos");
-            }
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Erro em tela de login "+e);
-        }
-       
-        
-        
-    }//GEN-LAST:event_Boton_EntrarActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,13 +129,14 @@ public class Jlogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton Boton_Entrar;
-    private javax.swing.JTextField Caixa_Senha;
-    private javax.swing.JTextField Caixa_Usuario;
-    private javax.swing.JLabel Label_Senha;
-    private javax.swing.JLabel Label_Usuario;
-    private javax.swing.JLabel botao;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel logo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane5;
     // End of variables declaration//GEN-END:variables
 }
