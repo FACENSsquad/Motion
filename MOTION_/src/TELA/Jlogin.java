@@ -38,6 +38,8 @@ public class Jlogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(450, 700));
+        setPreferredSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -55,7 +57,7 @@ public class Jlogin extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextPane3);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(30, 250, 400, 30);
+        jScrollPane3.setBounds(30, 250, 370, 30);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -66,7 +68,7 @@ public class Jlogin extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTextPane5);
 
         getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(30, 320, 400, 30);
+        jScrollPane5.setBounds(30, 320, 370, 30);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -78,7 +80,7 @@ public class Jlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(260, 580, 160, 60);
+        jButton1.setBounds(240, 580, 160, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fundo_login.png"))); // NOI18N
         jLabel1.setOpaque(true);
