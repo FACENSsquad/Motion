@@ -5,14 +5,19 @@
  */
 package TELA;
 
+import BEAN.Login_bean;
 import BEAN.Produtos_bean;
 import CONEXAO.Conexao;
 import java.util.ArrayList;
 import DAO.Produtos_dao;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,21 +25,52 @@ import javax.swing.JOptionPane;
  */
 public class Jproduto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jproduto
-     */
+    Connection conn;
+    
+    public ResultSet view_produtos(Produtos_bean p_bean){
+        conn = new Conexao().Bd_Conexao(); 
+        return null;
+    }
+    
     public Jproduto() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        show_produtos();
+        
+         
+        
     }
     public ArrayList<Produtos_bean> userList(){
         ArrayList<Produtos_bean> userList = new ArrayList<>();
-        try{
-            Class.forName("jdbc:mysql://localhost:3306/bd_motion?serverTimezone=UTC");
-            Connection con = DriveManager.getConnection(url);
+        try{ 
+            String sql = "select * from produto";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            Produtos_bean produtos_b;
+            while(rs.next()){
+            produtos_b = new Produtos_bean(rs.getInt("codigo"),rs.getString("produto"),rs.getString("tipo"),rs.getString("ncm"));
+            userList.add(produtos_b);
+            }
+            
         }   
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null,"Erro ao exibir produtos "+e);
+        }
+        return userList;
+    }
+    public void show_produtos(){
+        
+        ArrayList<Produtos_bean> list = userList();
+        DefaultTableModel model = (DefaultTableModel)View_de_produtos.getModel();
+    
+        Object[] row =  new Object[5];
+        for (int i = 0; i < list.size(); i++) {
+            row[0] = list.get(i).getId();
+            row[1] = list.get(i).getProduto();
+            row[2] = list.get(i).getTipo();
+            row[4] = list.get(i).getNcm();
+            model.addRow(row);
         }
     }
 
@@ -60,7 +96,7 @@ public class Jproduto extends javax.swing.JFrame {
         ncm = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        View_de_produtos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -166,10 +202,10 @@ public class Jproduto extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        View_de_produtos.setBackground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        View_de_produtos.setForeground(new java.awt.Color(0, 0, 0));
+        View_de_produtos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -206,22 +242,22 @@ public class Jproduto extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setPreferredSize(new java.awt.Dimension(400, 384));
-        jTable1.setRequestFocusEnabled(false);
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setShowHorizontalLines(false);
-        jTable1.setShowVerticalLines(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        View_de_produtos.setEnabled(false);
+        View_de_produtos.setFocusable(false);
+        View_de_produtos.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
+        View_de_produtos.setRequestFocusEnabled(false);
+        View_de_produtos.setRowHeight(25);
+        View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setShowHorizontalLines(false);
+        View_de_produtos.setShowVerticalLines(false);
+        jScrollPane1.setViewportView(View_de_produtos);
+        if (View_de_produtos.getColumnModel().getColumnCount() > 0) {
+            View_de_produtos.getColumnModel().getColumn(0).setResizable(false);
+            View_de_produtos.getColumnModel().getColumn(1).setResizable(false);
+            View_de_produtos.getColumnModel().getColumn(2).setResizable(false);
+            View_de_produtos.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -324,6 +360,7 @@ public class Jproduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable View_de_produtos;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
     private javax.swing.JButton jButton1;
@@ -334,7 +371,6 @@ public class Jproduto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton ncm;
     private javax.swing.JButton produto;
     private javax.swing.JButton tipo;
