@@ -5,7 +5,14 @@
  */
 package TELA;
 
+import BEAN.Produtos_bean;
+import CONEXAO.Conexao;
+import java.util.ArrayList;
+import DAO.Produtos_dao;
+import java.sql.Connection;
+import java.sql.Statement;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +26,16 @@ public class Jproduto extends javax.swing.JFrame {
     public Jproduto() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+    }
+    public ArrayList<Produtos_bean> userList(){
+        ArrayList<Produtos_bean> userList = new ArrayList<>();
+        try{
+            Class.forName("jdbc:mysql://localhost:3306/bd_motion?serverTimezone=UTC");
+            Connection con = DriveManager.getConnection(url);
+        }   
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -46,7 +63,6 @@ public class Jproduto extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1329, 869));
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -155,9 +171,6 @@ public class Jproduto extends javax.swing.JFrame {
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "agua", "un", "22112211"},
-                {"2", "cafe", "un", "22556666"},
-                {"3", "leite", "un", "33664477"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -186,7 +199,7 @@ public class Jproduto extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -207,6 +220,7 @@ public class Jproduto extends javax.swing.JFrame {
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
         }
 
@@ -325,4 +339,8 @@ public class Jproduto extends javax.swing.JFrame {
     private javax.swing.JButton produto;
     private javax.swing.JButton tipo;
     // End of variables declaration//GEN-END:variables
+
+    private void Bd_Conexao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

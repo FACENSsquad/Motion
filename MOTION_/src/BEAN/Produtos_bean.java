@@ -4,17 +4,24 @@ package BEAN;
 
 public class Produtos_bean {
     
-    private int id;
+    private int codigo;
     private String produto;
     private String tipo;
     private String ncm;
 
-    public int getId() {
-        return id;
+    public Produtos_bean(int codigo, String produto, String tipo, String ncm) {
+        this.codigo = codigo;
+        this.produto = produto;
+        this.tipo = tipo;
+        this.ncm = ncm;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return codigo;
+    }
+
+    public void setId(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getProduto() {
