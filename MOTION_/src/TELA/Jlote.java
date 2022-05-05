@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Samsung
  */
-public class Jproduto extends javax.swing.JFrame {
+public class Jlote extends javax.swing.JFrame {
 
     Connection conn;
     
@@ -32,7 +32,7 @@ public class Jproduto extends javax.swing.JFrame {
         return null;
     }
     
-    public Jproduto() {
+    public Jlote() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         show_produtos();
@@ -340,20 +340,21 @@ public class Jproduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Jproduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jlote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Jproduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jlote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Jproduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jlote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Jproduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jlote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Jproduto().setVisible(true);
+                new Jlote().setVisible(true);
             }
         });
     }
