@@ -20,19 +20,19 @@ public class Produtos_dao {
     
     public void inserir(Produtos_bean produto){
     
-        String sql = "insert into produto(produto, tipo, ncm) values"
-                   + "(? , ?, ?)";
+        String sql = "insert into produto(produto, tipo, ncm) values "
+                   + "(?, ?, ?)";
         
         try {
             
             PreparedStatement pst = this.conn.prepareStatement(sql);
             pst.setString(1, produto.getProduto());
             pst.setString(2, produto.getTipo());
-            pst.setString(2, produto.getNcm());
+            pst.setString(3, produto.getNcm());
             pst.execute();
             
         } catch (Exception e) {
-            System.out.println("Erro ao inserir produto");
+            System.out.println("Erro em classe Produtos_dao");
         }
         
     }

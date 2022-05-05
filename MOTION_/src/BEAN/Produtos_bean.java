@@ -9,12 +9,12 @@ public class Produtos_bean {
     private String tipo;
     private String ncm;
 
-    public Produtos_bean(int codigo, String produto, String tipo, String ncm) {
+    /*public Produtos_bean(int codigo, String produto, String tipo, String ncm) {
         this.codigo = codigo;
         this.produto = produto;
         this.tipo = tipo;
         this.ncm = ncm;
-    }
+    } */
 
     public int getId() {
         return codigo;
