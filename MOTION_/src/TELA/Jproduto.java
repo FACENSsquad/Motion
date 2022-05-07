@@ -225,7 +225,7 @@ public class Jproduto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(330, 20, 56, 15);
+        produto.setBounds(340, 20, 56, 15);
 
         tipo.setBackground(new java.awt.Color(255, 255, 255));
         tipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_tipo.png"))); // NOI18N
@@ -233,7 +233,7 @@ public class Jproduto extends javax.swing.JFrame {
         tipo.setBorderPainted(false);
         tipo.setContentAreaFilled(false);
         jPanel1.add(tipo);
-        tipo.setBounds(640, 20, 36, 15);
+        tipo.setBounds(660, 20, 36, 15);
 
         ncm.setBackground(new java.awt.Color(255, 255, 255));
         ncm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_ncm.png"))); // NOI18N
@@ -241,25 +241,16 @@ public class Jproduto extends javax.swing.JFrame {
         ncm.setBorderPainted(false);
         ncm.setContentAreaFilled(false);
         jPanel1.add(ncm);
-        ncm.setBounds(960, 20, 41, 15);
+        ncm.setBounds(980, 20, 41, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        View_de_produtos.setAutoCreateRowSorter(true);
+        View_de_produtos.setBackground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_produtos.setTableHeader(null);
         View_de_produtos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -277,22 +268,31 @@ public class Jproduto extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        View_de_produtos.setAlignmentY(2.0F);
+        View_de_produtos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        View_de_produtos.setAutoscrolls(false);
+        View_de_produtos.setCellSelectionEnabled(true);
+        View_de_produtos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        View_de_produtos.setDoubleBuffered(true);
+        View_de_produtos.setDragEnabled(true);
         View_de_produtos.setEnabled(false);
         View_de_produtos.setFocusable(false);
         View_de_produtos.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setMaximumSize(new java.awt.Dimension(2147483647, 440));
+        View_de_produtos.setMinimumSize(new java.awt.Dimension(100, 1040));
         View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
-        View_de_produtos.setRequestFocusEnabled(false);
-        View_de_produtos.setRowHeight(25);
+        View_de_produtos.setRowHeight(40);
         View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setShowHorizontalLines(false);
-        View_de_produtos.setShowVerticalLines(false);
+        View_de_produtos.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setUpdateSelectionOnSort(false);
+        View_de_produtos.setVerifyInputWhenFocusTarget(false);
         jScrollPane1.setViewportView(View_de_produtos);
         if (View_de_produtos.getColumnModel().getColumnCount() > 0) {
             View_de_produtos.getColumnModel().getColumn(0).setResizable(false);
@@ -308,7 +308,7 @@ public class Jproduto extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
-                .addGap(81, 81, 81))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +320,7 @@ public class Jproduto extends javax.swing.JFrame {
         barra_topLayout.setHorizontalGroup(
             barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
+            .addGroup(barra_topLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -328,7 +328,7 @@ public class Jproduto extends javax.swing.JFrame {
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33))
+                .addContainerGap())
         );
         barra_topLayout.setVerticalGroup(
             barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
