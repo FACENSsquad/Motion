@@ -13,6 +13,7 @@ import DAO.Produtos_dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,8 +25,50 @@ import javax.swing.table.DefaultTableModel;
  * @author Samsung
  */
 public class Jproduto extends javax.swing.JFrame {
+    
+    public Jproduto() {
+        initComponents();
+        tabela_produto();
+        
+    }
+    
+    
+    
+    private void tabela_produto(){
+        
+        DefaultTableModel model = (DefaultTableModel) View_de_produtos.getModel();
+        model.setNumRows(0);
+        
+        View_de_produtos.getColumnModel().getColumn(0).setPreferredWidth(10);
+        View_de_produtos.getColumnModel().getColumn(1).setPreferredWidth(10);
+        View_de_produtos.getColumnModel().getColumn(2).setPreferredWidth(10);
+        View_de_produtos.getColumnModel().getColumn(3).setPreferredWidth(10);
+        
+        try {
+           Connection conn = new Conexao().Bd_Conexao();
+           PreparedStatement pst;
+           ResultSet rs;
+           
+           pst = conn.prepareStatement("select * from produto");
+           rs = pst.executeQuery();
+           
+           while (rs.next()){
+               model.addRow(new Object[]{
+                   
+                   rs.getInt(1),
+                   rs.getString(2),
+                   rs.getString(3),
+                   rs.getString(4)
+                   
+               });
+           // Fechar banco aqui
+           }
+        } catch (SQLException e) {
+            System.out.println("Erro tabela_produto");
+        }
+    }
 
-    Connection conn;
+    /*Connection conn;
     
     public ResultSet view_produtos(Produtos_bean p_bean){
         conn = new Conexao().Bd_Conexao(); 
@@ -44,7 +87,7 @@ public class Jproduto extends javax.swing.JFrame {
         ArrayList<Produtos_bean> userList = new ArrayList<>();
         try{ 
             String sql = "select * from produto";
-            Statement st = conn.createStatement();
+            Statement st = this.conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
             Produtos_bean produtos_b = new Produtos_bean();
@@ -55,7 +98,7 @@ public class Jproduto extends javax.swing.JFrame {
             
         }   
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Erro ao exibir produtos "+e);
+            JOptionPane.showMessageDialog(null,"Erro ao exibir produtos em ArrayList "+e);
         }
         return userList;
     }
@@ -169,7 +212,7 @@ public class Jproduto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(codigo);
-        codigo.setBounds(20, 20, 53, 15);
+        codigo.setBounds(20, 20, 52, 15);
 
         produto.setBackground(new java.awt.Color(255, 255, 255));
         produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
@@ -182,7 +225,7 @@ public class Jproduto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(330, 20, 57, 15);
+        produto.setBounds(330, 20, 56, 15);
 
         tipo.setBackground(new java.awt.Color(255, 255, 255));
         tipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_tipo.png"))); // NOI18N
@@ -190,7 +233,7 @@ public class Jproduto extends javax.swing.JFrame {
         tipo.setBorderPainted(false);
         tipo.setContentAreaFilled(false);
         jPanel1.add(tipo);
-        tipo.setBounds(640, 20, 37, 15);
+        tipo.setBounds(640, 20, 36, 15);
 
         ncm.setBackground(new java.awt.Color(255, 255, 255));
         ncm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_ncm.png"))); // NOI18N
@@ -263,16 +306,13 @@ public class Jproduto extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGap(81, 81, 81))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
@@ -354,6 +394,7 @@ public class Jproduto extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Jproduto().setVisible(true);
+                
             }
         });
     }
@@ -375,11 +416,5 @@ public class Jproduto extends javax.swing.JFrame {
     private javax.swing.JButton tipo;
     // End of variables declaration//GEN-END:variables
 
-    private void Bd_Conexao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void produtos_b(int aInt, String string, String string0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
