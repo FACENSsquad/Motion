@@ -98,10 +98,11 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         tipo = (String) Campo_tipo.getSelectedItem();
         
         Produtos_bean p_bean = new Produtos_bean();
-        p_bean.setId(WIDTH);
         p_bean.setProduto(nome_produto);
-       // p_bean.setTipo(tipo);    Concertar erro de botao
+        p_bean.setTipo((String) Campo_tipo.getSelectedItem());
         p_bean.setNcm(ncm);
+        
+        
         
         
         Produtos_dao p_dao = new Produtos_dao();

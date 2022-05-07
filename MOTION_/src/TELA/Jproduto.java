@@ -36,23 +36,23 @@ public class Jproduto extends javax.swing.JFrame {
     
     private void tabela_produto(){
         
-        DefaultTableModel model = (DefaultTableModel) View_de_produtos.getModel();
-        model.setNumRows(0);
+        DefaultTableModel model = (DefaultTableModel) View_de_produtos.getModel(); //criando tabela
+        model.setNumRows(0);   // listar tabela apartir de
         
-        View_de_produtos.getColumnModel().getColumn(0).setPreferredWidth(10);
+        View_de_produtos.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
         View_de_produtos.getColumnModel().getColumn(1).setPreferredWidth(10);
         View_de_produtos.getColumnModel().getColumn(2).setPreferredWidth(10);
         View_de_produtos.getColumnModel().getColumn(3).setPreferredWidth(10);
         
         try {
-           Connection conn = new Conexao().Bd_Conexao();
-           PreparedStatement pst;
+           Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
+           PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from produto");
-           rs = pst.executeQuery();
+           pst = conn.prepareStatement("select * from produto");  // passando conexao para pst
+           rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
-           while (rs.next()){
+           while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
                model.addRow(new Object[]{
                    
                    rs.getInt(1),
