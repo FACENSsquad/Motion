@@ -20,6 +20,8 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
      */
     public Jcadastrar_produto() {
         initComponents();
+        
+       
     }
 
     /**
@@ -38,7 +40,12 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Campo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Campo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "J", "D", "M" }));
+        Campo_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Campo_tipoActionPerformed(evt);
+            }
+        });
 
         Caixa_produto.setText("jTextField1");
 
@@ -68,7 +75,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
                                 .addComponent(Botton_cadastrar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                                 .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(41, 41, 41))))
         );
@@ -99,7 +106,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         
         Produtos_bean p_bean = new Produtos_bean();
         p_bean.setProduto(nome_produto);
-        p_bean.setTipo((String) Campo_tipo.getSelectedItem());
+        p_bean.setTipo(Campo_tipo.getSelectedItem().toString());
         p_bean.setNcm(ncm);
         
         
@@ -119,6 +126,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_Botton_cadastrarActionPerformed
+
+    private void Campo_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_tipoActionPerformed
+       // String tipo_produto = Campo_tipo.getSelectedItem().toString();
+    }//GEN-LAST:event_Campo_tipoActionPerformed
 
     /**
      * @param args the command line arguments
