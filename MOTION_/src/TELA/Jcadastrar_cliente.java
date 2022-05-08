@@ -146,13 +146,14 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
     private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
         try {
             
-             String nome, email, cpf, telefone, endereco, cep = null, municipio, uf;
+             String nome, email, cpf, telefone, endereco, cep, municipio, uf;
              
              nome = Caixa_nome.getText();
              email = Caixa_email.getText();
              cpf = Caixa_cpf.getText();
              telefone = Caixa_telefone.getText();
              endereco = Caixa_endereco.getText();
+             cep = Caixa_cep.getText();
              municipio = Caixa_municipio.getText();
              uf = (String) Campo_uf.getSelectedItem();
              
@@ -165,6 +166,7 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
              c_bean.setEndereco(endereco);
              c_bean.setCep(cep);
              c_bean.setMunicipio(municipio);
+             c_bean.setUf(uf);
              
              
              
