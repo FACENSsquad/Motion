@@ -201,7 +201,8 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastro_fornecedorActionPerformed
 
     private void Cadastro_loteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_loteActionPerformed
-        // TODO add your handling code here:
+        Jlote jlote = new Jlote();
+        jlote.setVisible(true);
     }//GEN-LAST:event_Cadastro_loteActionPerformed
 
     private void EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstoqueActionPerformed
