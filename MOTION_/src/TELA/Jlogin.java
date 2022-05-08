@@ -37,8 +37,7 @@ public class Jlogin extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         Caixa_login = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        Caixa_senha = new javax.swing.JTextPane();
+        Caixa_senha = new javax.swing.JPasswordField();
         Botton_entrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -69,10 +68,13 @@ public class Jlogin extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(30, 300, 60, 19);
 
-        jScrollPane5.setViewportView(Caixa_senha);
-
-        getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(30, 320, 370, 30);
+        Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_senhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Caixa_senha);
+        Caixa_senha.setBounds(30, 320, 370, 30);
 
         Botton_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         Botton_entrar.setBorder(null);
@@ -122,6 +124,10 @@ public class Jlogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Botton_entrarActionPerformed
 
+    private void Caixa_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_senhaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,12 +166,11 @@ public class Jlogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Botton_entrar;
     private javax.swing.JTextPane Caixa_login;
-    private javax.swing.JTextPane Caixa_senha;
+    private javax.swing.JPasswordField Caixa_senha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
 }
