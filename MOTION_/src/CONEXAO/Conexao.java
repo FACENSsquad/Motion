@@ -10,9 +10,9 @@ public class Conexao {
             // Tentar estabelecer conexão
 
             Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/bd_motion?serverTimezone=UTC",  // linha de conexão
+                "jdbc:mysql://localhost:3307/bd_motion?serverTimezone=UTC",  // linha de conexão
                 "root", // usuario do MySQL
-                "" // senha do MySQL
+                "12345" // senha do MySQL
             );
             return conn;
         } 
