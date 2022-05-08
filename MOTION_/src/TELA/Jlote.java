@@ -189,7 +189,7 @@ public class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(220, 20, 56, 15);
+        produto.setBounds(210, 20, 56, 15);
 
         unidade.setBackground(new java.awt.Color(255, 255, 255));
         unidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_unidade.png"))); // NOI18N
@@ -197,7 +197,7 @@ public class Jlote extends javax.swing.JFrame {
         unidade.setBorderPainted(false);
         unidade.setContentAreaFilled(false);
         jPanel1.add(unidade);
-        unidade.setBounds(430, 20, 60, 15);
+        unidade.setBounds(400, 20, 60, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -205,7 +205,7 @@ public class Jlote extends javax.swing.JFrame {
         quantidade.setBorderPainted(false);
         quantidade.setContentAreaFilled(false);
         jPanel1.add(quantidade);
-        quantidade.setBounds(640, 20, 80, 15);
+        quantidade.setBounds(590, 20, 80, 15);
 
         valor.setBackground(new java.awt.Color(255, 255, 255));
         valor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valor.png"))); // NOI18N
@@ -213,7 +213,7 @@ public class Jlote extends javax.swing.JFrame {
         valor.setBorderPainted(false);
         valor.setContentAreaFilled(false);
         jPanel1.add(valor);
-        valor.setBounds(850, 20, 50, 15);
+        valor.setBounds(790, 20, 50, 15);
 
         fornecedor.setBackground(new java.awt.Color(255, 255, 255));
         fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_fornecedor.png"))); // NOI18N
@@ -226,7 +226,7 @@ public class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(fornecedor);
-        fornecedor.setBounds(1060, 20, 80, 15);
+        fornecedor.setBounds(980, 20, 80, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -292,17 +292,17 @@ public class Jlote extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
@@ -313,11 +313,14 @@ public class Jlote extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, barra_topLayout.createSequentialGroup()
+                        .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(33, 33, 33))
         );
         barra_topLayout.setVerticalGroup(
@@ -329,14 +332,14 @@ public class Jlote extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         getContentPane().add(barra_top);
         barra_top.setBounds(0, 0, 1330, 870);
 
-        setSize(new java.awt.Dimension(1347, 916));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

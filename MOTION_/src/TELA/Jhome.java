@@ -35,6 +35,7 @@ public class Jhome extends javax.swing.JFrame {
         Entrar_Produtos = new javax.swing.JButton();
         Cadastro_fornecedor = new javax.swing.JButton();
         Cadastro_lote = new javax.swing.JButton();
+        Cadastro_cliente = new javax.swing.JButton();
         Estoque = new javax.swing.JButton();
         Pedidos = new javax.swing.JButton();
         Movimentação = new javax.swing.JButton();
@@ -103,6 +104,15 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(Cadastro_lote);
         Cadastro_lote.setBounds(0, 330, 200, 30);
 
+        Cadastro_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_cliente.png"))); // NOI18N
+        Cadastro_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastro_clienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Cadastro_cliente);
+        Cadastro_cliente.setBounds(0, 360, 200, 30);
+
         Estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_estoque.png"))); // NOI18N
         Estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +120,7 @@ public class Jhome extends javax.swing.JFrame {
             }
         });
         jPanel2.add(Estoque);
-        Estoque.setBounds(0, 360, 200, 30);
+        Estoque.setBounds(0, 390, 200, 30);
 
         Pedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_pedidos.png"))); // NOI18N
         Pedidos.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +129,7 @@ public class Jhome extends javax.swing.JFrame {
             }
         });
         jPanel2.add(Pedidos);
-        Pedidos.setBounds(0, 390, 200, 30);
+        Pedidos.setBounds(0, 420, 200, 30);
 
         Movimentação.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_movimentacao.png"))); // NOI18N
         Movimentação.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +138,7 @@ public class Jhome extends javax.swing.JFrame {
             }
         });
         jPanel2.add(Movimentação);
-        Movimentação.setBounds(0, 420, 200, 30);
+        Movimentação.setBounds(0, 450, 200, 30);
 
         logo.setBackground(new java.awt.Color(235, 235, 235));
         logo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -217,6 +227,10 @@ public class Jhome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MovimentaçãoActionPerformed
 
+    private void Cadastro_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cadastro_clienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -253,6 +267,7 @@ public class Jhome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cadastro_cliente;
     private javax.swing.JButton Cadastro_fornecedor;
     private javax.swing.JButton Cadastro_lote;
     private javax.swing.JButton Entrar_Produtos;
