@@ -33,67 +33,125 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Campo_tipo = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        titulo = new javax.swing.JLabel();
+        produto = new javax.swing.JLabel();
         Caixa_produto = new javax.swing.JTextField();
+        NCM = new javax.swing.JLabel();
         Caixa_ncm = new javax.swing.JTextField();
+        unidade = new javax.swing.JLabel();
+        Campo_tipo = new javax.swing.JComboBox<>();
         Botton_cadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("cadasto de produtos"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(700, 600));
+        getContentPane().setLayout(null);
 
-        Campo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "J", "D", "M" }));
+        jPanel1.setBackground(new java.awt.Color(196, 196, 196));
+
+        titulo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        titulo.setForeground(new java.awt.Color(0, 0, 0));
+        titulo.setText("Cadasro de Produtos");
+
+        produto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        produto.setForeground(new java.awt.Color(0, 0, 0));
+        produto.setText("Produto:");
+
+        Caixa_produto.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_produtoActionPerformed(evt);
+            }
+        });
+
+        NCM.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        NCM.setForeground(new java.awt.Color(0, 0, 0));
+        NCM.setText("NCM:");
+
+        Caixa_ncm.setBackground(new java.awt.Color(255, 255, 255));
+
+        unidade.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        unidade.setForeground(new java.awt.Color(0, 0, 0));
+        unidade.setText("Unidade:");
+
+        Campo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CX", "UN", "EM", "PT" }));
         Campo_tipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Campo_tipoActionPerformed(evt);
             }
         });
 
-        Caixa_produto.setText("jTextField1");
-
-        Caixa_ncm.setText("jTextField2");
-
-        Botton_cadastrar.setText("Cadastrar");
+        Botton_cadastrar.setBackground(new java.awt.Color(196, 196, 196));
+        Botton_cadastrar.setForeground(new java.awt.Color(196, 196, 196));
+        Botton_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_salvar.png"))); // NOI18N
+        Botton_cadastrar.setBorder(null);
+        Botton_cadastrar.setBorderPainted(false);
         Botton_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botton_cadastrarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Botton_cadastrar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                                .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(41, 41, 41))))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Botton_cadastrar)
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titulo)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(produto)
+                                        .addGap(3, 3, 3))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(NCM)
+                                        .addGap(2, 2, 2)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                                        .addComponent(unidade)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                .addGap(68, 68, 68))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(titulo)
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(produto)
+                    .addComponent(unidade))
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NCM))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                 .addComponent(Botton_cadastrar)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(89, 89, 89))
         );
 
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 710, 610);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
@@ -130,6 +188,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     private void Campo_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_tipoActionPerformed
        // String tipo_produto = Campo_tipo.getSelectedItem().toString();
     }//GEN-LAST:event_Campo_tipoActionPerformed
+
+    private void Caixa_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_produtoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_produtoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,5 +233,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     private javax.swing.JTextField Caixa_ncm;
     private javax.swing.JTextField Caixa_produto;
     private javax.swing.JComboBox<String> Campo_tipo;
+    private javax.swing.JLabel NCM;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel produto;
+    private javax.swing.JLabel titulo;
+    private javax.swing.JLabel unidade;
     // End of variables declaration//GEN-END:variables
 }
