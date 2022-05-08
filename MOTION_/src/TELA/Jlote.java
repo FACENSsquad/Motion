@@ -92,8 +92,10 @@ public class Jlote extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         codigo = new javax.swing.JButton();
         produto = new javax.swing.JButton();
-        tipo = new javax.swing.JButton();
-        ncm = new javax.swing.JButton();
+        unidade = new javax.swing.JButton();
+        quantidade = new javax.swing.JButton();
+        valor = new javax.swing.JButton();
+        fornecedor = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_produtos = new javax.swing.JTable();
@@ -112,6 +114,11 @@ public class Jlote extends javax.swing.JFrame {
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setFocusPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(235, 235, 235));
@@ -119,7 +126,7 @@ public class Jlote extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel2.setText("Produtos");
+        jLabel2.setText("Lotes");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -128,9 +135,9 @@ public class Jlote extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(494, 494, 494)
+                .addGap(500, 500, 500)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 519, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 541, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
@@ -169,7 +176,7 @@ public class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(codigo);
-        codigo.setBounds(20, 20, 53, 15);
+        codigo.setBounds(20, 20, 52, 15);
 
         produto.setBackground(new java.awt.Color(255, 255, 255));
         produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
@@ -182,23 +189,44 @@ public class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(330, 20, 57, 15);
+        produto.setBounds(220, 20, 56, 15);
 
-        tipo.setBackground(new java.awt.Color(255, 255, 255));
-        tipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_tipo.png"))); // NOI18N
-        tipo.setBorder(null);
-        tipo.setBorderPainted(false);
-        tipo.setContentAreaFilled(false);
-        jPanel1.add(tipo);
-        tipo.setBounds(640, 20, 37, 15);
+        unidade.setBackground(new java.awt.Color(255, 255, 255));
+        unidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_unidade.png"))); // NOI18N
+        unidade.setBorder(null);
+        unidade.setBorderPainted(false);
+        unidade.setContentAreaFilled(false);
+        jPanel1.add(unidade);
+        unidade.setBounds(430, 20, 60, 15);
 
-        ncm.setBackground(new java.awt.Color(255, 255, 255));
-        ncm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_ncm.png"))); // NOI18N
-        ncm.setBorder(null);
-        ncm.setBorderPainted(false);
-        ncm.setContentAreaFilled(false);
-        jPanel1.add(ncm);
-        ncm.setBounds(960, 20, 41, 15);
+        quantidade.setBackground(new java.awt.Color(255, 255, 255));
+        quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
+        quantidade.setBorder(null);
+        quantidade.setBorderPainted(false);
+        quantidade.setContentAreaFilled(false);
+        jPanel1.add(quantidade);
+        quantidade.setBounds(640, 20, 80, 15);
+
+        valor.setBackground(new java.awt.Color(255, 255, 255));
+        valor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valor.png"))); // NOI18N
+        valor.setBorder(null);
+        valor.setBorderPainted(false);
+        valor.setContentAreaFilled(false);
+        jPanel1.add(valor);
+        valor.setBounds(850, 20, 50, 15);
+
+        fornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_fornecedor.png"))); // NOI18N
+        fornecedor.setBorder(null);
+        fornecedor.setBorderPainted(false);
+        fornecedor.setContentAreaFilled(false);
+        fornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fornecedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(fornecedor);
+        fornecedor.setBounds(1060, 20, 80, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -206,35 +234,35 @@ public class Jlote extends javax.swing.JFrame {
         View_de_produtos.setTableHeader(null);
         View_de_produtos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "codigo", "produto", "tipo", "ncm"
+                "codigo", "produto", "unidade", "quantidade", "valor", "fornecedor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -256,14 +284,16 @@ public class Jlote extends javax.swing.JFrame {
             View_de_produtos.getColumnModel().getColumn(1).setResizable(false);
             View_de_produtos.getColumnModel().getColumn(2).setResizable(false);
             View_de_produtos.getColumnModel().getColumn(3).setResizable(false);
+            View_de_produtos.getColumnModel().getColumn(4).setResizable(false);
+            View_de_produtos.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
         );
@@ -323,6 +353,15 @@ public class Jlote extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_produtoActionPerformed
 
+    private void fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fornecedorActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Jhome jhome = new Jhome();
+        jhome.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -364,6 +403,7 @@ public class Jlote extends javax.swing.JFrame {
     private javax.swing.JTable View_de_produtos;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
+    private javax.swing.JButton fornecedor;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -371,9 +411,10 @@ public class Jlote extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton ncm;
     private javax.swing.JButton produto;
-    private javax.swing.JButton tipo;
+    private javax.swing.JButton quantidade;
+    private javax.swing.JButton unidade;
+    private javax.swing.JButton valor;
     // End of variables declaration//GEN-END:variables
 
     private void Bd_Conexao() {

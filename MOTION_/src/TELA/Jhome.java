@@ -158,7 +158,6 @@ public class Jhome extends javax.swing.JFrame {
         jButton1.setDefaultCapable(false);
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
-        jButton1.setOpaque(false);
         jButton1.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -203,7 +202,8 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastro_fornecedorActionPerformed
 
     private void Cadastro_loteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_loteActionPerformed
-        // TODO add your handling code here:
+        Jlote jlote = new Jlote();
+        jlote.setVisible(true);
     }//GEN-LAST:event_Cadastro_loteActionPerformed
 
     private void EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstoqueActionPerformed
