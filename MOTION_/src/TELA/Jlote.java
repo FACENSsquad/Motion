@@ -68,7 +68,7 @@ public class Jlote extends javax.swing.JFrame {
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getId();
             row[1] = list.get(i).getProduto();
-            row[2] = list.get(i).getTipo();
+            row[2] = list.get(i).getUnidade();
             row[4] = list.get(i).getNcm();
             model.addRow(row);
         }

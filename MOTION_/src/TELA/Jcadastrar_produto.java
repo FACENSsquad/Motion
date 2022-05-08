@@ -40,7 +40,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         NCM = new javax.swing.JLabel();
         Caixa_ncm = new javax.swing.JTextField();
         unidade = new javax.swing.JLabel();
-        Campo_tipo = new javax.swing.JComboBox<>();
+        Campo_unidade = new javax.swing.JComboBox<>();
         Botton_cadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,10 +75,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         unidade.setForeground(new java.awt.Color(0, 0, 0));
         unidade.setText("Unidade:");
 
-        Campo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CX", "UN", "EM", "PT" }));
-        Campo_tipo.addActionListener(new java.awt.event.ActionListener() {
+        Campo_unidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CX", "UN", "EM", "PT" }));
+        Campo_unidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Campo_tipoActionPerformed(evt);
+                Campo_unidadeActionPerformed(evt);
             }
         });
 
@@ -121,7 +121,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                                         .addComponent(unidade)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Campo_unidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))))
@@ -135,7 +135,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Campo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Campo_unidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(produto)
                     .addComponent(unidade))
                 .addGap(57, 57, 57)
@@ -157,14 +157,13 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
         
         try {
-            String nome_produto, ncm, tipo;
+            String nome_produto, ncm;
         nome_produto = Caixa_produto.getText();
         ncm = Caixa_ncm.getText();
-        tipo = (String) Campo_tipo.getSelectedItem();
         
         Produtos_bean p_bean = new Produtos_bean();
         p_bean.setProduto(nome_produto);
-        p_bean.setTipo(Campo_tipo.getSelectedItem().toString());
+        p_bean.setUnidade(Campo_unidade.getSelectedItem().toString());
         p_bean.setNcm(ncm);
         
         
@@ -185,9 +184,9 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Botton_cadastrarActionPerformed
 
-    private void Campo_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_tipoActionPerformed
+    private void Campo_unidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_unidadeActionPerformed
        // String tipo_produto = Campo_tipo.getSelectedItem().toString();
-    }//GEN-LAST:event_Campo_tipoActionPerformed
+    }//GEN-LAST:event_Campo_unidadeActionPerformed
 
     private void Caixa_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_produtoActionPerformed
         // TODO add your handling code here:
@@ -232,7 +231,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     private javax.swing.JButton Botton_cadastrar;
     private javax.swing.JTextField Caixa_ncm;
     private javax.swing.JTextField Caixa_produto;
-    private javax.swing.JComboBox<String> Campo_tipo;
+    private javax.swing.JComboBox<String> Campo_unidade;
     private javax.swing.JLabel NCM;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel produto;

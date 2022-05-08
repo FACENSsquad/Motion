@@ -6,13 +6,13 @@ public class Produtos_bean {
     
     private int codigo;
     private String produto;
-    private String tipo;
+    private String unidade;
     private String ncm;
 
-    /*public Produtos_bean(int codigo, String produto, String tipo, String ncm) {
+    /*public Produtos_bean(int codigo, String produto, String unidade, String ncm) {
         this.codigo = codigo;
         this.produto = produto;
-        this.tipo = tipo;
+        this.unidade = unidade;
         this.ncm = ncm;
     } */
 
@@ -32,12 +32,12 @@ public class Produtos_bean {
         this.produto = produto;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getUnidade() {
+        return unidade;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
     }
 
     public String getNcm() {

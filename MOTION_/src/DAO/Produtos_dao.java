@@ -20,14 +20,14 @@ public class Produtos_dao {
     
     public void inserir(Produtos_bean produto){
     
-        String sql = "insert into produto(produto, tipo, ncm) values "
+        String sql = "insert into produto(produto, unidade, ncm) values "
                    + "(?, ?, ?)";
         
         try {
             
             PreparedStatement pst = this.conn.prepareStatement(sql);
             pst.setString(1, produto.getProduto());
-            pst.setString(2, produto.getTipo());
+            pst.setString(2, produto.getUnidade());
             pst.setString(3, produto.getNcm());
             pst.execute();
             
