@@ -228,7 +228,7 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_MovimentaçãoActionPerformed
 
     private void Cadastro_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_clienteActionPerformed
-        Jcadastrar_cliente jcliente = new Jcadastrar_cliente();
+        Jcliente jcliente = new Jcliente();
         jcliente.setVisible(true);
     }//GEN-LAST:event_Cadastro_clienteActionPerformed
 
