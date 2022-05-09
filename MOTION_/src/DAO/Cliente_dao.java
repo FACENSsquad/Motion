@@ -21,7 +21,7 @@ public class Cliente_dao {
      public void inserir(Cliente_bean cliente){
     
         String sql = "insert into cliente(nome, telefone, email, cep, uf, municipio, endereco, cpf_cnpj) values "
-                   + "(?, ?, ?, ?, ?, ?, ?, ?,)";
+                   + "(?, ?, ?, ?, ?, ?, ?, ?)";
        
         try {
             
