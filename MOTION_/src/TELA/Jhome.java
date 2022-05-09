@@ -190,15 +190,15 @@ public class Jhome extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 613, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 663, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(32, 32, 32))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1200, 750);
+        jPanel1.setBounds(0, 0, 1200, 800);
 
-        setSize(new java.awt.Dimension(1218, 797));
+        setSize(new java.awt.Dimension(1218, 847));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

@@ -231,6 +231,11 @@ public class Jlote extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setAutoscrolls(true);
+        jScrollPane1.setDoubleBuffered(true);
+        jScrollPane1.setFocusTraversalPolicyProvider(true);
+
         View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_produtos.setTableHeader(null);
         View_de_produtos.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,13 +277,13 @@ public class Jlote extends javax.swing.JFrame {
             }
         });
         View_de_produtos.setEnabled(false);
-        View_de_produtos.setFocusable(false);
+        View_de_produtos.setFillsViewportHeight(true);
+        View_de_produtos.setFocusTraversalPolicyProvider(true);
         View_de_produtos.setGridColor(new java.awt.Color(255, 255, 255));
         View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
-        View_de_produtos.setRequestFocusEnabled(false);
-        View_de_produtos.setRowHeight(25);
-        View_de_produtos.setSelectionBackground(new java.awt.Color(51, 51, 51));
-        View_de_produtos.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        View_de_produtos.setRowHeight(40);
+        View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setSelectionForeground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setShowHorizontalLines(false);
         View_de_produtos.setShowVerticalLines(false);
         jScrollPane1.setViewportView(View_de_produtos);

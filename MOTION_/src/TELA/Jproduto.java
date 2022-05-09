@@ -129,7 +129,7 @@ public class Jproduto extends javax.swing.JFrame {
 
         barra_top = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        produtos_inicio = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Cadastrar_produto = new javax.swing.JButton();
@@ -150,15 +150,15 @@ public class Jproduto extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(173, 216, 230));
 
-        jButton2.setBackground(new java.awt.Color(173, 216, 230));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_inicio.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        produtos_inicio.setBackground(new java.awt.Color(173, 216, 230));
+        produtos_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_inicio.png"))); // NOI18N
+        produtos_inicio.setBorder(null);
+        produtos_inicio.setBorderPainted(false);
+        produtos_inicio.setContentAreaFilled(false);
+        produtos_inicio.setFocusPainted(false);
+        produtos_inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                produtos_inicioActionPerformed(evt);
             }
         });
 
@@ -180,7 +180,7 @@ public class Jproduto extends javax.swing.JFrame {
                 .addGap(494, 494, 494)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 519, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(produtos_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
         jPanel2Layout.setVerticalGroup(
@@ -188,7 +188,7 @@ public class Jproduto extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(produtos_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(jLabel2)))
@@ -252,14 +252,13 @@ public class Jproduto extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setAutoscrolls(true);
         jScrollPane1.setDoubleBuffered(true);
         jScrollPane1.setFocusCycleRoot(true);
         jScrollPane1.setFocusTraversalPolicyProvider(true);
-        jScrollPane1.setOpaque(false);
-        jScrollPane1.setRequestFocusEnabled(false);
-        jScrollPane1.setWheelScrollingEnabled(false);
+        jScrollPane1.setInheritsPopupMenu(true);
 
         View_de_produtos.setAutoCreateRowSorter(true);
         View_de_produtos.setBackground(new java.awt.Color(255, 255, 255));
@@ -381,10 +380,10 @@ public class Jproduto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_produtoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void produtos_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtos_inicioActionPerformed
         Jhome jhome = new Jhome();
         jhome.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_produtos_inicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -427,7 +426,6 @@ public class Jproduto extends javax.swing.JFrame {
     private javax.swing.JTable View_de_produtos;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -436,6 +434,7 @@ public class Jproduto extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton ncm;
     private javax.swing.JButton produto;
+    private javax.swing.JButton produtos_inicio;
     private javax.swing.JButton tipo;
     // End of variables declaration//GEN-END:variables
 
