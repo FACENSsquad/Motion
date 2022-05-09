@@ -34,8 +34,8 @@ public class Jlote extends javax.swing.JFrame {
     
     public Jlote() {
         initComponents();
-        setExtendedState(MAXIMIZED_BOTH);
-        show_produtos();
+        //setExtendedState(MAXIMIZED_BOTH);
+        //show_produtos();
         
          
         
@@ -101,6 +101,7 @@ public class Jlote extends javax.swing.JFrame {
         View_de_produtos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -137,9 +138,9 @@ public class Jlote extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(500, 500, 500)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 541, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(170, 170, 170))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,6 +233,7 @@ public class Jlote extends javax.swing.JFrame {
 
         View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_produtos.setTableHeader(null);
+        View_de_produtos.setForeground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -275,7 +277,8 @@ public class Jlote extends javax.swing.JFrame {
         View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
         View_de_produtos.setRequestFocusEnabled(false);
         View_de_produtos.setRowHeight(25);
-        View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_produtos.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        View_de_produtos.setSelectionForeground(new java.awt.Color(51, 51, 51));
         View_de_produtos.setShowHorizontalLines(false);
         View_de_produtos.setShowVerticalLines(false);
         jScrollPane1.setViewportView(View_de_produtos);
@@ -312,16 +315,14 @@ public class Jlote extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(barra_topLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, barra_topLayout.createSequentialGroup()
-                        .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(33, 33, 33))
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
         );
         barra_topLayout.setVerticalGroup(
             barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

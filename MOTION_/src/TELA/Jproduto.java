@@ -30,6 +30,7 @@ public class Jproduto extends javax.swing.JFrame {
         initComponents();
         tabela_produto();
         
+        
     }
     
     
@@ -250,6 +251,16 @@ public class Jproduto extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setAutoscrolls(true);
+        jScrollPane1.setDoubleBuffered(true);
+        jScrollPane1.setFocusCycleRoot(true);
+        jScrollPane1.setFocusTraversalPolicyProvider(true);
+        jScrollPane1.setOpaque(false);
+        jScrollPane1.setRequestFocusEnabled(false);
+        jScrollPane1.setWheelScrollingEnabled(false);
+
         View_de_produtos.setAutoCreateRowSorter(true);
         View_de_produtos.setBackground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -282,17 +293,19 @@ public class Jproduto extends javax.swing.JFrame {
         });
         View_de_produtos.setAlignmentY(2.0F);
         View_de_produtos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        View_de_produtos.setAutoscrolls(false);
         View_de_produtos.setCellSelectionEnabled(true);
         View_de_produtos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         View_de_produtos.setDoubleBuffered(true);
         View_de_produtos.setDragEnabled(true);
-        View_de_produtos.setEnabled(false);
+        View_de_produtos.setFillsViewportHeight(true);
+        View_de_produtos.setFocusCycleRoot(true);
         View_de_produtos.setFocusable(false);
         View_de_produtos.setGridColor(new java.awt.Color(255, 255, 255));
         View_de_produtos.setMaximumSize(new java.awt.Dimension(2147483647, 440));
         View_de_produtos.setMinimumSize(new java.awt.Dimension(100, 1040));
+        View_de_produtos.setName(""); // NOI18N
         View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
+        View_de_produtos.setRequestFocusEnabled(false);
         View_de_produtos.setRowHeight(40);
         View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setSelectionForeground(new java.awt.Color(255, 255, 255));
