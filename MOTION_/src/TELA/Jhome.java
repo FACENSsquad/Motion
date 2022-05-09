@@ -205,32 +205,39 @@ public class Jhome extends javax.swing.JFrame {
     private void Entrar_ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entrar_ProdutosActionPerformed
        Jproduto jprodutos = new Jproduto();
        jprodutos.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Entrar_ProdutosActionPerformed
 
     private void Cadastro_fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_fornecedorActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_Cadastro_fornecedorActionPerformed
 
     private void Cadastro_loteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_loteActionPerformed
         Jlote jlote = new Jlote();
         jlote.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Cadastro_loteActionPerformed
 
     private void EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstoqueActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_EstoqueActionPerformed
 
     private void PedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidosActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_PedidosActionPerformed
 
     private void MovimentaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MovimentaçãoActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_MovimentaçãoActionPerformed
 
     private void Cadastro_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_clienteActionPerformed
         Jcliente jcliente = new Jcliente();
         jcliente.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Cadastro_clienteActionPerformed
 
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             

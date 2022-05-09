@@ -170,7 +170,8 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro ao cadastrar produto");
-        }
+        } 
+        this.dispose();
         
         
         

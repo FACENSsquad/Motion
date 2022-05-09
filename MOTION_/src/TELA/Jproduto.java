@@ -141,6 +141,7 @@ public class Jproduto extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_produtos = new javax.swing.JTable();
+        Botton_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -332,6 +333,15 @@ public class Jproduto extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
         );
 
+        Botton_atualizar.setBackground(new java.awt.Color(255, 51, 51));
+        Botton_atualizar.setForeground(new java.awt.Color(0, 0, 0));
+        Botton_atualizar.setText("Atualizar");
+        Botton_atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_atualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
         barra_top.setLayout(barra_topLayout);
         barra_topLayout.setHorizontalGroup(
@@ -344,7 +354,10 @@ public class Jproduto extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Botton_atualizar)
+                        .addGap(14, 14, 14)))
                 .addContainerGap())
         );
         barra_topLayout.setVerticalGroup(
@@ -352,7 +365,9 @@ public class Jproduto extends javax.swing.JFrame {
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Botton_atualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -383,7 +398,15 @@ public class Jproduto extends javax.swing.JFrame {
     private void produtos_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtos_inicioActionPerformed
         Jhome jhome = new Jhome();
         jhome.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_produtos_inicioActionPerformed
+
+    private void Botton_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_atualizarActionPerformed
+        Jproduto jproduto = new Jproduto();
+        jproduto.setVisible(true);
+        this.dispose();
+                
+    }//GEN-LAST:event_Botton_atualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,6 +445,7 @@ public class Jproduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Botton_atualizar;
     private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_produtos;
     private javax.swing.JPanel barra_top;

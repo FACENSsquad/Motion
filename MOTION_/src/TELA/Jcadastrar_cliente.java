@@ -186,6 +186,7 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
             
         } catch (Exception e) {
         }
+        this.dispose();
     }//GEN-LAST:event_Botton_cadastrarActionPerformed
 
     /**
