@@ -81,6 +81,7 @@ public class Jcliente extends javax.swing.JFrame {
         Botton_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -106,7 +107,7 @@ public class Jcliente extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel2.setText("Produtos");
+        jLabel2.setText("Cliente");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -117,7 +118,7 @@ public class Jcliente extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(494, 494, 494)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 519, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
@@ -189,6 +190,9 @@ public class Jcliente extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
         View_de_cliente.setAutoCreateRowSorter(true);
         View_de_cliente.setBackground(new java.awt.Color(255, 255, 255));
         View_de_cliente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -227,6 +231,7 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.setDoubleBuffered(true);
         View_de_cliente.setDragEnabled(true);
         View_de_cliente.setEnabled(false);
+        View_de_cliente.setFillsViewportHeight(true);
         View_de_cliente.setFocusable(false);
         View_de_cliente.setGridColor(new java.awt.Color(255, 255, 255));
         View_de_cliente.setMaximumSize(new java.awt.Dimension(2147483647, 440));
@@ -256,12 +261,13 @@ public class Jcliente extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
         );
 
-        Botton_atualizar.setBackground(new java.awt.Color(255, 51, 51));
+        Botton_atualizar.setBackground(new java.awt.Color(235, 235, 235));
         Botton_atualizar.setForeground(new java.awt.Color(0, 0, 0));
-        Botton_atualizar.setText("Atualizar");
+        Botton_atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/atualizar.png"))); // NOI18N
+        Botton_atualizar.setBorder(null);
         Botton_atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botton_atualizarActionPerformed(evt);
@@ -280,9 +286,10 @@ public class Jcliente extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Botton_atualizar)))
+                        .addGap(22, 22, 22)))
                 .addContainerGap())
         );
         barra_topLayout.setVerticalGroup(
@@ -291,8 +298,8 @@ public class Jcliente extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Botton_atualizar)
-                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -301,9 +308,9 @@ public class Jcliente extends javax.swing.JFrame {
         );
 
         getContentPane().add(barra_top);
-        barra_top.setBounds(0, 0, 1330, 870);
+        barra_top.setBounds(0, 0, 1200, 800);
 
-        setSize(new java.awt.Dimension(1347, 916));
+        setSize(new java.awt.Dimension(1200, 800));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
