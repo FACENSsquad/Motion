@@ -9,13 +9,6 @@ public class Produtos_bean {
     private String unidade;
     private String ncm;
 
-    /*public Produtos_bean(int codigo, String produto, String unidade, String ncm) {
-        this.codigo = codigo;
-        this.produto = produto;
-        this.unidade = unidade;
-        this.ncm = ncm;
-    } */
-
     public int getId() {
         return codigo;
     }

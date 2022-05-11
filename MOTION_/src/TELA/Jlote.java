@@ -5,74 +5,66 @@
  */
 package TELA;
 
-import BEAN.Login_bean;
 import BEAN.Produtos_bean;
 import CONEXAO.Conexao;
-import java.util.ArrayList;
-import DAO.Produtos_dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
+import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Samsung
  */
-public class Jlote extends javax.swing.JFrame {
-
-    Connection conn;
-    
-    public ResultSet view_produtos(Produtos_bean p_bean){
-        conn = new Conexao().Bd_Conexao(); 
-        return null;
-    }
+public final class Jlote extends javax.swing.JFrame {
     
     public Jlote() {
         initComponents();
-        //setExtendedState(MAXIMIZED_BOTH);
-        //show_produtos();
-        
-         
-        
+        tabela_lote();
+
     }
-    public ArrayList<Produtos_bean> userList(){
-        ArrayList<Produtos_bean> userList = new ArrayList<>();
-        try{ 
-            String sql = "select * from produto";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            
-            Produtos_bean produtos_b = new Produtos_bean();
-            while(rs.next()){
-            produtos_b(rs.getInt("codigo"),rs.getString("produto"),rs.getString("tipo"),rs.getString("ncm"));
-            userList.add(produtos_b);
-            }
-            
-        }   
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Erro ao exibir produtos "+e);
-        }
-        return userList;
-    }
-    public void show_produtos(){
-        
-        ArrayList<Produtos_bean> list = userList();
-        DefaultTableModel model = (DefaultTableModel)View_de_produtos.getModel();
     
-        Object[] row =  new Object[5];
-        for (int i = 0; i < list.size(); i++) {
-            row[0] = list.get(i).getId();
-            row[1] = list.get(i).getProduto();
-            row[2] = list.get(i).getUnidade();
-            row[4] = list.get(i).getNcm();
-            model.addRow(row);
+    public void tabela_lote(){
+        
+        DefaultTableModel model = (DefaultTableModel) View_de_lotes.getModel();
+        model.setNumRows(0);
+        
+        View_de_lotes.getColumnModel().getColumn(0).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(1).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(2).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(3).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(4).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(5).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(6).setPreferredWidth(10);
+        View_de_lotes.getColumnModel().getColumn(7).setPreferredWidth(10);
+        
+        try{
+            Connection connl = new Conexao().Bd_Conexao();
+            PreparedStatement pst;
+            ResultSet rs;
+            
+            pst = connl.prepareStatement("select * from lote");
+            rs = pst.executeQuery();
+            
+            while (rs.next()){
+                model.addRow(new Object[]{
+                    rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                });
+            }
+        }
+        catch(SQLException e ){
+            System.out.println("Erro tabela_produto "+ e);
         }
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,7 +90,7 @@ public class Jlote extends javax.swing.JFrame {
         fornecedor = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        View_de_produtos = new javax.swing.JTable();
+        View_de_lotes = new javax.swing.JTable();
         Botton_atualizar = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1, 0));
@@ -240,66 +232,68 @@ public class Jlote extends javax.swing.JFrame {
         jScrollPane1.setDoubleBuffered(true);
         jScrollPane1.setFocusTraversalPolicyProvider(true);
 
-        View_de_produtos.setBackground(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        View_de_produtos.setTableHeader(null);
-        View_de_produtos.setForeground(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setModel(new javax.swing.table.DefaultTableModel(
+        View_de_lotes.setBackground(new java.awt.Color(255, 255, 255));
+        View_de_lotes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        View_de_lotes.setTableHeader(null);
+        View_de_lotes.setForeground(new java.awt.Color(0, 0, 0));
+        View_de_lotes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "codigo", "produto", "unidade", "quantidade", "valor", "fornecedor"
+                "lote", "l_produto", "quantidade", "valor", "alocacao", "data_v", "fornecedor", "data_e"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        View_de_produtos.setCellSelectionEnabled(true);
-        View_de_produtos.setEnabled(false);
-        View_de_produtos.setFillsViewportHeight(true);
-        View_de_produtos.setFocusTraversalPolicyProvider(true);
-        View_de_produtos.setGridColor(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setPreferredSize(new java.awt.Dimension(400, 384));
-        View_de_produtos.setRowHeight(40);
-        View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        View_de_produtos.setShowHorizontalLines(false);
-        View_de_produtos.setShowVerticalLines(false);
-        jScrollPane1.setViewportView(View_de_produtos);
-        if (View_de_produtos.getColumnModel().getColumnCount() > 0) {
-            View_de_produtos.getColumnModel().getColumn(0).setResizable(false);
-            View_de_produtos.getColumnModel().getColumn(1).setResizable(false);
-            View_de_produtos.getColumnModel().getColumn(2).setResizable(false);
-            View_de_produtos.getColumnModel().getColumn(3).setResizable(false);
-            View_de_produtos.getColumnModel().getColumn(4).setResizable(false);
-            View_de_produtos.getColumnModel().getColumn(5).setResizable(false);
+        View_de_lotes.setColumnSelectionAllowed(false);
+        View_de_lotes.setEnabled(false);
+        View_de_lotes.setFillsViewportHeight(true);
+        View_de_lotes.setFocusTraversalPolicyProvider(true);
+        View_de_lotes.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_lotes.setPreferredSize(new java.awt.Dimension(400, 384));
+        View_de_lotes.setRowHeight(40);
+        View_de_lotes.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_lotes.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        View_de_lotes.setShowHorizontalLines(false);
+        View_de_lotes.setShowVerticalLines(false);
+        jScrollPane1.setViewportView(View_de_lotes);
+        if (View_de_lotes.getColumnModel().getColumnCount() > 0) {
+            View_de_lotes.getColumnModel().getColumn(0).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(1).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(2).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(3).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(4).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(5).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(6).setResizable(false);
+            View_de_lotes.getColumnModel().getColumn(7).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -323,7 +317,6 @@ public class Jlote extends javax.swing.JFrame {
         Botton_atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/atualizar.png"))); // NOI18N
         Botton_atualizar.setBorder(null);
         Botton_atualizar.setContentAreaFilled(false);
-        Botton_atualizar.setOpaque(false);
         Botton_atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botton_atualizarActionPerformed(evt);
@@ -440,7 +433,7 @@ public class Jlote extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Botton_atualizar;
     private javax.swing.JButton Cadastrar_produto;
-    private javax.swing.JTable View_de_produtos;
+    private javax.swing.JTable View_de_lotes;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
     private javax.swing.JButton fornecedor;

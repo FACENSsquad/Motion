@@ -5,19 +5,11 @@
  */
 package TELA;
 
-import BEAN.Login_bean;
-import BEAN.Produtos_bean;
 import CONEXAO.Conexao;
-import java.util.ArrayList;
-import DAO.Produtos_dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
