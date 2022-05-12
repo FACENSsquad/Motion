@@ -385,7 +385,8 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_Entrar_ProdutosActionPerformed
 
     private void Cadastro_fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_fornecedorActionPerformed
-        // TODO add your handling code here:
+       Jcadastrar_fornecedores jcadastrar_fornecedores = new  Jcadastrar_fornecedores();
+       jcadastrar_fornecedores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Cadastro_fornecedorActionPerformed
 
