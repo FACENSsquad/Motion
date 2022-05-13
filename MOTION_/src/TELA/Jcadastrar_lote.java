@@ -32,6 +32,7 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         Caixa_quantidade = new javax.swing.JTextField();
         Caixa_data = new javax.swing.JTextField();
@@ -47,6 +48,8 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Botton_cancelar = new javax.swing.JButton();
         Caixa_produto = new javax.swing.JTextField();
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 600));
@@ -216,5 +219,6 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

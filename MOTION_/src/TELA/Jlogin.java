@@ -51,23 +51,27 @@ public class Jlogin extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(180, 80, 80, 32);
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 230, 60, 19);
+        jLabel3.setBounds(30, 230, 60, 17);
 
+        Caixa_login.setEditable(false);
+        Caixa_login.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(Caixa_login);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(30, 250, 370, 30);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Senha:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 300, 60, 19);
+        jLabel4.setBounds(30, 300, 60, 17);
 
+        Caixa_senha.setEditable(false);
+        Caixa_senha.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_senhaActionPerformed(evt);
@@ -86,7 +90,7 @@ public class Jlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Botton_entrar);
-        Botton_entrar.setBounds(240, 580, 160, 60);
+        Botton_entrar.setBounds(240, 580, 140, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fundo_login.png"))); // NOI18N
         jLabel1.setOpaque(true);
