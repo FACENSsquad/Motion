@@ -366,8 +366,8 @@ public final class Jlote extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
-        Jcadastrar_produto jcadastrar = new Jcadastrar_produto();
-        jcadastrar.setVisible(true);
+       Jcadastrar_lote jcadastrar = new Jcadastrar_lote();
+       jcadastrar.setVisible(true);
     }//GEN-LAST:event_Cadastrar_produtoActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
