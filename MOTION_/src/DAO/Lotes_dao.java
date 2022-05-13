@@ -4,6 +4,7 @@ package DAO;
 import BEAN.Lotes_bean; 
 import CONEXAO.Conexao;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 
@@ -33,9 +34,19 @@ public class Lotes_dao {
         + " values(?,?,?,?,?,?)";
         try {
             
+            PreparedStatement pst = this.conn.prepareStatement(sql);
+            
+            pst.setInt(1, lote.getL_produto());
+            pst.setInt(2, lote.getQuantidade());
+            pst.setFloat(3, lote.getValor());
+            pst.setInt(4, lote.getAlocacao());
+            pst.setString(5, lote.getData_v());
+            pst.setInt(6, lote.getFornecedor());
+            pst.execute();
+            
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro em Lotes_dao " +e);
-            return null;
             
         }
     }
