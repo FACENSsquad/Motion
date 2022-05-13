@@ -30,6 +30,7 @@ public class Jhome extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Entrar_Produtos = new javax.swing.JButton();
@@ -39,7 +40,6 @@ public class Jhome extends javax.swing.JFrame {
         Estoque = new javax.swing.JButton();
         Pedidos = new javax.swing.JButton();
         Movimentação = new javax.swing.JButton();
-        logo = new javax.swing.JLabel();
         lupa = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -75,6 +75,11 @@ public class Jhome extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("TESTE");
 
+        logo.setBackground(new java.awt.Color(235, 235, 235));
+        logo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        logo.setForeground(new java.awt.Color(255, 255, 255));
+        logo.setText("MotiON");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -82,13 +87,17 @@ public class Jhome extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logo)
+                .addGap(34, 34, 34))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(logo))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -162,19 +171,11 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(Movimentação);
         Movimentação.setBounds(0, 450, 200, 30);
 
-        logo.setBackground(new java.awt.Color(235, 235, 235));
-        logo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setText("MotiON");
-        jPanel2.add(logo);
-        logo.setBounds(30, 740, 80, 32);
-
         lupa.setBackground(new java.awt.Color(255, 255, 255));
         lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
         jPanel2.add(lupa);
         lupa.setBounds(0, 230, 20, 30);
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
         jPanel2.add(jTextField1);
         jTextField1.setBounds(20, 230, 180, 30);
@@ -250,7 +251,7 @@ public class Jhome extends javax.swing.JFrame {
         descricao_produto1.setBounds(80, 80, 80, 19);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
         jLabel5.setText("R$ 25.000,00");
         dash_lote.add(jLabel5);
         jLabel5.setBounds(90, 120, 290, 90);
@@ -287,7 +288,7 @@ public class Jhome extends javax.swing.JFrame {
         produto1.setBounds(80, 90, 150, 19);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(64, 64, 64));
         jLabel6.setText("01/01/2022");
         jPanel6.add(jLabel6);
         jLabel6.setBounds(120, 120, 250, 90);
@@ -306,7 +307,7 @@ public class Jhome extends javax.swing.JFrame {
         jPanel7.setLayout(null);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
         jLabel7.setText("COCA COLA");
         jPanel7.add(jLabel7);
         jLabel7.setBounds(120, 100, 250, 90);

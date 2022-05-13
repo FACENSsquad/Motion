@@ -32,7 +32,7 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Caixa_produto = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         Caixa_quantidade = new javax.swing.JTextField();
         Caixa_data = new javax.swing.JTextField();
         Caixa_valor = new javax.swing.JTextField();
@@ -46,26 +46,23 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Botton_cancelar = new javax.swing.JButton();
+        Caixa_produto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
-        Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_produtoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Caixa_produto);
-        Caixa_produto.setBounds(170, 60, 90, 19);
-        getContentPane().add(Caixa_quantidade);
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 600));
+        jPanel1.setLayout(null);
+        jPanel1.add(Caixa_quantidade);
         Caixa_quantidade.setBounds(170, 120, 90, 19);
-        getContentPane().add(Caixa_data);
+        jPanel1.add(Caixa_data);
         Caixa_data.setBounds(390, 120, 90, 19);
-        getContentPane().add(Caixa_valor);
+        jPanel1.add(Caixa_valor);
         Caixa_valor.setBounds(390, 60, 90, 19);
-        getContentPane().add(Caixa_alocacao);
+        jPanel1.add(Caixa_alocacao);
         Caixa_alocacao.setBounds(390, 90, 90, 19);
-        getContentPane().add(Caixa_fornecedor);
+        jPanel1.add(Caixa_fornecedor);
         Caixa_fornecedor.setBounds(170, 90, 90, 19);
 
         Botton_cadastrar.setText("Cadastrar");
@@ -74,31 +71,31 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
                 Botton_cadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Botton_cadastrar);
+        jPanel1.add(Botton_cadastrar);
         Botton_cadastrar.setBounds(250, 220, 110, 25);
 
         jLabel1.setText("Codigo do produto:");
-        getContentPane().add(jLabel1);
+        jPanel1.add(jLabel1);
         jLabel1.setBounds(50, 60, 100, 15);
 
         jLabel2.setText("Quantidade:");
-        getContentPane().add(jLabel2);
+        jPanel1.add(jLabel2);
         jLabel2.setBounds(50, 130, 58, 15);
 
         jLabel3.setText("Data de validade:");
-        getContentPane().add(jLabel3);
+        jPanel1.add(jLabel3);
         jLabel3.setBounds(300, 120, 90, 15);
 
         jLabel4.setText("Valor:");
-        getContentPane().add(jLabel4);
+        jPanel1.add(jLabel4);
         jLabel4.setBounds(300, 60, 29, 15);
 
         jLabel5.setText("Alocação:");
-        getContentPane().add(jLabel5);
+        jPanel1.add(jLabel5);
         jLabel5.setBounds(300, 90, 60, 15);
 
         jLabel6.setText("Codigo do fornecedor:");
-        getContentPane().add(jLabel6);
+        jPanel1.add(jLabel6);
         jLabel6.setBounds(50, 90, 120, 15);
 
         Botton_cancelar.setText("Cancelar");
@@ -107,8 +104,19 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
                 Botton_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(Botton_cancelar);
+        jPanel1.add(Botton_cancelar);
         Botton_cancelar.setBounds(380, 220, 90, 25);
+
+        Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_produtoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_produto);
+        Caixa_produto.setBounds(170, 60, 90, 19);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 700, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -207,5 +215,6 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
