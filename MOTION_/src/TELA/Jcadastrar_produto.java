@@ -32,38 +32,43 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         unidade = new javax.swing.JLabel();
         Campo_unidade = new javax.swing.JComboBox<>();
         bt_cadastrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("cadasto de produtos"); // NOI18N
         setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(196, 196, 196));
+        jPanel1.setBackground(new java.awt.Color(208, 214, 216));
 
-        titulo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        titulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         titulo.setForeground(new java.awt.Color(0, 0, 0));
-        titulo.setText("Cadasro de Produtos");
+        titulo.setText("CADASTRO DE PRODUTO");
 
-        produto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         produto.setForeground(new java.awt.Color(0, 0, 0));
         produto.setText("Produto:");
 
         Caixa_produto.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_produto.setBorder(null);
+        Caixa_produto.setPreferredSize(new java.awt.Dimension(0, 25));
         Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_produtoActionPerformed(evt);
             }
         });
 
-        NCM.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        NCM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         NCM.setForeground(new java.awt.Color(0, 0, 0));
         NCM.setText("NCM:");
 
         Caixa_ncm.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_ncm.setBorder(null);
+        Caixa_ncm.setPreferredSize(new java.awt.Dimension(0, 25));
 
-        unidade.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        unidade.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         unidade.setForeground(new java.awt.Color(0, 0, 0));
-        unidade.setText("Unidade:");
+        unidade.setText("Un:");
 
         Campo_unidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CX", "UN", "EM", "PT" }));
         Campo_unidade.setSelectedItem(Unidades);
@@ -84,6 +89,11 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(208, 214, 216));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cancelar.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -92,49 +102,54 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bt_cadastrar)
                         .addGap(12, 12, 12))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titulo)
+                            .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(produto)
-                                        .addGap(3, 3, 3))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NCM)
-                                        .addGap(2, 2, 2)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                                        .addComponent(unidade)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Campo_unidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                                .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(107, 107, 107)
+                                .addComponent(Campo_unidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(produto)
+                                .addGap(366, 366, 366)
+                                .addComponent(unidade))
+                            .addComponent(NCM))
+                        .addGap(0, 80, Short.MAX_VALUE)))
                 .addGap(68, 68, 68))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(229, 229, 229)
+                .addComponent(titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addComponent(titulo)
-                .addGap(54, 54, 54)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(unidade)
+                    .addComponent(produto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Campo_unidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(produto)
-                    .addComponent(unidade))
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NCM))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
-                .addComponent(bt_cadastrar)
+                    .addComponent(Caixa_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(NCM)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Caixa_ncm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                        .addComponent(bt_cadastrar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(89, 89, 89))
         );
 
@@ -224,6 +239,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Campo_unidade;
     private javax.swing.JLabel NCM;
     private javax.swing.JButton bt_cadastrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel produto;
     private javax.swing.JLabel titulo;
