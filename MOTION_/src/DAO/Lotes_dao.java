@@ -47,7 +47,10 @@ public class Lotes_dao {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro em Lotes_dao " +e);
-            
+        } finally{
+        this.conexao.fecha_bd();
+            System.out.println("Banco fechado");
+            JOptionPane.showMessageDialog(null, "Lote cadastrado com sucesso");
         }
     }
     

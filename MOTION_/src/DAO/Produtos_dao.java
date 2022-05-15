@@ -5,6 +5,7 @@ import BEAN.Produtos_bean;
 import CONEXAO.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 
 public class Produtos_dao {
@@ -33,6 +34,10 @@ public class Produtos_dao {
             
         } catch (Exception e) {
             System.out.println("Erro em classe Produtos_dao");
+        } finally{
+        this.conexao.fecha_bd();
+            System.out.println("Banco fechado");
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
         }
         
     }

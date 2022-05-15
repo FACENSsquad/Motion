@@ -7,6 +7,8 @@ package TELA;
 
 import BEAN.Cliente_bean;
 import DAO.Cliente_dao;
+import CONEXAO.Conexao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +21,7 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
      */
     public Jcadastrar_cliente() {
         initComponents();
+        
     }
 
     /**
@@ -264,9 +267,9 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
              Caixa_telefone.setText("");
              Caixa_cpf.setText("");
              
-             
             
         } catch (Exception e) {
+       JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente");
         }
         this.dispose();
     }//GEN-LAST:event_Botton_cadastrarActionPerformed

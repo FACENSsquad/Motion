@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class Login_dao {
     
     Connection conn;
+    Conexao conexao;
     
     public ResultSet autenticaUsuario(Login_bean login_usuario){
         conn = new Conexao().Bd_Conexao();
@@ -29,7 +30,12 @@ public class Login_dao {
         } catch (Exception e){
             JOptionPane.showMessageDialog(null,"Erro em Login_dao " +e);
             return null;
+        } finally{
+        this.conexao.fecha_bd();
+            System.out.println("Banco fechado");
+            
         }
+        
     }
     
     }

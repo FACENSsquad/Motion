@@ -5,6 +5,7 @@ import BEAN.Cliente_bean;
 import CONEXAO.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 
 public class Cliente_dao {
@@ -12,10 +13,12 @@ public class Cliente_dao {
      private Conexao conexao;
      private Connection conn;
      
+     
      public Cliente_dao(){
      
         this.conexao = new Conexao();
         this.conn = this.conexao.Bd_Conexao();
+        
      
      }
      public void inserir(Cliente_bean cliente){
@@ -38,6 +41,10 @@ public class Cliente_dao {
             
         } catch (Exception e) {
             System.out.println("Erro em classe Cliente_dao");
+        } finally{
+        this.conexao.fecha_bd();
+            System.out.println("Banco fechado");
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
         }
         
     }
