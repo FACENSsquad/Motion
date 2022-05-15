@@ -5,11 +5,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
+    
+    Connection conn;
     public Connection Bd_Conexao(){
         try{
             // Tentar estabelecer conexão
 
-            Connection conn = DriverManager.getConnection(
+           conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/bd_motion?serverTimezone=UTC",  // linha de conexão
                 "root", // usuario do MySQL
                 "" // senha do MySQL
@@ -22,5 +24,19 @@ public class Conexao {
             return null;
         }
     }
-}
+    
+    public boolean fecha_bd(){
+        
+        try {
+            conn.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro ao fechar conexao " + e.getMessage());
+            return false;
+        }
+    }
+    
+    }
+    
+
     
