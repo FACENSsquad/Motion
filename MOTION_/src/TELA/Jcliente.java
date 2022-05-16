@@ -79,6 +79,7 @@ public class Jcliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_cliente = new javax.swing.JTable();
         Botton_atualizar = new javax.swing.JButton();
+        Botton_update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -274,6 +275,13 @@ public class Jcliente extends javax.swing.JFrame {
             }
         });
 
+        Botton_update.setText("Update");
+        Botton_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_updateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
         barra_top.setLayout(barra_topLayout);
         barra_topLayout.setHorizontalGroup(
@@ -286,6 +294,8 @@ public class Jcliente extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Botton_update)
+                        .addGap(106, 106, 106)
                         .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,9 +307,11 @@ public class Jcliente extends javax.swing.JFrame {
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Botton_update))
                 .addGap(8, 8, 8)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -340,6 +352,10 @@ public class Jcliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Botton_atualizarActionPerformed
 
+    private void Botton_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_updateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botton_updateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -379,6 +395,7 @@ public class Jcliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Botton_atualizar;
+    private javax.swing.JButton Botton_update;
     private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_cliente;
     private javax.swing.JPanel barra_top;

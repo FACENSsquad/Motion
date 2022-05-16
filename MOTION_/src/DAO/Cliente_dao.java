@@ -48,5 +48,32 @@ public class Cliente_dao {
         }
         
     }
+     public void update(Cliente_bean update_cliente){
+     
+         String sql = "update cliente set = " + "?" + "where codigo = " + "?";
+         
+         try {
+            
+            PreparedStatement pst = this.conn.prepareStatement(sql);
+            pst.setString(1, update_cliente.getNome());
+            pst.setString(2, update_cliente.getTelefone());
+            pst.setString(3, update_cliente.getEmail());
+            pst.setString(4, update_cliente.getCep());
+            pst.setString(5, update_cliente.getUf());
+            pst.setString(6, update_cliente.getMunicipio());
+            pst.setString(7, update_cliente.getEndereco());
+            pst.setString(8, update_cliente.getCpf());
+            pst.execute();
+            
+        } catch (Exception e) {
+            System.out.println("Erro em classe Cliente_dao");
+        } finally{
+        this.conexao.fecha_bd();
+            System.out.println("Banco fechado");
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+        }
+         
+     }
+     
     
 }

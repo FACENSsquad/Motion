@@ -30,12 +30,7 @@ public class Login_dao {
         } catch (Exception e){
             JOptionPane.showMessageDialog(null,"Erro em Login_dao " +e);
             return null;
-        } finally{
-        this.conexao.fecha_bd();
-            System.out.println("Banco fechado");
-            
         }
-        
     }
     
     }

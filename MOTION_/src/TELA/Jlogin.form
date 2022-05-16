@@ -74,7 +74,6 @@
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="Caixa_login">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
@@ -100,7 +99,6 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="Caixa_senha">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>

@@ -57,7 +57,6 @@ public class Jlogin extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 230, 60, 17);
 
-        Caixa_login.setEditable(false);
         Caixa_login.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(Caixa_login);
 
@@ -70,7 +69,6 @@ public class Jlogin extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(30, 300, 60, 17);
 
-        Caixa_senha.setEditable(false);
         Caixa_senha.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
