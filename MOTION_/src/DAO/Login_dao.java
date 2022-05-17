@@ -16,22 +16,21 @@ public class Login_dao {
     
     public ResultSet autenticaUsuario(Login_bean login_usuario){
         conn = new Conexao().Bd_Conexao();
-        
         try {
-            String sql = "select * from usuario where usuario = ? and senha = ?";
+            String sql = "select * from usuario where usuario = ? and senha = ? and nivel = ?";
             PreparedStatement pst = conn.prepareStatement(sql);
             
             pst.setString(1,login_usuario.getUsuario());
             pst.setString(2,login_usuario.getSenha());
-            
+            pst.setInt(3,login_usuario.getNivel());
+
             ResultSet rs = pst.executeQuery();
             return rs;
             
         } catch (Exception e){
-            JOptionPane.showMessageDialog(null,"Erro em Login_dao " +e);
-            return null;
+         JOptionPane.showMessageDialog(null,"Erro em Login_dao " +e);
+         return null;
         }
     }
     
     }
-

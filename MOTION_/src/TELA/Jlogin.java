@@ -6,8 +6,12 @@
 package TELA;
 
 import BEAN.Login_bean;
+import CONEXAO.Conexao;
 import DAO.Login_dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -108,19 +112,30 @@ public class Jlogin extends javax.swing.JFrame {
             Login_bean loginBean = new Login_bean();
             loginBean.setUsuario(usuario_login);
             loginBean.setSenha(usuario_senha);
- 
-            Login_dao loginDao = new Login_dao();
-            ResultSet rsLoginDao = loginDao.autenticaUsuario(loginBean);
             
-            if(rsLoginDao.next()){
-             
-                Jhome jhome = new Jhome();
-                jhome.setVisible(true);
-                dispose();
-            } else {
-            JOptionPane.showMessageDialog(null,"Usuario ou senha incorretos");
+            int max = 0;
+            while (max < 2){
+                loginBean.setNivel(max); //primeiro o sistema vai tentar logar como usuário normal
+                Login_dao loginDao = new Login_dao();
+                ResultSet rsLoginDao = loginDao.autenticaUsuario(loginBean);
+
+                if(rsLoginDao.next()){
+                    Jhome jhome = new Jhome();
+                    jhome.setVisible(true);
+                    dispose();
+                    if (max == 0){
+                        System.out.println("ADMIN!!!!!");
+                    }else{
+                        System.out.println("USUÁRIO COMUM!!!!!!");
+                        }
+                    return;
+                } else {
+                    if (max > 1){
+                    JOptionPane.showMessageDialog(null,"Usuario ou senha incorretos");
+                    }
+                    max++;
+                }
             }
-            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro em tela de login "+e);
         }
