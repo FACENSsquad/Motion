@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,8 +18,28 @@ import javax.swing.table.DefaultTableModel;
  * @author Samsung
  */
 public class Jproduto extends javax.swing.JFrame {
-    
-    public Jproduto() {
+    boolean isAdmin;
+    String userName;
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Jproduto(boolean isAdmin, String userName) {
+        this.isAdmin = isAdmin;
+        this.userName = userName;
         initComponents();
         tabela_produto();
         
@@ -381,8 +402,14 @@ public class Jproduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
+        if (isAdmin == true){
         Jcadastrar_produto jcadastrar = new Jcadastrar_produto();
         jcadastrar.setVisible(true);
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");
+        }
+
     }//GEN-LAST:event_Cadastrar_produtoActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
@@ -394,13 +421,13 @@ public class Jproduto extends javax.swing.JFrame {
     }//GEN-LAST:event_produtoActionPerformed
 
     private void produtos_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtos_inicioActionPerformed
-        Jhome jhome = new Jhome();
+        Jhome jhome = new Jhome(isAdmin, userName);
         jhome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_produtos_inicioActionPerformed
 
     private void Botton_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_atualizarActionPerformed
-        Jproduto jproduto = new Jproduto();
+        Jproduto jproduto = new Jproduto(isAdmin, userName);
         jproduto.setVisible(true);
         this.dispose();
                 
@@ -435,9 +462,7 @@ public class Jproduto extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Jproduto().setVisible(true);
-                
+            public void run() {                
             }
         });
     }

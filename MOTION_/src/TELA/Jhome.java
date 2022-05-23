@@ -5,19 +5,50 @@
  */
 package TELA;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Samsung
  */
 public class Jhome extends javax.swing.JFrame {
+    boolean isAdmin;
+    String userName;
+
 
     /**
      * Creates new form Jhome
      */
-    public Jhome() {
+    public Jhome(boolean isAdmin, String userName) {
+        this.isAdmin = isAdmin;
+        this.userName = userName;
         initComponents();
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public JButton getEntrar_Produtos() {
+        return Entrar_Produtos;
+    }
+
+    public void setEntrar_Produtos(JButton Entrar_Produtos) {
+        this.Entrar_Produtos = Entrar_Produtos;
+    }
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+    private Jhome() {
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,9 +70,10 @@ public class Jhome extends javax.swing.JFrame {
         Cadastro_cliente = new javax.swing.JButton();
         Estoque = new javax.swing.JButton();
         Pedidos = new javax.swing.JButton();
-        Movimentação = new javax.swing.JButton();
+        addUser = new javax.swing.JButton();
         lupa = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        Movimentação1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         dash_produto = new javax.swing.JPanel();
         titulo_dash = new javax.swing.JLabel();
@@ -73,7 +105,7 @@ public class Jhome extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(176, 216, 230));
 
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("TESTE");
+        jLabel1.setText(String.valueOf(userName));
 
         logo.setBackground(new java.awt.Color(235, 235, 235));
         logo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -162,14 +194,14 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(Pedidos);
         Pedidos.setBounds(0, 420, 200, 30);
 
-        Movimentação.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_movimentacao.png"))); // NOI18N
-        Movimentação.addActionListener(new java.awt.event.ActionListener() {
+        addUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_movimentacao.png"))); // NOI18N
+        addUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MovimentaçãoActionPerformed(evt);
+                addUserActionPerformed(evt);
             }
         });
-        jPanel2.add(Movimentação);
-        Movimentação.setBounds(0, 450, 200, 30);
+        jPanel2.add(addUser);
+        addUser.setBounds(0, 670, 200, 30);
 
         lupa.setBackground(new java.awt.Color(255, 255, 255));
         lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
@@ -180,9 +212,17 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(jTextField1);
         jTextField1.setBounds(20, 230, 180, 30);
 
+        Movimentação1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_movimentacao.png"))); // NOI18N
+        Movimentação1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Movimentação1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Movimentação1);
+        Movimentação1.setBounds(0, 450, 200, 30);
+
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Precisa de ajuda?");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
@@ -380,7 +420,7 @@ public class Jhome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Entrar_ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entrar_ProdutosActionPerformed
-       Jproduto jprodutos = new Jproduto();
+       Jproduto jprodutos = new Jproduto(isAdmin, userName);
        jprodutos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_Entrar_ProdutosActionPerformed
@@ -392,7 +432,7 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastro_fornecedorActionPerformed
 
     private void Cadastro_loteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_loteActionPerformed
-        Jlote jlote = new Jlote();
+        Jlote jlote = new Jlote(isAdmin, userName);
         jlote.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Cadastro_loteActionPerformed
@@ -407,20 +447,35 @@ public class Jhome extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_PedidosActionPerformed
 
-    private void MovimentaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MovimentaçãoActionPerformed
-        // TODO add your handling code here:
+    private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
+        if (isAdmin == true){
+            System.out.println("É admin!");
+        }
+        else{
+        System.out.println("Não é admin");
+    }
         this.dispose();
-    }//GEN-LAST:event_MovimentaçãoActionPerformed
+    }//GEN-LAST:event_addUserActionPerformed
 
     private void Cadastro_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_clienteActionPerformed
-        Jcliente jcliente = new Jcliente();
+        if (isAdmin == true){
+        Jcliente jcliente = new Jcliente(true, userName);
         jcliente.setVisible(true);
-        this.dispose();
+        }
+        else{
+        Jcliente jcliente = new Jcliente(false, userName);
+        jcliente.setVisible(true);
+        }
+        this.setVisible(false);
     }//GEN-LAST:event_Cadastro_clienteActionPerformed
 
     private void bt_dash_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_dash_produtoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_dash_produtoActionPerformed
+
+    private void Movimentação1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movimentação1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Movimentação1ActionPerformed
 
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
         
@@ -466,8 +521,9 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JButton Cadastro_lote;
     private javax.swing.JButton Entrar_Produtos;
     private javax.swing.JButton Estoque;
-    private javax.swing.JButton Movimentação;
+    private javax.swing.JButton Movimentação1;
     private javax.swing.JButton Pedidos;
+    private javax.swing.JButton addUser;
     private javax.swing.JButton bt_dash_lote;
     private javax.swing.JButton bt_dash_produto;
     private javax.swing.JLabel codigo_lote;

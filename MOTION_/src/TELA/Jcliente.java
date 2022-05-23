@@ -12,15 +12,36 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
 public class Jcliente extends javax.swing.JFrame {
-    
-    public Jcliente() {
+    boolean isAdmin;
+    String userName;
+
+    public Jcliente(boolean isAdmin, String userName) {
+        this.isAdmin = isAdmin;
+        this.userName = userName;
         initComponents();
         tabela_cliente();
         
+    }
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
     
     
@@ -327,8 +348,12 @@ public class Jcliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
+        if (isAdmin == true){
         Jcadastrar_cliente jcadastrar = new Jcadastrar_cliente();
-        jcadastrar.setVisible(true);
+        jcadastrar.setVisible(true);}
+        else{
+        JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");
+        }
     }//GEN-LAST:event_Cadastrar_produtoActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
@@ -340,13 +365,13 @@ public class Jcliente extends javax.swing.JFrame {
     }//GEN-LAST:event_produtoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Jhome jhome = new Jhome();
+        Jhome jhome = new Jhome(isAdmin, userName);
         jhome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Botton_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_atualizarActionPerformed
-        Jcliente jcliente = new Jcliente();
+        Jcliente jcliente = new Jcliente(isAdmin, userName);
         jcliente.setVisible(true);
         this.dispose();
 
@@ -386,9 +411,7 @@ public class Jcliente extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Jcliente().setVisible(true);
-                
+            public void run() {                
             }
         });
     }

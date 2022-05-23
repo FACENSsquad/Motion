@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,8 +19,28 @@ import javax.swing.table.DefaultTableModel;
  * @author Samsung
  */
 public final class Jlote extends javax.swing.JFrame {
-    
-    public Jlote() {
+    boolean isAdmin;
+    String userName;
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Jlote(boolean isAdmin, String userName) {
+        this.isAdmin = isAdmin;
+        this.userName = userName;
         initComponents();
         tabela_lote();
 
@@ -366,8 +387,13 @@ public final class Jlote extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
-       Jcadastrar_lote jcadastrar = new Jcadastrar_lote();
-       jcadastrar.setVisible(true);
+       if (isAdmin == true){
+        Jcadastrar_lote jcadastrar = new Jcadastrar_lote();
+       jcadastrar.setVisible(true);}
+       else{
+       JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");
+        }
+
     }//GEN-LAST:event_Cadastrar_produtoActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
@@ -383,13 +409,13 @@ public final class Jlote extends javax.swing.JFrame {
     }//GEN-LAST:event_fornecedorActionPerformed
 
     private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
-        Jhome jhome = new Jhome();
+        Jhome jhome = new Jhome(isAdmin, userName);
         jhome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_inicioActionPerformed
 
     private void Botton_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_atualizarActionPerformed
-        Jlote jlote = new Jlote();
+        Jlote jlote = new Jlote(isAdmin, userName);
         jlote.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Botton_atualizarActionPerformed
@@ -425,7 +451,6 @@ public final class Jlote extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Jlote().setVisible(true);
             }
         });
     }

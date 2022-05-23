@@ -120,13 +120,15 @@ public class Jlogin extends javax.swing.JFrame {
                 ResultSet rsLoginDao = loginDao.autenticaUsuario(loginBean);
 
                 if(rsLoginDao.next()){
-                    Jhome jhome = new Jhome();
-                    jhome.setVisible(true);
                     dispose();
                     if (max == 0){
                         System.out.println("ADMIN!!!!!");
+                        Jhome jhome = new Jhome(true, usuario_login);
+                        jhome.setVisible(true);
                     }else{
                         System.out.println("USUÁRIO COMUM!!!!!!");
+                        Jhome jhome = new Jhome(false, usuario_login);
+                        jhome.setVisible(true);
                         }
                     return;
                 } else {
