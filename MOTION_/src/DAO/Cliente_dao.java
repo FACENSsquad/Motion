@@ -39,18 +39,20 @@ public class Cliente_dao {
             pst.setString(8, cliente.getCpf());
             pst.execute();
             
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+            
         } catch (Exception e) {
             System.out.println("Erro em classe Cliente_dao");
         } finally{
         this.conexao.fecha_bd();
             System.out.println("Banco fechado");
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+            
         }
         
     }
      public void update(Cliente_bean update_cliente){
      
-         String sql = "update cliente set = " + "?" + "where codigo = " + "?";
+         String sql = "update cliente set = ? where codigo = ?;";
          
          try {
             
@@ -65,12 +67,13 @@ public class Cliente_dao {
             pst.setString(8, update_cliente.getCpf());
             pst.execute();
             
+            JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso");
         } catch (Exception e) {
             System.out.println("Erro em classe Cliente_dao");
         } finally{
         this.conexao.fecha_bd();
             System.out.println("Banco fechado");
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+            
         }
          
      }
