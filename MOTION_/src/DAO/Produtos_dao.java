@@ -32,15 +32,17 @@ public class Produtos_dao {
             pst.setString(3, produto.getNcm());
             pst.execute();
             
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+            
         } catch (Exception e) {
             System.out.println("Erro em classe Produtos_dao");
         } finally{
         this.conexao.fecha_bd();
             System.out.println("Banco fechado");
-            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
-        }
-        
-    }
-}
+            
+        } 
+      
+    } 
+} 
  
 
