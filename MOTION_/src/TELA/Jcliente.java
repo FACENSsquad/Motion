@@ -387,7 +387,7 @@ public class Jcliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Jcliente().setVisible(true);
+            new Jcliente().setVisible(true);
                 
             }
         });

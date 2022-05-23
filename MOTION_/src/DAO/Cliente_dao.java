@@ -52,7 +52,7 @@ public class Cliente_dao {
     }
      public void update(Cliente_bean update_cliente){
      
-         String sql = "update cliente set = ? where codigo = ?;";
+         String sql = "update cliente set =  ? where codigo = ?;";
          
          try {
             
