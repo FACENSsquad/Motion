@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -420,6 +420,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="05/06/2022"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="/*jlabel4.setText(&#xa;    Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao &#xa;    PreparedStatement pst;  &#xa;    ResultSet rs;&#xa;           &#xa;    pst = conn.prepareStatement(&quot;select min(data_v) from lote&quot;);  // passando conexao para pst&#xa;    rs = pst.executeQuery();      //executando  os valores da conexao com result set&#xa;           &#xa;);&#xa;*/"/>
+              </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="110" y="120" width="260" height="90"/>

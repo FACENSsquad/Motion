@@ -259,6 +259,16 @@ public class Jhome extends javax.swing.JFrame {
         jLabel4.setText("05/06/2022");
         dash_produto.add(jLabel4);
         jLabel4.setBounds(110, 120, 260, 90);
+        /*jlabel4.setText(
+            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao
+            PreparedStatement pst;
+            ResultSet rs;
+
+            pst = conn.prepareStatement("select min(data_v) from lote");  // passando conexao para pst
+            rs = pst.executeQuery();      //executando  os valores da conexao com result set
+
+        );
+        */
 
         bt_dash_produto.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -438,7 +448,8 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastro_loteActionPerformed
 
     private void EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstoqueActionPerformed
-        // TODO add your handling code here:
+        Jestoque jestoque = new Jestoque(isAdmin, userName);
+        jestoque.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstoqueActionPerformed
 
