@@ -97,16 +97,17 @@ public class Jestoque extends javax.swing.JFrame {
         produtos_inicio = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Cadastrar_produto = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        codigo = new javax.swing.JButton();
         produto = new javax.swing.JButton();
-        tipo = new javax.swing.JButton();
-        ncm = new javax.swing.JButton();
+        lote = new javax.swing.JButton();
+        quantidade = new javax.swing.JButton();
+        valor_un = new javax.swing.JButton();
+        alocacao = new javax.swing.JButton();
+        data_validade = new javax.swing.JButton();
+        data_validade1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_estoque = new javax.swing.JTable();
-        Botton_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 800));
@@ -135,7 +136,7 @@ public class Jestoque extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel2.setText("Estqque");
+        jLabel2.setText("Estoque");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -144,7 +145,7 @@ public class Jestoque extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(494, 494, 494)
+                .addGap(433, 433, 433)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(produtos_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,30 +163,8 @@ public class Jestoque extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        Cadastrar_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cadastrar_item.png"))); // NOI18N
-        Cadastrar_produto.setBorder(null);
-        Cadastrar_produto.setOpaque(false);
-        Cadastrar_produto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cadastrar_produtoActionPerformed(evt);
-            }
-        });
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
-
-        codigo.setBackground(new java.awt.Color(255, 255, 255));
-        codigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
-        codigo.setBorder(null);
-        codigo.setBorderPainted(false);
-        codigo.setContentAreaFilled(false);
-        codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(codigo);
-        codigo.setBounds(20, 20, 52, 15);
 
         produto.setBackground(new java.awt.Color(255, 255, 255));
         produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
@@ -198,23 +177,85 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(340, 20, 56, 15);
+        produto.setBounds(20, 20, 56, 15);
 
-        tipo.setBackground(new java.awt.Color(255, 255, 255));
-        tipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_tipo.png"))); // NOI18N
-        tipo.setBorder(null);
-        tipo.setBorderPainted(false);
-        tipo.setContentAreaFilled(false);
-        jPanel1.add(tipo);
-        tipo.setBounds(660, 20, 36, 15);
+        lote.setBackground(new java.awt.Color(255, 255, 255));
+        lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
+        lote.setBorder(null);
+        lote.setBorderPainted(false);
+        lote.setContentAreaFilled(false);
+        lote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lote);
+        lote.setBounds(180, 20, 34, 15);
 
-        ncm.setBackground(new java.awt.Color(255, 255, 255));
-        ncm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_ncm.png"))); // NOI18N
-        ncm.setBorder(null);
-        ncm.setBorderPainted(false);
-        ncm.setContentAreaFilled(false);
-        jPanel1.add(ncm);
-        ncm.setBounds(980, 20, 41, 15);
+        quantidade.setBackground(new java.awt.Color(255, 255, 255));
+        quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
+        quantidade.setBorder(null);
+        quantidade.setBorderPainted(false);
+        quantidade.setContentAreaFilled(false);
+        quantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quantidadeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(quantidade);
+        quantidade.setBounds(340, 20, 80, 15);
+
+        valor_un.setBackground(new java.awt.Color(255, 255, 255));
+        valor_un.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valorUn.png"))); // NOI18N
+        valor_un.setBorder(null);
+        valor_un.setBorderPainted(false);
+        valor_un.setContentAreaFilled(false);
+        valor_un.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valor_unActionPerformed(evt);
+            }
+        });
+        jPanel1.add(valor_un);
+        valor_un.setBounds(500, 20, 57, 15);
+
+        alocacao.setBackground(new java.awt.Color(255, 255, 255));
+        alocacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_alocacao.png"))); // NOI18N
+        alocacao.setBorder(null);
+        alocacao.setBorderPainted(false);
+        alocacao.setContentAreaFilled(false);
+        alocacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alocacaoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(alocacao);
+        alocacao.setBounds(670, 20, 60, 15);
+
+        data_validade.setBackground(new java.awt.Color(255, 255, 255));
+        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_datavalidade.png"))); // NOI18N
+        data_validade.setBorder(null);
+        data_validade.setBorderPainted(false);
+        data_validade.setContentAreaFilled(false);
+        data_validade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                data_validadeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(data_validade);
+        data_validade.setBounds(830, 20, 90, 15);
+
+        data_validade1.setBackground(new java.awt.Color(255, 255, 255));
+        data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
+        data_validade1.setBorder(null);
+        data_validade1.setBorderPainted(false);
+        data_validade1.setContentAreaFilled(false);
+        data_validade1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                data_validade1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(data_validade1);
+        data_validade1.setBounds(1000, 20, 82, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -302,16 +343,6 @@ public class Jestoque extends javax.swing.JFrame {
                 .addGap(0, 8, Short.MAX_VALUE))
         );
 
-        Botton_atualizar.setBackground(new java.awt.Color(235, 235, 235));
-        Botton_atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/atualizar.png"))); // NOI18N
-        Botton_atualizar.setBorder(null);
-        Botton_atualizar.setContentAreaFilled(false);
-        Botton_atualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botton_atualizarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
         barra_top.setLayout(barra_topLayout);
         barra_topLayout.setHorizontalGroup(
@@ -319,15 +350,9 @@ public class Jestoque extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, barra_topLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -337,14 +362,10 @@ public class Jestoque extends javax.swing.JFrame {
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         getContentPane().add(barra_top);
@@ -353,21 +374,6 @@ public class Jestoque extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1218, 847));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
-        if (isAdmin == true){
-        Jcadastrar_produto jcadastrar = new Jcadastrar_produto();
-        jcadastrar.setVisible(true);
-        }
-        else{
-        JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");
-        }
-
-    }//GEN-LAST:event_Cadastrar_produtoActionPerformed
-
-    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoActionPerformed
 
     private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed
         // TODO add your handling code here:
@@ -379,12 +385,29 @@ public class Jestoque extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_produtos_inicioActionPerformed
 
-    private void Botton_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_atualizarActionPerformed
-        Jestoque jproduto = new Jestoque(isAdmin, userName);
-        jproduto.setVisible(true);
-        this.dispose();
-                
-    }//GEN-LAST:event_Botton_atualizarActionPerformed
+    private void loteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loteActionPerformed
+
+    private void quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quantidadeActionPerformed
+
+    private void valor_unActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor_unActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valor_unActionPerformed
+
+    private void alocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alocacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alocacaoActionPerformed
+
+    private void data_validadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_data_validadeActionPerformed
+
+    private void data_validade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validade1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_data_validade1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,21 +445,22 @@ public class Jestoque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Botton_atualizar;
-    private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_estoque;
+    private javax.swing.JButton alocacao;
     private javax.swing.JPanel barra_top;
-    private javax.swing.JButton codigo;
+    private javax.swing.JButton data_validade;
+    private javax.swing.JButton data_validade1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton ncm;
+    private javax.swing.JButton lote;
     private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
-    private javax.swing.JButton tipo;
+    private javax.swing.JButton quantidade;
+    private javax.swing.JButton valor_un;
     // End of variables declaration//GEN-END:variables
 
     
