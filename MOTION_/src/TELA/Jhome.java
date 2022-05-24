@@ -485,7 +485,9 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_dash_produtoActionPerformed
 
     private void Movimentação1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movimentação1ActionPerformed
-        // TODO add your handling code here:
+        Jmovimentação jmovimentação = new Jmovimentação(isAdmin, userName);
+        jmovimentação.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Movimentação1ActionPerformed
 
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
