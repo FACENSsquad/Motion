@@ -32,91 +32,205 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
-        Caixa_quantidade = new javax.swing.JTextField();
-        Caixa_data = new javax.swing.JTextField();
-        Caixa_valor = new javax.swing.JTextField();
-        Caixa_alocacao = new javax.swing.JTextField();
-        Caixa_fornecedor = new javax.swing.JTextField();
         Botton_cadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        Botton_cancelar = new javax.swing.JButton();
         Caixa_produto = new javax.swing.JTextField();
-
-        jToggleButton1.setText("jToggleButton1");
+        jLabel2 = new javax.swing.JLabel();
+        Caixa_quantidade = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        Caixa_data = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        Caixa_valor = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        Caixa_alocacao = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Caixa_fornecedor = new javax.swing.JTextField();
+        Botton_cancelar = new javax.swing.JButton();
+        titulo1 = new javax.swing.JLabel();
+        titulo2 = new javax.swing.JLabel();
+        Botton_deletar = new javax.swing.JButton();
+        Codigo = new javax.swing.JLabel();
+        Botton_consultar = new javax.swing.JToggleButton();
+        Caixa_codigo = new javax.swing.JTextField();
+        Botton_Atualizar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 600));
+        jPanel1.setBackground(new java.awt.Color(208, 214, 216));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 550));
         jPanel1.setLayout(null);
-        jPanel1.add(Caixa_quantidade);
-        Caixa_quantidade.setBounds(170, 120, 90, 19);
-        jPanel1.add(Caixa_data);
-        Caixa_data.setBounds(390, 120, 90, 19);
-        jPanel1.add(Caixa_valor);
-        Caixa_valor.setBounds(390, 60, 90, 19);
-        jPanel1.add(Caixa_alocacao);
-        Caixa_alocacao.setBounds(390, 90, 90, 19);
-        jPanel1.add(Caixa_fornecedor);
-        Caixa_fornecedor.setBounds(170, 90, 90, 19);
 
-        Botton_cadastrar.setText("Cadastrar");
+        Botton_cadastrar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_salvar.png"))); // NOI18N
+        Botton_cadastrar.setBorder(null);
         Botton_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botton_cadastrarActionPerformed(evt);
             }
         });
         jPanel1.add(Botton_cadastrar);
-        Botton_cadastrar.setBounds(250, 220, 110, 25);
+        Botton_cadastrar.setBounds(480, 320, 90, 40);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Codigo do produto:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 60, 100, 15);
+        jLabel1.setBounds(100, 70, 130, 17);
 
-        jLabel2.setText("Quantidade:");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 130, 58, 15);
-
-        jLabel3.setText("Data de validade:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(300, 120, 90, 15);
-
-        jLabel4.setText("Valor:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(300, 60, 29, 15);
-
-        jLabel5.setText("Alocação:");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(300, 90, 60, 15);
-
-        jLabel6.setText("Codigo do fornecedor:");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(50, 90, 120, 15);
-
-        Botton_cancelar.setText("Cancelar");
-        Botton_cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botton_cancelarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Botton_cancelar);
-        Botton_cancelar.setBounds(380, 220, 90, 25);
-
+        Caixa_produto.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_produto.setBorder(null);
+        Caixa_produto.setPreferredSize(new java.awt.Dimension(0, 25));
         Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_produtoActionPerformed(evt);
             }
         });
         jPanel1.add(Caixa_produto);
-        Caixa_produto.setBounds(170, 60, 90, 19);
+        Caixa_produto.setBounds(100, 90, 150, 25);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Quantidade:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(100, 230, 78, 17);
+
+        Caixa_quantidade.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_quantidade.setBorder(null);
+        Caixa_quantidade.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel1.add(Caixa_quantidade);
+        Caixa_quantidade.setBounds(100, 250, 150, 25);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Data de validade:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(390, 230, 120, 17);
+
+        Caixa_data.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_data.setBorder(null);
+        Caixa_data.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel1.add(Caixa_data);
+        Caixa_data.setBounds(390, 250, 170, 25);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Valor:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(390, 70, 40, 17);
+
+        Caixa_valor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_valor.setBorder(null);
+        Caixa_valor.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel1.add(Caixa_valor);
+        Caixa_valor.setBounds(390, 90, 170, 25);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Alocação:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(390, 150, 80, 17);
+
+        Caixa_alocacao.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_alocacao.setBorder(null);
+        Caixa_alocacao.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel1.add(Caixa_alocacao);
+        Caixa_alocacao.setBounds(390, 170, 170, 25);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Codigo do fornecedor:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(100, 150, 150, 17);
+
+        Caixa_fornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_fornecedor.setBorder(null);
+        Caixa_fornecedor.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel1.add(Caixa_fornecedor);
+        Caixa_fornecedor.setBounds(100, 170, 150, 25);
+
+        Botton_cancelar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cancelar.png"))); // NOI18N
+        Botton_cancelar.setBorder(null);
+        Botton_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_cancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_cancelar);
+        Botton_cancelar.setBounds(380, 320, 80, 39);
+
+        titulo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        titulo1.setForeground(new java.awt.Color(0, 0, 0));
+        titulo1.setText("Atualizar ou Deletar");
+        jPanel1.add(titulo1);
+        titulo1.setBounds(260, 390, 170, 22);
+
+        titulo2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        titulo2.setForeground(new java.awt.Color(0, 0, 0));
+        titulo2.setText("CADASTRO DE LOTES");
+        jPanel1.add(titulo2);
+        titulo2.setBounds(239, 22, 200, 22);
+
+        Botton_deletar.setBackground(new java.awt.Color(209, 214, 216));
+        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
+        Botton_deletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_deletar.png"))); // NOI18N
+        Botton_deletar.setBorder(null);
+        Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_deletarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_deletar);
+        Botton_deletar.setBounds(390, 490, 80, 40);
+
+        Codigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Codigo.setForeground(new java.awt.Color(0, 0, 0));
+        Codigo.setText("Codigo:");
+        jPanel1.add(Codigo);
+        Codigo.setBounds(100, 420, 60, 17);
+
+        Botton_consultar.setBackground(new java.awt.Color(255, 255, 255));
+        Botton_consultar.setForeground(new java.awt.Color(51, 51, 51));
+        Botton_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
+        Botton_consultar.setBorder(null);
+        Botton_consultar.setBorderPainted(false);
+        Botton_consultar.setContentAreaFilled(false);
+        Botton_consultar.setFocusCycleRoot(true);
+        Botton_consultar.setFocusTraversalPolicyProvider(true);
+        Botton_consultar.setRequestFocusEnabled(false);
+        Botton_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_consultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_consultar);
+        Botton_consultar.setBounds(320, 440, 30, 20);
+
+        Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_codigo.setBorder(null);
+        Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_codigoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_codigo);
+        Caixa_codigo.setBounds(100, 440, 249, 25);
+
+        Botton_Atualizar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_Atualizar.setForeground(new java.awt.Color(51, 51, 51));
+        Botton_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_atualizar.png"))); // NOI18N
+        Botton_Atualizar.setBorder(null);
+        Botton_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_AtualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_Atualizar);
+        Botton_Atualizar.setBounds(490, 490, 80, 40);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 700, 600);
@@ -168,6 +282,25 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_Botton_cancelarActionPerformed
 
+    private void Caixa_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_codigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_codigoActionPerformed
+
+    private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
+        
+    }//GEN-LAST:event_Botton_deletarActionPerformed
+
+    private void Botton_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_AtualizarActionPerformed
+        
+
+        dispose();
+    }//GEN-LAST:event_Botton_AtualizarActionPerformed
+
+    private void Botton_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_consultarActionPerformed
+
+        
+    }//GEN-LAST:event_Botton_consultarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -204,14 +337,19 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Botton_Atualizar;
     private javax.swing.JButton Botton_cadastrar;
     private javax.swing.JButton Botton_cancelar;
+    private javax.swing.JToggleButton Botton_consultar;
+    private javax.swing.JButton Botton_deletar;
     private javax.swing.JTextField Caixa_alocacao;
+    private javax.swing.JTextField Caixa_codigo;
     private javax.swing.JTextField Caixa_data;
     private javax.swing.JTextField Caixa_fornecedor;
     private javax.swing.JTextField Caixa_produto;
     private javax.swing.JTextField Caixa_quantidade;
     private javax.swing.JTextField Caixa_valor;
+    private javax.swing.JLabel Codigo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -219,6 +357,7 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel titulo1;
+    private javax.swing.JLabel titulo2;
     // End of variables declaration//GEN-END:variables
 }
