@@ -8,10 +8,12 @@ import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 
+
 public class Produtos_dao {
     
     private Conexao conexao;
     private Connection conn;
+    
     
     public Produtos_dao(){
     
@@ -35,14 +37,15 @@ public class Produtos_dao {
             JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
             
         } catch (Exception e) {
-            System.out.println("Erro em classe Produtos_dao");
+            JOptionPane.showMessageDialog(null, "Erro em classe Produtos_dao");
         } finally{
         this.conexao.fecha_bd();
             System.out.println("Banco fechado");
             
         } 
       
-    } 
+    }
+    
 } 
  
 

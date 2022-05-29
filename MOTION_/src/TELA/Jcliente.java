@@ -100,7 +100,6 @@ public class Jcliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_cliente = new javax.swing.JTable();
         Botton_atualizar = new javax.swing.JButton();
-        Botton_update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -216,7 +215,6 @@ public class Jcliente extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         View_de_cliente.setAutoCreateRowSorter(true);
-        View_de_cliente.setBackground(new java.awt.Color(255, 255, 255));
         View_de_cliente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_cliente.setTableHeader(null);
         View_de_cliente.setModel(new javax.swing.table.DefaultTableModel(
@@ -261,7 +259,6 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.setPreferredSize(new java.awt.Dimension(400, 384));
         View_de_cliente.setRowHeight(40);
         View_de_cliente.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_cliente.setSelectionForeground(new java.awt.Color(255, 255, 255));
         View_de_cliente.setUpdateSelectionOnSort(false);
         View_de_cliente.setVerifyInputWhenFocusTarget(false);
         jScrollPane1.setViewportView(View_de_cliente);
@@ -287,19 +284,11 @@ public class Jcliente extends javax.swing.JFrame {
         );
 
         Botton_atualizar.setBackground(new java.awt.Color(235, 235, 235));
-        Botton_atualizar.setForeground(new java.awt.Color(0, 0, 0));
         Botton_atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/atualizar.png"))); // NOI18N
         Botton_atualizar.setBorder(null);
         Botton_atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botton_atualizarActionPerformed(evt);
-            }
-        });
-
-        Botton_update.setText("Update");
-        Botton_update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botton_updateActionPerformed(evt);
             }
         });
 
@@ -315,8 +304,6 @@ public class Jcliente extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Botton_update)
-                        .addGap(106, 106, 106)
                         .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,11 +315,9 @@ public class Jcliente extends javax.swing.JFrame {
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Botton_update))
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -377,10 +362,6 @@ public class Jcliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Botton_atualizarActionPerformed
 
-    private void Botton_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_updateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Botton_updateActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -419,7 +400,6 @@ public class Jcliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Botton_atualizar;
-    private javax.swing.JButton Botton_update;
     private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_cliente;
     private javax.swing.JPanel barra_top;

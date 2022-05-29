@@ -9,11 +9,11 @@ public class Produtos_bean {
     private String unidade;
     private String ncm;
 
-    public int getId() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setId(int codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
