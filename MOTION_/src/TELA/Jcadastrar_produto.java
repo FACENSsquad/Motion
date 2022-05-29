@@ -78,8 +78,33 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Erro em classe Produtos_dao CONSULTAR");
+            JOptionPane.showMessageDialog(null,"Erro em metodo CONSULTAR");
     
+        }
+    }
+    
+    public void delete(){
+        
+        int confirmar;
+        String message = "Deseja realmente remover este produto?";
+        
+        confirmar = JOptionPane.showConfirmDialog(null, message);
+       
+        
+        if(confirmar == JOptionPane.YES_OPTION){
+            
+        String sql = "delete from produto where codigo = ?";
+        try {
+             PreparedStatement pst = this.conn.prepareStatement(sql);
+             pst.setString(1, Caixa_codigo.getText());
+             pst.executeUpdate();
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erro em metodo DELETE");
+        }
+    } else if(confirmar == JOptionPane.NO_OPTION) {
+     dispose();
         }
     }
 
@@ -102,6 +127,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         titulo1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Botton_Atualizar = new javax.swing.JToggleButton();
+        Botton_deletar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(697, 515));
@@ -229,6 +255,17 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         jPanel1.add(Botton_Atualizar);
         Botton_Atualizar.setBounds(380, 250, 210, 30);
 
+        Botton_deletar.setBackground(new java.awt.Color(255, 51, 51));
+        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
+        Botton_deletar.setText("Deletar");
+        Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_deletarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_deletar);
+        Botton_deletar.setBounds(100, 250, 130, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 710, 610);
 
@@ -292,6 +329,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_Botton_AtualizarActionPerformed
 
+    private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
+         delete();
+    }//GEN-LAST:event_Botton_deletarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +369,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Botton_Atualizar;
     private javax.swing.JToggleButton Botton_consultar;
+    private javax.swing.JButton Botton_deletar;
     private javax.swing.JTextField Caixa_codigo;
     private javax.swing.JTextField Caixa_ncm;
     private javax.swing.JTextField Caixa_produto;
