@@ -5,7 +5,14 @@
  */
 package TELA;
 
+import CONEXAO.Conexao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import static javax.swing.UIManager.getString;
 
 /**
  *
@@ -14,11 +21,38 @@ import javax.swing.JButton;
 public class Jhome extends javax.swing.JFrame {
     boolean isAdmin;
     String userName;
+    String lote_vencer, faturamento, lote_velho, p_vendido;
+   ResultSet rs;
+    
+     private Conexao conexao;
+     private Connection conn;
+    
+    public void informacoes(){
+        
+        this.conexao = new Conexao();
+        this.conn = this.conexao.Bd_Conexao();
+    
+        String sql1 = "select min(data_v) from lote;";
+        //String sql2 = "select * from vencimento;";
+        
+        try {
+            PreparedStatement pst = this.conn.prepareStatement(sql1);
+            pst.execute();
+            
+            
+            while (rs.next()) {
+             
+            
+            lote_vencer = getString(1);
+            
+            JOptionPane.showMessageDialog(null, "");
+            }
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,"");
+        } 
+    
+    }
 
-
-    /**
-     * Creates new form Jhome
-     */
     public Jhome(boolean isAdmin, String userName) {
         this.isAdmin = isAdmin;
         this.userName = userName;
@@ -79,7 +113,7 @@ public class Jhome extends javax.swing.JFrame {
         titulo_dash = new javax.swing.JLabel();
         codigo_lote = new javax.swing.JLabel();
         descricao_produto = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         bt_dash_produto = new javax.swing.JButton();
         dash_lote = new javax.swing.JPanel();
         titulo_dash1 = new javax.swing.JLabel();
@@ -254,21 +288,9 @@ public class Jhome extends javax.swing.JFrame {
         dash_produto.add(descricao_produto);
         descricao_produto.setBounds(80, 80, 60, 19);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("05/06/2022");
-        dash_produto.add(jLabel4);
-        jLabel4.setBounds(110, 120, 260, 90);
-        /*jlabel4.setText(
-            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao
-            PreparedStatement pst;
-            ResultSet rs;
-
-            pst = conn.prepareStatement("select min(data_v) from lote");  // passando conexao para pst
-            rs = pst.executeQuery();      //executando  os valores da conexao com result set
-
-        );
-        */
+        jLabel3.setText(String.valueOf(lote_vencer));
+        dash_produto.add(jLabel3);
+        jLabel3.setBounds(100, 105, 270, 90);
 
         bt_dash_produto.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -282,7 +304,7 @@ public class Jhome extends javax.swing.JFrame {
             }
         });
         dash_produto.add(bt_dash_produto);
-        bt_dash_produto.setBounds(39, 61, 397, 179);
+        bt_dash_produto.setBounds(40, 60, 397, 179);
 
         dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         dash_lote.setPreferredSize(new java.awt.Dimension(475, 265));
@@ -302,9 +324,9 @@ public class Jhome extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel5.setText("R$ 25.000,00");
+        jLabel5.setText(String.valueOf(faturamento));
         dash_lote.add(jLabel5);
-        jLabel5.setBounds(90, 120, 290, 90);
+        jLabel5.setBounds(90, 120, 310, 90);
 
         bt_dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -339,7 +361,7 @@ public class Jhome extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel6.setText("01/01/2022");
+        jLabel6.setText(String.valueOf(lote_vencer));
         jPanel6.add(jLabel6);
         jLabel6.setBounds(120, 120, 250, 90);
 
@@ -358,7 +380,7 @@ public class Jhome extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel7.setText("COCA COLA");
+        jLabel7.setText(String.valueOf(p_vendido));
         jPanel7.add(jLabel7);
         jLabel7.setBounds(120, 100, 250, 90);
 
@@ -549,7 +571,7 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -568,4 +590,8 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JLabel titulo_dash3;
     private javax.swing.JLabel titulo_dash4;
     // End of variables declaration//GEN-END:variables
+
+    private String setText(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -55,6 +55,11 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.getColumnModel().getColumn(1).setPreferredWidth(10);
         View_de_cliente.getColumnModel().getColumn(2).setPreferredWidth(10);
         View_de_cliente.getColumnModel().getColumn(3).setPreferredWidth(10);
+        View_de_cliente.getColumnModel().getColumn(4).setPreferredWidth(10);
+        View_de_cliente.getColumnModel().getColumn(5).setPreferredWidth(10);
+        View_de_cliente.getColumnModel().getColumn(6).setPreferredWidth(10);
+        View_de_cliente.getColumnModel().getColumn(7).setPreferredWidth(10);
+        View_de_cliente.getColumnModel().getColumn(8).setPreferredWidth(10);
         
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
@@ -70,10 +75,15 @@ public class Jcliente extends javax.swing.JFrame {
                    rs.getInt(1),
                    rs.getString(2),
                    rs.getString(3),
-                   rs.getString(4)
+                   rs.getString(4),
+                   rs.getString(5),
+                   rs.getString(6),
+                   rs.getString(7),
+                   rs.getString(8),
+                   rs.getString(9)
                    
                });
-           // Fechar banco aqui
+           
            }
         } catch (SQLException e) {
             System.out.println("Erro tabela_cliente");
@@ -92,10 +102,15 @@ public class Jcliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Cadastrar_produto = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        codigo = new javax.swing.JButton();
-        produto = new javax.swing.JButton();
-        tipo = new javax.swing.JButton();
-        ncm = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_cliente = new javax.swing.JTable();
@@ -167,47 +182,68 @@ public class Jcliente extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        codigo.setBackground(new java.awt.Color(255, 255, 255));
-        codigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
-        codigo.setBorder(null);
-        codigo.setBorderPainted(false);
-        codigo.setContentAreaFilled(false);
-        codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(codigo);
-        codigo.setBounds(20, 20, 52, 15);
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("UF");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(820, 20, 30, 19);
 
-        produto.setBackground(new java.awt.Color(255, 255, 255));
-        produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
-        produto.setBorder(null);
-        produto.setBorderPainted(false);
-        produto.setContentAreaFilled(false);
-        produto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                produtoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(produto);
-        produto.setBounds(340, 20, 56, 15);
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Endereço");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(1060, 20, 80, 19);
 
-        tipo.setBackground(new java.awt.Color(255, 255, 255));
-        tipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_tipo.png"))); // NOI18N
-        tipo.setBorder(null);
-        tipo.setBorderPainted(false);
-        tipo.setContentAreaFilled(false);
-        jPanel1.add(tipo);
-        tipo.setBounds(660, 20, 36, 15);
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("CPF / CNPJ");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(290, 20, 80, 19);
 
-        ncm.setBackground(new java.awt.Color(255, 255, 255));
-        ncm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_ncm.png"))); // NOI18N
-        ncm.setBorder(null);
-        ncm.setBorderPainted(false);
-        ncm.setContentAreaFilled(false);
-        jPanel1.add(ncm);
-        ncm.setBounds(980, 20, 41, 15);
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Municipio");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(930, 20, 80, 19);
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("CEP");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(700, 20, 80, 19);
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("E-mail");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(560, 20, 80, 19);
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Código");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(40, 20, 80, 19);
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Telefone");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(420, 20, 80, 19);
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Nome");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(170, 20, 80, 19);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -219,24 +255,24 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.setTableHeader(null);
         View_de_cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "codigo", "produto", "tipo", "ncm"
+                "Codigo", "Nome", "CPF // CNPJ", "Telefone", "Email", "Cep", "UF", "Municipio", "Endereço"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -246,7 +282,7 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.setAlignmentY(2.0F);
         View_de_cliente.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
         View_de_cliente.setAutoscrolls(false);
-        View_de_cliente.setCellSelectionEnabled(true);
+        View_de_cliente.setColumnSelectionAllowed(false);
         View_de_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         View_de_cliente.setDoubleBuffered(true);
         View_de_cliente.setDragEnabled(true);
@@ -341,14 +377,6 @@ public class Jcliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Cadastrar_produtoActionPerformed
 
-    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoActionPerformed
-
-    private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_produtoActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Jhome jhome = new Jhome(isAdmin, userName);
         jhome.setVisible(true);
@@ -403,17 +431,22 @@ public class Jcliente extends javax.swing.JFrame {
     private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_cliente;
     private javax.swing.JPanel barra_top;
-    private javax.swing.JButton codigo;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton ncm;
-    private javax.swing.JButton produto;
-    private javax.swing.JButton tipo;
     // End of variables declaration//GEN-END:variables
 
     

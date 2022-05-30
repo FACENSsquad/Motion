@@ -130,10 +130,8 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Botton_deletar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(697, 515));
         setMinimumSize(new java.awt.Dimension(697, 515));
         setName("cadasto de produtos"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(700, 550));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(208, 214, 216));
@@ -221,7 +219,6 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Botton_consultar.setContentAreaFilled(false);
         Botton_consultar.setFocusCycleRoot(true);
         Botton_consultar.setFocusTraversalPolicyProvider(true);
-        Botton_consultar.setOpaque(false);
         Botton_consultar.setRequestFocusEnabled(false);
         Botton_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +236,6 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
 
         Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_codigo.setBorder(null);
-        Caixa_codigo.setMinimumSize(new java.awt.Dimension(0, 15));
         Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -344,6 +340,8 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
 
     private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
          delete();
+         
+         dispose();
     }//GEN-LAST:event_Botton_deletarActionPerformed
 
     /**
