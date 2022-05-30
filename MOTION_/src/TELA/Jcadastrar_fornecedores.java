@@ -29,184 +29,271 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        Caixa_cpfFornecedor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        Caixa_telefoneFornecedor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        Caixa_emailFornecedor = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        Caixa_telefoneFornecedor = new javax.swing.JTextField();
-        Caixa_enderecoFornecedor = new javax.swing.JTextField();
+        Caixa_cepFornecedor = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         Caixa_municipioFornecedor = new javax.swing.JTextField();
-        Campo_uf = new javax.swing.JComboBox<>();
         Caixa_nomeFornecedor = new javax.swing.JTextField();
         Caixa_razãoFornecedor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        Caixa_enderecoFornecedor = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Caixa_emailFornecedor = new javax.swing.JTextField();
-        Caixa_cpfFornecedor = new javax.swing.JTextField();
-        Caixa_cepFornecedor = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        Campo_uf = new javax.swing.JComboBox<>();
+        titulo2 = new javax.swing.JLabel();
+        Botton_cancelar = new javax.swing.JButton();
+        Botton_cadastrar = new javax.swing.JButton();
+        Codigo = new javax.swing.JLabel();
+        Botton_consultar = new javax.swing.JToggleButton();
+        Botton_deletar = new javax.swing.JButton();
+        Botton_Atualizar = new javax.swing.JToggleButton();
+        Caixa_codigo = new javax.swing.JTextField();
+        titulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 500));
+        setMaximumSize(new java.awt.Dimension(700, 550));
+        setMinimumSize(new java.awt.Dimension(700, 550));
+        setPreferredSize(new java.awt.Dimension(700, 550));
 
+        jPanel1.setBackground(new java.awt.Color(208, 214, 216));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 550));
         jPanel1.setLayout(null);
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("CPF / CNPJ");
-
-        jLabel3.setText("Telefone");
-
-        jLabel4.setText("E-mail");
-
-        jLabel9.setText("Razão");
-
-        jLabel6.setText("CEP");
-
-        Caixa_telefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_telefoneFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-
-        Caixa_enderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_enderecoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-
-        Caixa_municipioFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_municipioFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-
-        Campo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-
-        Caixa_nomeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_nomeFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-        Caixa_nomeFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_nomeFornecedorActionPerformed(evt);
-            }
-        });
-
-        Caixa_razãoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_razãoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-        Caixa_razãoFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_razãoFornecedorActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Nome");
-
-        jLabel7.setText("Endereço");
-
-        jLabel8.setText("UF");
-
-        Caixa_emailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_emailFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-        Caixa_emailFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_emailFornecedorActionPerformed(evt);
-            }
-        });
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(100, 60, 53, 15);
 
         Caixa_cpfFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_cpfFornecedor.setBorder(null);
         Caixa_cpfFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_cpfFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_cpfFornecedorActionPerformed(evt);
             }
         });
+        jPanel1.add(Caixa_cpfFornecedor);
+        Caixa_cpfFornecedor.setBounds(100, 80, 210, 25);
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Telefone");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(360, 110, 42, 15);
+
+        Caixa_telefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_telefoneFornecedor.setBorder(null);
+        Caixa_telefoneFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(Caixa_telefoneFornecedor);
+        Caixa_telefoneFornecedor.setBounds(360, 130, 220, 25);
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("E-mail");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(100, 260, 28, 15);
+
+        Caixa_emailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_emailFornecedor.setBorder(null);
+        Caixa_emailFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_emailFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_emailFornecedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_emailFornecedor);
+        Caixa_emailFornecedor.setBounds(100, 280, 310, 25);
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Razão");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(360, 60, 31, 15);
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("CEP");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(370, 210, 19, 15);
 
         Caixa_cepFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_cepFornecedor.setBorder(null);
         Caixa_cepFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(Caixa_cepFornecedor);
+        Caixa_cepFornecedor.setBounds(370, 230, 140, 25);
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Municipio");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(100, 210, 44, 15);
+
+        Caixa_municipioFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_municipioFornecedor.setBorder(null);
+        Caixa_municipioFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_municipioFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_municipioFornecedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_municipioFornecedor);
+        Caixa_municipioFornecedor.setBounds(100, 230, 210, 25);
+
+        Caixa_nomeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_nomeFornecedor.setBorder(null);
+        Caixa_nomeFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_nomeFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_nomeFornecedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_nomeFornecedor);
+        Caixa_nomeFornecedor.setBounds(100, 130, 210, 25);
+
+        Caixa_razãoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_razãoFornecedor.setBorder(null);
+        Caixa_razãoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_razãoFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_razãoFornecedorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_razãoFornecedor);
+        Caixa_razãoFornecedor.setBounds(360, 80, 220, 25);
+
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Nome");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(100, 110, 27, 15);
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Endereço");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(100, 160, 46, 15);
+
+        Caixa_enderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_enderecoFornecedor.setBorder(null);
+        Caixa_enderecoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(Caixa_enderecoFornecedor);
+        Caixa_enderecoFornecedor.setBounds(100, 180, 300, 25);
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("UF");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(480, 180, 13, 15);
+
+        Campo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        jPanel1.add(Campo_uf);
+        Campo_uf.setBounds(510, 180, 44, 24);
+
+        titulo2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        titulo2.setForeground(new java.awt.Color(0, 0, 0));
+        titulo2.setText("CADASTRO DE FORNECEDOR");
+        jPanel1.add(titulo2);
+        titulo2.setBounds(210, 20, 270, 22);
+
+        Botton_cancelar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cancelar.png"))); // NOI18N
+        Botton_cancelar.setBorder(null);
+        Botton_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_cancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_cancelar);
+        Botton_cancelar.setBounds(390, 330, 80, 39);
+
+        Botton_cadastrar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_salvar.png"))); // NOI18N
+        Botton_cadastrar.setBorder(null);
+        Botton_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_cadastrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_cadastrar);
+        Botton_cadastrar.setBounds(490, 330, 90, 40);
+
+        Codigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Codigo.setForeground(new java.awt.Color(0, 0, 0));
+        Codigo.setText("Codigo:");
+        jPanel1.add(Codigo);
+        Codigo.setBounds(100, 420, 60, 17);
+
+        Botton_consultar.setBackground(new java.awt.Color(255, 255, 255));
+        Botton_consultar.setForeground(new java.awt.Color(51, 51, 51));
+        Botton_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
+        Botton_consultar.setBorder(null);
+        Botton_consultar.setBorderPainted(false);
+        Botton_consultar.setContentAreaFilled(false);
+        Botton_consultar.setFocusCycleRoot(true);
+        Botton_consultar.setFocusTraversalPolicyProvider(true);
+        Botton_consultar.setRequestFocusEnabled(false);
+        Botton_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_consultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_consultar);
+        Botton_consultar.setBounds(320, 440, 30, 20);
+
+        Botton_deletar.setBackground(new java.awt.Color(209, 214, 216));
+        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
+        Botton_deletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_deletar.png"))); // NOI18N
+        Botton_deletar.setBorder(null);
+        Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_deletarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_deletar);
+        Botton_deletar.setBounds(400, 490, 80, 40);
+
+        Botton_Atualizar.setBackground(new java.awt.Color(208, 214, 216));
+        Botton_Atualizar.setForeground(new java.awt.Color(51, 51, 51));
+        Botton_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_atualizar.png"))); // NOI18N
+        Botton_Atualizar.setBorder(null);
+        Botton_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_AtualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Botton_Atualizar);
+        Botton_Atualizar.setBounds(500, 490, 80, 40);
+
+        Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_codigo.setBorder(null);
+        Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_codigoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_codigo);
+        Caixa_codigo.setBounds(100, 440, 249, 25);
+
+        titulo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        titulo1.setForeground(new java.awt.Color(0, 0, 0));
+        titulo1.setText("Atualizar ou Deletar");
+        jPanel1.add(titulo1);
+        titulo1.setBounds(260, 390, 170, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jLabel5)
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel9))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 399, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(194, 194, 194))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(107, 107, 107))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(Caixa_razãoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Caixa_cpfFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Caixa_nomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(Caixa_cepFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Caixa_emailFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(Caixa_municipioFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(149, 149, 149)))
-                        .addComponent(Campo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Caixa_telefoneFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Caixa_enderecoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(Campo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(Caixa_razãoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Caixa_cpfFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Caixa_nomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(Caixa_cepFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Caixa_emailFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(Caixa_municipioFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel9)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2)))
-                .addGap(105, 105, 105)
-                .addComponent(Caixa_enderecoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Caixa_telefoneFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(165, 165, 165))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Caixa_nomeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_nomeFornecedorActionPerformed
@@ -224,6 +311,35 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     private void Caixa_razãoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_razãoFornecedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Caixa_razãoFornecedorActionPerformed
+
+    private void Caixa_municipioFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_municipioFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_municipioFornecedorActionPerformed
+
+    private void Botton_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_Botton_cancelarActionPerformed
+
+    private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
+
+    }//GEN-LAST:event_Botton_cadastrarActionPerformed
+
+    private void Caixa_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_codigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_codigoActionPerformed
+
+    private void Botton_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_consultarActionPerformed
+
+    }//GEN-LAST:event_Botton_consultarActionPerformed
+
+    private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
+
+    }//GEN-LAST:event_Botton_deletarActionPerformed
+
+    private void Botton_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_AtualizarActionPerformed
+
+        dispose();
+    }//GEN-LAST:event_Botton_AtualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,7 +377,13 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Botton_Atualizar;
+    private javax.swing.JButton Botton_cadastrar;
+    private javax.swing.JButton Botton_cancelar;
+    private javax.swing.JToggleButton Botton_consultar;
+    private javax.swing.JButton Botton_deletar;
     private javax.swing.JTextField Caixa_cepFornecedor;
+    private javax.swing.JTextField Caixa_codigo;
     private javax.swing.JTextField Caixa_cpfFornecedor;
     private javax.swing.JTextField Caixa_emailFornecedor;
     private javax.swing.JTextField Caixa_enderecoFornecedor;
@@ -270,6 +392,7 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     private javax.swing.JTextField Caixa_razãoFornecedor;
     private javax.swing.JTextField Caixa_telefoneFornecedor;
     private javax.swing.JComboBox<String> Campo_uf;
+    private javax.swing.JLabel Codigo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -280,5 +403,7 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel titulo1;
+    private javax.swing.JLabel titulo2;
     // End of variables declaration//GEN-END:variables
 }

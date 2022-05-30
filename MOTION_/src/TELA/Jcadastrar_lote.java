@@ -56,6 +56,8 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
         Botton_Atualizar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(700, 550));
+        setMinimumSize(new java.awt.Dimension(700, 550));
         setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
@@ -236,6 +238,7 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
         jPanel1.setBounds(0, 0, 700, 600);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
