@@ -21,7 +21,7 @@ import static javax.swing.UIManager.getString;
 public class Jhome extends javax.swing.JFrame {
     boolean isAdmin;
     String userName;
-    String lote_vencer, faturamento, lote_velho, p_vendido;
+    String lote_vencer = "0", faturamento, lote_velho, p_vendido;
    ResultSet rs;
     
      private Conexao conexao;
@@ -37,15 +37,16 @@ public class Jhome extends javax.swing.JFrame {
         
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql1);
-            pst.execute();
+            rs = pst.executeQuery();
             
             
             while (rs.next()) {
-             
+                
+                
+            lote_vencer = rs.getString(1); 
             
-            lote_vencer = getString(1);
+            Label_vencer.setText(lote_vencer);
             
-            JOptionPane.showMessageDialog(null, "");
             }
         } catch (Exception e) {
            JOptionPane.showMessageDialog(null,e);
@@ -115,7 +116,7 @@ public class Jhome extends javax.swing.JFrame {
         titulo_dash = new javax.swing.JLabel();
         codigo_lote = new javax.swing.JLabel();
         descricao_produto = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Label_vencer = new javax.swing.JLabel();
         bt_dash_produto = new javax.swing.JButton();
         dash_lote = new javax.swing.JPanel();
         titulo_dash1 = new javax.swing.JLabel();
@@ -290,9 +291,9 @@ public class Jhome extends javax.swing.JFrame {
         dash_produto.add(descricao_produto);
         descricao_produto.setBounds(80, 80, 60, 19);
 
-        jLabel3.setText(String.valueOf(lote_vencer));
-        dash_produto.add(jLabel3);
-        jLabel3.setBounds(100, 105, 270, 90);
+        Label_vencer.setText(String.valueOf(lote_vencer));
+        dash_produto.add(Label_vencer);
+        Label_vencer.setBounds(100, 105, 270, 90);
 
         bt_dash_produto.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -558,6 +559,7 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JButton Cadastro_lote;
     private javax.swing.JButton Entrar_Produtos;
     private javax.swing.JButton Estoque;
+    private javax.swing.JLabel Label_vencer;
     private javax.swing.JButton Movimentação1;
     private javax.swing.JButton Pedidos;
     private javax.swing.JButton addUser;
@@ -573,7 +575,6 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
