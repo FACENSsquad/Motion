@@ -21,7 +21,7 @@ O app foi testado com o uso de um banco de dados MySQL em Windows 10 e 11, porta
 * **Eduardo Alves** -  [Eduardo Alves](https://github.com/eduams)
 * **João Melo** - [João Melo](https://github.com/joao-java)
 * **Vinicius Domingues** - [Vinicius Domingues](https://github.com/ViniciusDSS)
-* * **Matheus Maciel** - [Matheus Maciel](https://github.com/macielths)
+* **Matheus Maciel** - [Matheus Maciel](https://github.com/macielths)
 
 
 ## 🎁 Expressões de gratidão
