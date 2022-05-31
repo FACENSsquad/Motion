@@ -7,6 +7,7 @@ import DAO.Produtos_dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
 import javax.swing.JOptionPane;
 
 public class Jcadastrar_produto extends javax.swing.JFrame {
@@ -79,8 +80,9 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro em metodo CONSULTAR");
-    
         }
+        
+
     }
     
     public void delete(){
@@ -102,6 +104,11 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Erro em metodo DELETE");
+            System.out.println(e);
+                if (e instanceof SQLIntegrityConstraintViolationException){
+                JOptionPane.showMessageDialog(null,"Possivelmente o item que você está tentando deletar está contido dentro de um LOTE. Tente apagar o lote desse produto e tente novamente.");
+                }
+            
         }
     } else if(confirmar == JOptionPane.NO_OPTION) {
      dispose();

@@ -48,7 +48,7 @@ public class Jhome extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "");
             }
         } catch (Exception e) {
-           JOptionPane.showMessageDialog(null,"");
+           JOptionPane.showMessageDialog(null,e);
         } 
     
     }
@@ -57,6 +57,8 @@ public class Jhome extends javax.swing.JFrame {
         this.isAdmin = isAdmin;
         this.userName = userName;
         initComponents();
+        informacoes();
+        System.out.println(lote_vencer);
     }
 
     public String getUserName() {
