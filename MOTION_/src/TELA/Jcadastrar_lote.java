@@ -33,23 +33,24 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
    
          
         String sql = "update lote set l_produto = ?, quantidade = ?, valor = ?, "
-                + "alocacao = ?, data_v = ?, fornecedor = ? "
+                + "alocacao = ?, data_v = ? "
                + "where lote = ?;";
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql);
-           // pst.setString(1, Caixa_produto.getText());
-           // pst.setString(2, Caixa_quantidade.getText());
-           // pst.setString(3, Caixa_valor.getText());
-            pst.setInt(4, Integer.parseInt(Caixa_alocacao.getText()));
-           // pst.setString(5, Caixa_data.getText()); 
-           // pst.setInt(6, Integer.parseInt(Caixa_fornecedor.getText()));
-            pst.setInt(7, Integer.parseInt(Caixa_codigo.getText()));
+            pst.setString(1, Caixa_produto.getText());
+            pst.setString(2, Caixa_quantidade.getText());
+            pst.setString(3, Caixa_valor.getText());
+            pst.setString(4, Caixa_alocacao.getText());
+            pst.setString(5, Caixa_data.getText()); 
+           // pst.setString(6, Caixa_fornecedor.getText());
+            pst.setInt(6, Integer.parseInt(Caixa_codigo.getText()));
             pst.execute();
             
             JOptionPane.showMessageDialog(null, "Lote atualizado com sucesso");
             
         } catch (Exception e) {
            JOptionPane.showMessageDialog(null,"Erro em  UPDATE lote");
+            System.out.println(e);
         }  
     }
      
