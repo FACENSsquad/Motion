@@ -6,8 +6,12 @@
 package TELA;
 
 import BEAN.Lotes_bean;
+import CONEXAO.Conexao;
 import DAO.Lotes_dao;
 import static java.lang.Integer.parseInt;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,11 +20,110 @@ import javax.swing.JOptionPane;
  */
 public class Jcadastrar_lote extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jcadastrar_lote
-     */
-    public Jcadastrar_lote() {
+     private Conexao conexao;
+     private Connection conn;
+    
+    
+     public void conexao_cadastrar(){
+     this.conexao = new Conexao();
+     this.conn = this.conexao.Bd_Conexao();
+     }
+     
+     public void update_l(){
+   
+         
+        String sql = "update lote set l_produto = ?, quantidade = ?, valor = ?, "
+                + "alocacao = ?, data_v = ? "
+               + "where lote = ?;";
+        try {
+            PreparedStatement pst = this.conn.prepareStatement(sql);
+            pst.setString(1, Caixa_produto.getText());
+            pst.setString(2, Caixa_quantidade.getText());
+            pst.setString(3, Caixa_valor.getText());
+            pst.setString(4, Caixa_alocacao.getText());
+            pst.setString(5, Caixa_data.getText()); 
+           // pst.setString(6, Caixa_fornecedor.getText());
+            pst.setInt(6, Integer.parseInt(Caixa_codigo.getText()));
+            pst.execute();
+            
+            JOptionPane.showMessageDialog(null, "Lote atualizado com sucesso");
+            
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,"Erro em  UPDATE lote");
+            System.out.println(e);
+        }  
+    }
+     
+     public void consultar (){
+    
+        String sql = "select * from lote where lote = ?; ";
+        ResultSet rs;
+        
+        try { 
+            PreparedStatement pst3 = this.conn.prepareStatement(sql);
+            pst3.setString(1, Caixa_codigo.getText());
+            rs = pst3.executeQuery();
+            
+            if (rs.next()) {
+                
+              Caixa_produto.setText(rs.getString(2));
+              Caixa_quantidade.setText(rs.getString(3));
+              Caixa_valor.setText(rs.getString(4));
+              Caixa_alocacao.setText(rs.getString(5));
+              Caixa_data.setText(rs.getString(6));
+              Caixa_fornecedor.setText(rs.getString(7));
+           
+             
+              
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null,"Lote não encontrado");
+                
+              Caixa_produto.setText(null);
+              Caixa_quantidade.setText(null);
+              Caixa_valor.setText(null);
+              Caixa_alocacao.setText(null);
+              Caixa_data.setText(null);
+              Caixa_fornecedor.setText(null);
+            }
+            } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erro em metodo CONSULTAR Lote");
+           
+        }
+    }
+     
+     
+     public void delete(){
+        
+        int confirmar;
+        String message = "Deseja realmente remover este lote?";
+        
+        confirmar = JOptionPane.showConfirmDialog(null, message);
+       
+        
+        if(confirmar == JOptionPane.YES_OPTION){
+            
+        String sql = "delete from lote where lote = ?";
+        try {
+             PreparedStatement pst = this.conn.prepareStatement(sql);
+             pst.setString(1, Caixa_codigo.getText());
+             pst.executeUpdate();
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erro em metodo DELETE de lote");
+        }
+    } else if(confirmar == JOptionPane.NO_OPTION) {
+     dispose();
+        }
+    }
+     
+     
+    
+    public Jcadastrar_lote(){
         initComponents();
+        conexao_cadastrar();
     }
 
     /**
@@ -290,17 +393,19 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
     }//GEN-LAST:event_Caixa_codigoActionPerformed
 
     private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
-        
+    delete();
+    
+    dispose();
     }//GEN-LAST:event_Botton_deletarActionPerformed
 
     private void Botton_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_AtualizarActionPerformed
-        
+    update_l();
 
         dispose();
     }//GEN-LAST:event_Botton_AtualizarActionPerformed
 
     private void Botton_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_consultarActionPerformed
-
+consultar();
         
     }//GEN-LAST:event_Botton_consultarActionPerformed
 

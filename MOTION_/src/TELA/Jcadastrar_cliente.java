@@ -33,9 +33,9 @@ public class Jcadastrar_cliente extends javax.swing.JFrame {
     
     public void update_c (){
    
-        String sql = "update produto set nome = ?, cpf_cnpj = ?, telefone = ?, "
-                + " email = ?, cep = ?, uf = ?, municipio = ?, endereco = ?, "
-               + " where codigo = ?;";
+        String sql = "update cliente set nome = ?, cpf_cnpj = ?, telefone = ?, "
+                + "email = ?, cep = ?, uf = ?, municipio = ?, endereco = ? "
+               + "where codigo = ?; ";
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql);
             pst.setString(1, Caixa_nome.getText());
