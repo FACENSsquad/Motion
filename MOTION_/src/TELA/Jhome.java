@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import static javax.swing.UIManager.getString;
 
 /**
  *
@@ -21,7 +20,7 @@ import static javax.swing.UIManager.getString;
 public class Jhome extends javax.swing.JFrame {
     boolean isAdmin;
     String userName;
-    String lote_vencer = "0", faturamento, lote_velho, p_vendido, produtoCode, produtoNome;
+    String lote_vencer = "0", valor, lote_velho, p_vendido, produtoCode, produtoNome;
     String loteMaisvelho, produtoCode2, produtoNome2;
     ResultSet rs;
     
@@ -36,8 +35,8 @@ public class Jhome extends javax.swing.JFrame {
         String sql1 = "select min(data_v), l_produto, produto.produto as produto\n" +
                       "from lote\n" +
                       "left join produto on lote.l_produto = produto.codigo;";
-        //String sql2 = "select * from vencimento;";
         
+        //1º lote a vencer
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql1);
             rs = pst.executeQuery();
@@ -59,12 +58,28 @@ public class Jhome extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,e);
         }
         
+        //Valor do estoque
+        try {
+            PreparedStatement pst = this.conn.prepareStatement("select * from valor_estoque;");
+            rs = pst.executeQuery();
+            
+            
+            while (rs.next()) {
+                
+                
+            valor = rs.getString(1); 
+                        
+            valorr.setText(valor);
+
+            }
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,e);
+        }
         
+        //leto mais velho
         String sql2 = "select min(data_e), l_produto, produto.produto as produto\n" +
-                       "from lote\n" +
-                       "left join produto on lote.l_produto = produto.codigo;";
-        //String sql2 = "select * from vencimento;";
-        
+               "from lote\n" +
+               "left join produto on lote.l_produto = produto.codigo;";
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql2);
             rs = pst.executeQuery();
@@ -80,6 +95,29 @@ public class Jhome extends javax.swing.JFrame {
             velho1.setText(produtoNome2);
             velho2.setText(produtoCode2);
             velho3.setText(loteMaisvelho);
+
+            }
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,e);
+        }
+        
+        //Lote com maior quantidade.
+        try {
+            PreparedStatement pst = this.conn.prepareStatement("select * from lote_maior_quantidade;");
+            rs = pst.executeQuery();
+            
+            String quantidadeM, loteM, produtoM;
+            
+            while (rs.next()) {
+                
+                
+            quantidadeM = rs.getString(1); 
+            loteM = rs.getString(2); 
+            produtoM = rs.getString(3); 
+                        
+            quantidadeMM.setText(quantidadeM);
+            loteMM.setText(loteM);
+            produtoMM.setText(produtoM);
 
             }
         } catch (Exception e) {
@@ -154,8 +192,8 @@ public class Jhome extends javax.swing.JFrame {
         Label_vencer1 = new javax.swing.JLabel();
         dash_lote = new javax.swing.JPanel();
         titulo_dash1 = new javax.swing.JLabel();
-        descricao_produto1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        valorr = new javax.swing.JLabel();
         bt_dash_lote = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         titulo_dash3 = new javax.swing.JLabel();
@@ -164,8 +202,10 @@ public class Jhome extends javax.swing.JFrame {
         velho3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         titulo_dash4 = new javax.swing.JLabel();
+        quantidadeMM = new javax.swing.JLabel();
+        loteMM = new javax.swing.JLabel();
+        produtoMM = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -304,20 +344,23 @@ public class Jhome extends javax.swing.JFrame {
         dash_produto.add(titulo_dash);
         titulo_dash.setBounds(70, 40, 150, 19);
 
-        label_nome.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        label_nome.setText(String.valueOf(produtoNome));
+        label_nome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        label_nome.setForeground(new java.awt.Color(51, 51, 51));
+        label_nome.setText("produto");
         dash_produto.add(label_nome);
-        label_nome.setBounds(100, 60, 150, 90);
+        label_nome.setBounds(90, 70, 100, 40);
 
-        Label_vencer2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Label_vencer2.setText(String.valueOf(produtoCode));
+        Label_vencer2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Label_vencer2.setForeground(new java.awt.Color(51, 51, 51));
+        Label_vencer2.setText("lote");
         dash_produto.add(Label_vencer2);
-        Label_vencer2.setBounds(250, 60, 270, 90);
+        Label_vencer2.setBounds(250, 70, 80, 40);
 
-        Label_vencer.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Label_vencer.setText(String.valueOf(lote_vencer));
+        Label_vencer.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        Label_vencer.setForeground(new java.awt.Color(153, 0, 0));
+        Label_vencer.setText("DATA");
         dash_produto.add(Label_vencer);
-        Label_vencer.setBounds(100, 130, 270, 90);
+        Label_vencer.setBounds(90, 120, 300, 80);
 
         bt_dash_produto.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -343,21 +386,21 @@ public class Jhome extends javax.swing.JFrame {
 
         titulo_dash1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         titulo_dash1.setForeground(new java.awt.Color(126, 126, 126));
-        titulo_dash1.setText("Faturamento no mês");
+        titulo_dash1.setText("Valor do estoque");
         dash_lote.add(titulo_dash1);
         titulo_dash1.setBounds(70, 40, 150, 19);
 
-        descricao_produto1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        descricao_produto1.setForeground(new java.awt.Color(126, 126, 126));
-        descricao_produto1.setText("FATURADO");
-        dash_lote.add(descricao_produto1);
-        descricao_produto1.setBounds(80, 80, 80, 19);
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("R$:");
+        dash_lote.add(jLabel3);
+        jLabel3.setBounds(150, 140, 30, 30);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel5.setText(String.valueOf(faturamento));
-        dash_lote.add(jLabel5);
-        jLabel5.setBounds(90, 120, 310, 90);
+        valorr.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        valorr.setForeground(new java.awt.Color(64, 64, 64));
+        valorr.setText("valor estoque");
+        dash_lote.add(valorr);
+        valorr.setBounds(180, 100, 190, 90);
 
         bt_dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -378,22 +421,23 @@ public class Jhome extends javax.swing.JFrame {
         jPanel6.add(titulo_dash3);
         titulo_dash3.setBounds(70, 40, 150, 19);
 
-        velho1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        velho1.setForeground(new java.awt.Color(64, 64, 64));
+        velho1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        velho1.setForeground(new java.awt.Color(51, 51, 51));
+        velho1.setText("produto");
         jPanel6.add(velho1);
-        velho1.setBounds(100, 70, 250, 90);
+        velho1.setBounds(90, 70, 110, 40);
 
-        velho2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        velho2.setForeground(new java.awt.Color(64, 64, 64));
-        velho2.setText(null);
+        velho2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        velho2.setForeground(new java.awt.Color(51, 51, 51));
+        velho2.setText("lote");
         jPanel6.add(velho2);
-        velho2.setBounds(280, 70, 250, 90);
+        velho2.setBounds(260, 70, 100, 40);
 
-        velho3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        velho3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         velho3.setForeground(new java.awt.Color(64, 64, 64));
-        velho3.setText(null);
+        velho3.setText("DATA");
         jPanel6.add(velho3);
-        velho3.setBounds(100, 130, 250, 90);
+        velho3.setBounds(80, 120, 320, 80);
 
         jButton4.setBackground(new java.awt.Color(235, 235, 235));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -413,17 +457,29 @@ public class Jhome extends javax.swing.JFrame {
         jPanel7.setPreferredSize(new java.awt.Dimension(448, 265));
         jPanel7.setLayout(null);
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel7.setText(String.valueOf(p_vendido));
-        jPanel7.add(jLabel7);
-        jLabel7.setBounds(120, 100, 250, 90);
-
         titulo_dash4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         titulo_dash4.setForeground(new java.awt.Color(126, 126, 126));
-        titulo_dash4.setText("Produto mais vendido");
+        titulo_dash4.setText("Lote com maior quantidade");
         jPanel7.add(titulo_dash4);
-        titulo_dash4.setBounds(70, 40, 150, 19);
+        titulo_dash4.setBounds(70, 40, 200, 19);
+
+        quantidadeMM.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
+        quantidadeMM.setForeground(new java.awt.Color(64, 64, 64));
+        quantidadeMM.setText("QUANTIDADE");
+        jPanel7.add(quantidadeMM);
+        quantidadeMM.setBounds(170, 110, 180, 90);
+
+        loteMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        loteMM.setForeground(new java.awt.Color(51, 51, 51));
+        loteMM.setText("jLabel4");
+        jPanel7.add(loteMM);
+        loteMM.setBounds(90, 90, 46, 17);
+
+        produtoMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        produtoMM.setForeground(new java.awt.Color(51, 51, 51));
+        produtoMM.setText("jLabel4");
+        jPanel7.add(produtoMM);
+        produtoMM.setBounds(200, 90, 46, 17);
 
         jButton5.setBackground(new java.awt.Color(235, 235, 235));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -594,14 +650,12 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JButton bt_dash_produto;
     private javax.swing.JPanel dash_lote;
     private javax.swing.JPanel dash_produto;
-    private javax.swing.JLabel descricao_produto1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -610,11 +664,15 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_nome;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel loteMM;
     private javax.swing.JLabel lupa;
+    private javax.swing.JLabel produtoMM;
+    private javax.swing.JLabel quantidadeMM;
     private javax.swing.JLabel titulo_dash;
     private javax.swing.JLabel titulo_dash1;
     private javax.swing.JLabel titulo_dash3;
     private javax.swing.JLabel titulo_dash4;
+    private javax.swing.JLabel valorr;
     private javax.swing.JLabel velho1;
     private javax.swing.JLabel velho2;
     private javax.swing.JLabel velho3;
