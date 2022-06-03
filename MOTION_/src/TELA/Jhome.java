@@ -31,23 +31,19 @@ public class Jhome extends javax.swing.JFrame {
         
         this.conexao = new Conexao();
         this.conn = this.conexao.Bd_Conexao();
-    
-        String sql1 = "select min(data_v), l_produto, produto.produto as produto\n" +
-                      "from lote\n" +
-                      "left join produto on lote.l_produto = produto.codigo;";
         
         //1º lote a vencer
         try {
-            PreparedStatement pst = this.conn.prepareStatement(sql1);
+            PreparedStatement pst = this.conn.prepareStatement("select * from primeiro_lote_vencer;");
             rs = pst.executeQuery();
             
             
             while (rs.next()) {
                 
                 
-            lote_vencer = rs.getString(1); 
+            lote_vencer = rs.getString(3); 
             produtoCode = rs.getString(2); 
-            produtoNome = rs.getString(3); 
+            produtoNome = rs.getString(1); 
             
             Label_vencer.setText(lote_vencer);
             Label_vencer2.setText(produtoCode);
@@ -77,24 +73,21 @@ public class Jhome extends javax.swing.JFrame {
         }
         
         //leto mais velho
-        String sql2 = "select min(data_e), l_produto, produto.produto as produto\n" +
-               "from lote\n" +
-               "left join produto on lote.l_produto = produto.codigo;";
         try {
-            PreparedStatement pst = this.conn.prepareStatement(sql2);
+            PreparedStatement pst = this.conn.prepareStatement("select * from lote_mais_velho;");
             rs = pst.executeQuery();
             
             
             while (rs.next()) {
                 
                 
-            loteMaisvelho = rs.getString(1); 
+            loteMaisvelho = rs.getString(3); 
             produtoCode2 = rs.getString(2); 
-            produtoNome2 = rs.getString(3); 
+            produtoNome2 = rs.getString(1); 
                         
-            velho1.setText(produtoNome2);
-            velho2.setText(produtoCode2);
-            velho3.setText(loteMaisvelho);
+            velho1produto.setText(produtoNome2);
+            velho2lote.setText(produtoCode2);
+            velho3data.setText(loteMaisvelho);
 
             }
         } catch (Exception e) {
@@ -112,8 +105,8 @@ public class Jhome extends javax.swing.JFrame {
                 
                 
             quantidadeM = rs.getString(1); 
-            loteM = rs.getString(2); 
-            produtoM = rs.getString(3); 
+            loteM = rs.getString(3); 
+            produtoM = rs.getString(2); 
                         
             quantidadeMM.setText(quantidadeM);
             loteMM.setText(loteM);
@@ -182,7 +175,6 @@ public class Jhome extends javax.swing.JFrame {
         lupa = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Movimentação1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         dash_produto = new javax.swing.JPanel();
         titulo_dash = new javax.swing.JLabel();
         label_nome = new javax.swing.JLabel();
@@ -190,21 +182,24 @@ public class Jhome extends javax.swing.JFrame {
         Label_vencer = new javax.swing.JLabel();
         bt_dash_produto = new javax.swing.JButton();
         Label_vencer1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         dash_lote = new javax.swing.JPanel();
         titulo_dash1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         valorr = new javax.swing.JLabel();
         bt_dash_lote = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         titulo_dash3 = new javax.swing.JLabel();
-        velho1 = new javax.swing.JLabel();
-        velho2 = new javax.swing.JLabel();
-        velho3 = new javax.swing.JLabel();
+        velho1produto = new javax.swing.JLabel();
+        velho2lote = new javax.swing.JLabel();
+        velho3data = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         titulo_dash4 = new javax.swing.JLabel();
         quantidadeMM = new javax.swing.JLabel();
         loteMM = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         produtoMM = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
@@ -323,17 +318,6 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(Movimentação1);
         Movimentação1.setBounds(0, 450, 200, 30);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton1.setText("Precisa de ajuda?");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setDefaultCapable(false);
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.setRequestFocusEnabled(false);
-
         dash_produto.setBackground(new java.awt.Color(235, 235, 235));
         dash_produto.setPreferredSize(new java.awt.Dimension(475, 265));
         dash_produto.setLayout(null);
@@ -380,6 +364,17 @@ public class Jhome extends javax.swing.JFrame {
         dash_produto.add(Label_vencer1);
         Label_vencer1.setBounds(100, 105, 270, 90);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton1.setText("Precisa de ajuda?");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setDefaultCapable(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setFocusable(false);
+        jButton1.setRequestFocusEnabled(false);
+
         dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         dash_lote.setPreferredSize(new java.awt.Dimension(475, 265));
         dash_lote.setLayout(null);
@@ -415,34 +410,48 @@ public class Jhome extends javax.swing.JFrame {
         jPanel6.setPreferredSize(new java.awt.Dimension(475, 265));
         jPanel6.setLayout(null);
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/abrir.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton2);
+        jButton2.setBounds(370, 180, 39, 40);
+
         titulo_dash3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         titulo_dash3.setForeground(new java.awt.Color(126, 126, 126));
         titulo_dash3.setText("Lote mais velho");
         jPanel6.add(titulo_dash3);
         titulo_dash3.setBounds(70, 40, 150, 19);
 
-        velho1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        velho1.setForeground(new java.awt.Color(51, 51, 51));
-        velho1.setText("produto");
-        jPanel6.add(velho1);
-        velho1.setBounds(90, 70, 110, 40);
+        velho1produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        velho1produto.setForeground(new java.awt.Color(51, 51, 51));
+        velho1produto.setText("produto");
+        jPanel6.add(velho1produto);
+        velho1produto.setBounds(90, 70, 110, 40);
 
-        velho2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        velho2.setForeground(new java.awt.Color(51, 51, 51));
-        velho2.setText("lote");
-        jPanel6.add(velho2);
-        velho2.setBounds(260, 70, 100, 40);
+        velho2lote.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        velho2lote.setForeground(new java.awt.Color(51, 51, 51));
+        velho2lote.setText("lote");
+        jPanel6.add(velho2lote);
+        velho2lote.setBounds(260, 70, 100, 40);
 
-        velho3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        velho3.setForeground(new java.awt.Color(64, 64, 64));
-        velho3.setText("DATA");
-        jPanel6.add(velho3);
-        velho3.setBounds(80, 120, 320, 80);
+        velho3data.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        velho3data.setForeground(new java.awt.Color(64, 64, 64));
+        velho3data.setText("DATA");
+        jPanel6.add(velho3data);
+        velho3data.setBounds(80, 120, 320, 70);
 
         jButton4.setBackground(new java.awt.Color(235, 235, 235));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setContentAreaFilled(false);
+        jButton4.setFocusPainted(false);
+        jButton4.setFocusable(false);
         jButton4.setMinimumSize(new java.awt.Dimension(238, 10));
         jButton4.setPreferredSize(new java.awt.Dimension(250, 100));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -467,13 +476,25 @@ public class Jhome extends javax.swing.JFrame {
         quantidadeMM.setForeground(new java.awt.Color(64, 64, 64));
         quantidadeMM.setText("QUANTIDADE");
         jPanel7.add(quantidadeMM);
-        quantidadeMM.setBounds(170, 110, 180, 90);
+        quantidadeMM.setBounds(200, 110, 180, 90);
 
         loteMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         loteMM.setForeground(new java.awt.Color(51, 51, 51));
         loteMM.setText("jLabel4");
         jPanel7.add(loteMM);
         loteMM.setBounds(90, 90, 46, 17);
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/abrir.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton3);
+        jButton3.setBounds(370, 180, 39, 40);
 
         produtoMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         produtoMM.setForeground(new java.awt.Color(51, 51, 51));
@@ -597,6 +618,18 @@ public class Jhome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Jmovimentação jmovimentação = new Jmovimentação(isAdmin, userName);
+        jmovimentação.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Jestoque jestoque = new Jestoque(isAdmin, userName);
+        jestoque.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
         
     }    
@@ -651,6 +684,8 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JPanel dash_lote;
     private javax.swing.JPanel dash_produto;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -673,9 +708,9 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JLabel titulo_dash3;
     private javax.swing.JLabel titulo_dash4;
     private javax.swing.JLabel valorr;
-    private javax.swing.JLabel velho1;
-    private javax.swing.JLabel velho2;
-    private javax.swing.JLabel velho3;
+    private javax.swing.JLabel velho1produto;
+    private javax.swing.JLabel velho2lote;
+    private javax.swing.JLabel velho3data;
     // End of variables declaration//GEN-END:variables
 
     private String setText(String string) {
