@@ -110,7 +110,6 @@ public class Jestoque extends javax.swing.JFrame {
         View_de_estoque = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -259,16 +258,17 @@ public class Jestoque extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jScrollPane1.setBackground(new java.awt.Color(222, 222, 222));
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setAutoscrolls(true);
-        jScrollPane1.setDoubleBuffered(true);
-        jScrollPane1.setFocusCycleRoot(true);
-        jScrollPane1.setFocusTraversalPolicyProvider(true);
+        jScrollPane1.setEnabled(false);
+        jScrollPane1.setFocusable(false);
         jScrollPane1.setInheritsPopupMenu(true);
 
         View_de_estoque.setAutoCreateRowSorter(true);
+        View_de_estoque.setBackground(new java.awt.Color(255, 255, 255));
         View_de_estoque.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_estoque.setTableHeader(null);
         View_de_estoque.setModel(new javax.swing.table.DefaultTableModel(
@@ -298,21 +298,22 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         View_de_estoque.setAlignmentY(2.0F);
-        View_de_estoque.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        View_de_estoque.setColumnSelectionAllowed(false);
         View_de_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         View_de_estoque.setDoubleBuffered(true);
         View_de_estoque.setDragEnabled(true);
+        View_de_estoque.setEnabled(false);
         View_de_estoque.setFillsViewportHeight(true);
         View_de_estoque.setFocusCycleRoot(true);
         View_de_estoque.setFocusable(false);
         View_de_estoque.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_estoque.setIntercellSpacing(new java.awt.Dimension(0, 0));
         View_de_estoque.setMaximumSize(new java.awt.Dimension(2147483647, 440));
         View_de_estoque.setMinimumSize(new java.awt.Dimension(100, 1040));
         View_de_estoque.setName(""); // NOI18N
         View_de_estoque.setPreferredSize(new java.awt.Dimension(400, 384));
         View_de_estoque.setRequestFocusEnabled(false);
         View_de_estoque.setRowHeight(40);
+        View_de_estoque.setRowSelectionAllowed(false);
         View_de_estoque.setSelectionBackground(new java.awt.Color(255, 255, 255));
         View_de_estoque.setUpdateSelectionOnSort(false);
         View_de_estoque.setVerifyInputWhenFocusTarget(false);

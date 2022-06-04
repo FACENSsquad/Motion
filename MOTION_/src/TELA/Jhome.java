@@ -210,6 +210,7 @@ public class Jhome extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(176, 216, 230));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText(String.valueOf(userName));
 

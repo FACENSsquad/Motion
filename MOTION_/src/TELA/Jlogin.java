@@ -38,52 +38,58 @@ public class Jlogin extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
         Caixa_login = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         Caixa_senha = new javax.swing.JPasswordField();
         Botton_entrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(235, 235, 235));
         setMinimumSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel2.setText("MotiON");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(180, 80, 80, 32);
+        jLabel2.setBounds(150, 70, 130, 43);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 230, 60, 17);
 
         Caixa_login.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane3.setViewportView(Caixa_login);
-
-        getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(30, 250, 370, 30);
+        Caixa_login.setBorder(null);
+        Caixa_login.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Caixa_login.setCaretColor(new java.awt.Color(255, 255, 255));
+        Caixa_login.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        Caixa_login.setMinimumSize(new java.awt.Dimension(0, 25));
+        Caixa_login.setPreferredSize(new java.awt.Dimension(0, 25));
+        Caixa_login.setSelectionColor(new java.awt.Color(255, 255, 255));
+        getContentPane().add(Caixa_login);
+        Caixa_login.setBounds(30, 250, 370, 25);
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Senha:");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(30, 300, 60, 17);
 
         Caixa_senha.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_senha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Caixa_senha.setBorder(null);
+        Caixa_senha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_senhaActionPerformed(evt);
             }
         });
         getContentPane().add(Caixa_senha);
-        Caixa_senha.setBounds(30, 320, 370, 30);
+        Caixa_senha.setBounds(30, 320, 370, 25);
 
+        Botton_entrar.setBackground(new java.awt.Color(235, 235, 235));
         Botton_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         Botton_entrar.setBorder(null);
+        Botton_entrar.setContentAreaFilled(false);
         Botton_entrar.setOpaque(false);
         Botton_entrar.setRequestFocusEnabled(false);
         Botton_entrar.addActionListener(new java.awt.event.ActionListener() {
@@ -92,12 +98,7 @@ public class Jlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Botton_entrar);
-        Botton_entrar.setBounds(240, 580, 140, 50);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fundo_login.png"))); // NOI18N
-        jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 700);
+        Botton_entrar.setBounds(310, 590, 90, 40);
 
         pack();
         setLocationRelativeTo(null);
@@ -186,10 +187,8 @@ public class Jlogin extends javax.swing.JFrame {
     private javax.swing.JButton Botton_entrar;
     private javax.swing.JTextPane Caixa_login;
     private javax.swing.JPasswordField Caixa_senha;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,10 +9,6 @@ public class MOTION_ {
     public static void main(String[] args) {
        
         Jlogin jlogin = new Jlogin();
-        jlogin.setVisible(true);
-       
+        jlogin.setVisible(true);   
     }
-    
-    
-    
 }
