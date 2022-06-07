@@ -65,7 +65,7 @@ public final class Jlote extends javax.swing.JFrame {
             PreparedStatement pst;
             ResultSet rs;
             
-            pst = connl.prepareStatement("select * from lote");
+            pst = connl.prepareStatement("select * from lotes;");
             rs = pst.executeQuery();
             
             while (rs.next()){
@@ -102,17 +102,21 @@ public final class Jlote extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Cadastrar_produto = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         codigo = new javax.swing.JButton();
         produto = new javax.swing.JButton();
         unidade = new javax.swing.JButton();
-        quantidade = new javax.swing.JButton();
+        alocação = new javax.swing.JButton();
         valor = new javax.swing.JButton();
         fornecedor = new javax.swing.JButton();
+        data_validade = new javax.swing.JButton();
+        fornecedor1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_lotes = new javax.swing.JTable();
         Botton_atualizar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1, 0));
         setUndecorated(true);
@@ -167,7 +171,7 @@ public final class Jlote extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(jLabel2)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Cadastrar_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cadastrar_item.png"))); // NOI18N
@@ -179,11 +183,14 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         codigo.setBackground(new java.awt.Color(255, 255, 255));
-        codigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
+        codigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
         codigo.setBorder(null);
         codigo.setBorderPainted(false);
         codigo.setContentAreaFilled(false);
@@ -193,7 +200,7 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(codigo);
-        codigo.setBounds(20, 20, 52, 15);
+        codigo.setBounds(10, 20, 40, 15);
 
         produto.setBackground(new java.awt.Color(255, 255, 255));
         produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
@@ -206,23 +213,23 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(210, 20, 56, 15);
+        produto.setBounds(160, 20, 56, 15);
 
         unidade.setBackground(new java.awt.Color(255, 255, 255));
-        unidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_unidade.png"))); // NOI18N
+        unidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
         unidade.setBorder(null);
         unidade.setBorderPainted(false);
         unidade.setContentAreaFilled(false);
         jPanel1.add(unidade);
-        unidade.setBounds(400, 20, 60, 15);
+        unidade.setBounds(300, 20, 80, 15);
 
-        quantidade.setBackground(new java.awt.Color(255, 255, 255));
-        quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
-        quantidade.setBorder(null);
-        quantidade.setBorderPainted(false);
-        quantidade.setContentAreaFilled(false);
-        jPanel1.add(quantidade);
-        quantidade.setBounds(590, 20, 80, 15);
+        alocação.setBackground(new java.awt.Color(255, 255, 255));
+        alocação.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_alocacao.png"))); // NOI18N
+        alocação.setBorder(null);
+        alocação.setBorderPainted(false);
+        alocação.setContentAreaFilled(false);
+        jPanel1.add(alocação);
+        alocação.setBounds(580, 20, 60, 15);
 
         valor.setBackground(new java.awt.Color(255, 255, 255));
         valor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valor.png"))); // NOI18N
@@ -230,10 +237,10 @@ public final class Jlote extends javax.swing.JFrame {
         valor.setBorderPainted(false);
         valor.setContentAreaFilled(false);
         jPanel1.add(valor);
-        valor.setBounds(790, 20, 50, 15);
+        valor.setBounds(440, 20, 39, 15);
 
         fornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_fornecedor.png"))); // NOI18N
+        fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
         fornecedor.setBorder(null);
         fornecedor.setBorderPainted(false);
         fornecedor.setContentAreaFilled(false);
@@ -243,7 +250,33 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(fornecedor);
-        fornecedor.setBounds(980, 20, 80, 15);
+        fornecedor.setBounds(1010, 20, 80, 15);
+
+        data_validade.setBackground(new java.awt.Color(255, 255, 255));
+        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
+        data_validade.setBorder(null);
+        data_validade.setBorderPainted(false);
+        data_validade.setContentAreaFilled(false);
+        data_validade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                data_validadeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(data_validade);
+        data_validade.setBounds(730, 20, 80, 15);
+
+        fornecedor1.setBackground(new java.awt.Color(255, 255, 255));
+        fornecedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_fornecedor.png"))); // NOI18N
+        fornecedor1.setBorder(null);
+        fornecedor1.setBorderPainted(false);
+        fornecedor1.setContentAreaFilled(false);
+        fornecedor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fornecedor1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(fornecedor1);
+        fornecedor1.setBounds(870, 20, 80, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -253,10 +286,8 @@ public final class Jlote extends javax.swing.JFrame {
         jScrollPane1.setDoubleBuffered(true);
         jScrollPane1.setFocusTraversalPolicyProvider(true);
 
-        View_de_lotes.setBackground(new java.awt.Color(255, 255, 255));
         View_de_lotes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_lotes.setTableHeader(null);
-        View_de_lotes.setForeground(new java.awt.Color(0, 0, 0));
         View_de_lotes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -294,7 +325,6 @@ public final class Jlote extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        View_de_lotes.setColumnSelectionAllowed(false);
         View_de_lotes.setEnabled(false);
         View_de_lotes.setFillsViewportHeight(true);
         View_de_lotes.setFocusTraversalPolicyProvider(true);
@@ -302,7 +332,6 @@ public final class Jlote extends javax.swing.JFrame {
         View_de_lotes.setPreferredSize(new java.awt.Dimension(400, 384));
         View_de_lotes.setRowHeight(40);
         View_de_lotes.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_lotes.setSelectionForeground(new java.awt.Color(255, 255, 255));
         View_de_lotes.setShowHorizontalLines(false);
         View_de_lotes.setShowVerticalLines(false);
         jScrollPane1.setViewportView(View_de_lotes);
@@ -334,7 +363,6 @@ public final class Jlote extends javax.swing.JFrame {
         );
 
         Botton_atualizar.setBackground(new java.awt.Color(235, 235, 235));
-        Botton_atualizar.setForeground(new java.awt.Color(0, 0, 0));
         Botton_atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/atualizar.png"))); // NOI18N
         Botton_atualizar.setBorder(null);
         Botton_atualizar.setContentAreaFilled(false);
@@ -344,6 +372,10 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
+        jButton1.setBorder(null);
+
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
         barra_top.setLayout(barra_topLayout);
         barra_topLayout.setHorizontalGroup(
@@ -352,35 +384,42 @@ public final class Jlote extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barra_topLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(169, 169, 169))
                     .addGroup(barra_topLayout.createSequentialGroup()
-                        .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(barra_topLayout.createSequentialGroup()
+                        .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(barra_topLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(169, 169, 169))))
         );
         barra_topLayout.setVerticalGroup(
             barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barra_topLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Botton_atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(5, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(barra_top);
-        barra_top.setBounds(0, 0, 1340, 800);
+        barra_top.setBounds(0, 0, 1200, 800);
 
         pack();
         setLocationRelativeTo(null);
@@ -419,6 +458,14 @@ public final class Jlote extends javax.swing.JFrame {
         jlote.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Botton_atualizarActionPerformed
+
+    private void data_validadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_data_validadeActionPerformed
+
+    private void fornecedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fornecedor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fornecedor1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -459,18 +506,22 @@ public final class Jlote extends javax.swing.JFrame {
     private javax.swing.JButton Botton_atualizar;
     private javax.swing.JButton Cadastrar_produto;
     private javax.swing.JTable View_de_lotes;
+    private javax.swing.JButton alocação;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
+    private javax.swing.JButton data_validade;
     private javax.swing.JButton fornecedor;
+    private javax.swing.JButton fornecedor1;
     private javax.swing.JButton inicio;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton produto;
-    private javax.swing.JButton quantidade;
     private javax.swing.JButton unidade;
     private javax.swing.JButton valor;
     // End of variables declaration//GEN-END:variables

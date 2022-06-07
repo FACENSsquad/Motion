@@ -172,8 +172,6 @@ public class Jhome extends javax.swing.JFrame {
         Cadastro_cliente = new javax.swing.JButton();
         Estoque = new javax.swing.JButton();
         Pedidos = new javax.swing.JButton();
-        lupa = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         Movimentação1 = new javax.swing.JButton();
         dash_produto = new javax.swing.JPanel();
         titulo_dash = new javax.swing.JLabel();
@@ -301,15 +299,6 @@ public class Jhome extends javax.swing.JFrame {
         jPanel2.add(Pedidos);
         Pedidos.setBounds(0, 420, 200, 30);
 
-        lupa.setBackground(new java.awt.Color(255, 255, 255));
-        lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
-        jPanel2.add(lupa);
-        lupa.setBounds(0, 230, 20, 30);
-
-        jTextField1.setBorder(null);
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(20, 230, 180, 30);
-
         Movimentação1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bt_home_movimentacao.png"))); // NOI18N
         Movimentação1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,13 +379,13 @@ public class Jhome extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("R$:");
         dash_lote.add(jLabel3);
-        jLabel3.setBounds(150, 140, 30, 30);
+        jLabel3.setBounds(110, 140, 30, 30);
 
         valorr.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         valorr.setForeground(new java.awt.Color(64, 64, 64));
         valorr.setText("valor estoque");
         dash_lote.add(valorr);
-        valorr.setBounds(180, 100, 190, 90);
+        valorr.setBounds(140, 100, 240, 90);
 
         bt_dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         bt_dash_lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -481,9 +470,9 @@ public class Jhome extends javax.swing.JFrame {
 
         loteMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         loteMM.setForeground(new java.awt.Color(51, 51, 51));
-        loteMM.setText("jLabel4");
+        loteMM.setText("produtoM");
         jPanel7.add(loteMM);
-        loteMM.setBounds(90, 90, 46, 17);
+        loteMM.setBounds(90, 90, 140, 17);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/abrir.png"))); // NOI18N
@@ -499,9 +488,9 @@ public class Jhome extends javax.swing.JFrame {
 
         produtoMM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         produtoMM.setForeground(new java.awt.Color(51, 51, 51));
-        produtoMM.setText("jLabel4");
+        produtoMM.setText("loteM");
         jPanel7.add(produtoMM);
-        produtoMM.setBounds(200, 90, 46, 17);
+        produtoMM.setBounds(280, 90, 34, 17);
 
         jButton5.setBackground(new java.awt.Color(235, 235, 235));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASHBORD.png"))); // NOI18N
@@ -697,11 +686,9 @@ public class Jhome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_nome;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel loteMM;
-    private javax.swing.JLabel lupa;
     private javax.swing.JLabel produtoMM;
     private javax.swing.JLabel quantidadeMM;
     private javax.swing.JLabel titulo_dash;
