@@ -578,8 +578,9 @@ public class Jhome extends javax.swing.JFrame {
     }//GEN-LAST:event_EstoqueActionPerformed
 
     private void PedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidosActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
+       Jpedido jpedido = new Jpedido(isAdmin, userName);
+       jpedido.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_PedidosActionPerformed
 
     private void Cadastro_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_clienteActionPerformed
