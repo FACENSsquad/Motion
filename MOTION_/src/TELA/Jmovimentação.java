@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -20,6 +21,8 @@ import javax.swing.table.DefaultTableModel;
 public class Jmovimentação extends javax.swing.JFrame {
     boolean isAdmin;
     String userName;
+    private Conexao conexao;
+    private Connection conn;
 
     public boolean isIsAdmin() {
         return isAdmin;
@@ -87,13 +90,35 @@ public class Jmovimentação extends javax.swing.JFrame {
             System.out.println("Erro tabela_estoque");
         }
     }
+    
+    public void pesquisar(){
+    
+        this.conexao = new Conexao();
+        this.conn = this.conexao.Bd_Conexao();
+        ResultSet rs;
+        
+        try {
+            PreparedStatement pst = this.conn.prepareStatement("select * from vencimento ");
+            
+            
+            
+            rs = pst.executeQuery();
+            
+            
+            
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,e);
+        }
+    
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         barra_top = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        Caixa_pesquisar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         produtos_inicio = new javax.swing.JButton();
@@ -117,8 +142,8 @@ public class Jmovimentação extends javax.swing.JFrame {
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
         barra_top.setForeground(new java.awt.Color(235, 235, 235));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
+        Caixa_pesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_pesquisar.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
@@ -365,7 +390,7 @@ public class Jmovimentação extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Caixa_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
         barra_topLayout.setVerticalGroup(
@@ -374,7 +399,7 @@ public class Jmovimentação extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                    .addComponent(Caixa_pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -462,6 +487,7 @@ public class Jmovimentação extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Caixa_pesquisar;
     private javax.swing.JTable View_de_movimentacao;
     private javax.swing.JButton alocacao;
     private javax.swing.JPanel barra_top;
@@ -474,7 +500,6 @@ public class Jmovimentação extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lote;
     private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;

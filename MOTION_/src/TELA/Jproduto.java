@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -20,7 +21,10 @@ import javax.swing.table.DefaultTableModel;
 public class Jproduto extends javax.swing.JFrame {
     boolean isAdmin;
     String userName;
-
+    private Conexao conexao;
+    private Connection conn;
+    
+    
     public boolean isIsAdmin() {
         return isAdmin;
     }
@@ -80,6 +84,26 @@ public class Jproduto extends javax.swing.JFrame {
         } catch (SQLException e) {
             System.out.println("Erro tabela_produto");
         }
+    }
+    
+    public void pesquisar(){
+    
+        this.conexao = new Conexao();
+        this.conn = this.conexao.Bd_Conexao();
+        ResultSet rs;
+        
+        try {
+            PreparedStatement pst = this.conn.prepareStatement("select * from produto where produto like ?;");
+            pst.setString(1, Caixa_pesquisar.getText() + "%");
+            
+            rs = pst.executeQuery();
+            
+            View_de_produtos.setModel(DbUtils.resultSetToTableModel(rs));// passando biblioteca para a view de produtos
+            
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,e);
+        }
+    
     }
 
     /*Connection conn;
@@ -145,8 +169,8 @@ public class Jproduto extends javax.swing.JFrame {
         produtos_inicio = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        Botton_pesquisar = new javax.swing.JButton();
+        Caixa_pesquisar = new javax.swing.JTextField();
         Cadastrar_produto = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         codigo = new javax.swing.JButton();
@@ -159,7 +183,6 @@ public class Jproduto extends javax.swing.JFrame {
         Botton_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -212,12 +235,22 @@ public class Jproduto extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
-        jButton1.setBorder(null);
+        Botton_pesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        Botton_pesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/lupa.png"))); // NOI18N
+        Botton_pesquisar.setBorder(null);
+        Botton_pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botton_pesquisarActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
+        Caixa_pesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        Caixa_pesquisar.setBorder(null);
+        Caixa_pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_pesquisarActionPerformed(evt);
+            }
+        });
 
         Cadastrar_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cadastrar_item.png"))); // NOI18N
         Cadastrar_produto.setBorder(null);
@@ -332,6 +365,11 @@ public class Jproduto extends javax.swing.JFrame {
         View_de_produtos.setSelectionBackground(new java.awt.Color(255, 255, 255));
         View_de_produtos.setUpdateSelectionOnSort(false);
         View_de_produtos.setVerifyInputWhenFocusTarget(false);
+        View_de_produtos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_de_produtosKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(View_de_produtos);
         if (View_de_produtos.getColumnModel().getColumnCount() > 0) {
             View_de_produtos.getColumnModel().getColumn(0).setResizable(false);
@@ -377,9 +415,9 @@ public class Jproduto extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(barra_topLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Botton_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Caixa_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -399,8 +437,8 @@ public class Jproduto extends javax.swing.JFrame {
                     .addGroup(barra_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(Cadastrar_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Botton_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Caixa_pesquisar)
+                    .addComponent(Botton_pesquisar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -447,6 +485,18 @@ public class Jproduto extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_Botton_atualizarActionPerformed
 
+    private void Botton_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_pesquisarActionPerformed
+        pesquisar();
+    }//GEN-LAST:event_Botton_pesquisarActionPerformed
+
+    private void Caixa_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_pesquisarActionPerformed
+        pesquisar();
+    }//GEN-LAST:event_Caixa_pesquisarActionPerformed
+
+    private void View_de_produtosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_de_produtosKeyReleased
+        pesquisar();
+    }//GEN-LAST:event_View_de_produtosKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -483,18 +533,18 @@ public class Jproduto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Botton_atualizar;
+    private javax.swing.JButton Botton_pesquisar;
     private javax.swing.JButton Cadastrar_produto;
+    private javax.swing.JTextField Caixa_pesquisar;
     private javax.swing.JTable View_de_produtos;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton codigo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton ncm;
     private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
