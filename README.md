@@ -26,5 +26,5 @@ O app foi testado com o uso de um banco de dados MySQL em Windows 10 e 11, porta
 
 ## 🎁 Expressões de gratidão
 
-* Agradecemos ao professor Marcio Funes por nos dar a oportunidade de criar esse projeto na Facens 
+* Agradecemos a Facens por nos dar a oportunidade de criar esse projeto 
 ---
