@@ -103,10 +103,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Erro em metodo DELETE");
+           
             System.out.println(e);
                 if (e instanceof SQLIntegrityConstraintViolationException){
-                JOptionPane.showMessageDialog(null,"Possivelmente o item que você está tentando deletar está contido dentro de um LOTE. Tente apagar o lote desse produto e tente novamente.");
+                JOptionPane.showMessageDialog(null,"Este item está contido dentro de um LOTE. Delete o lote desse produto e tente novamente.");
                 }
             
         }

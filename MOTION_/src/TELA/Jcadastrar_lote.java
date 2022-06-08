@@ -375,7 +375,7 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
             
            
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "erro ao cadastrar lote");
+            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatorios");
         }
         this.dispose();
     }//GEN-LAST:event_Botton_cadastrarActionPerformed
