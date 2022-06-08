@@ -109,6 +109,9 @@ public class Jcadastrar_lote extends javax.swing.JFrame {
              PreparedStatement pst = this.conn.prepareStatement(sql);
              pst.setString(1, Caixa_codigo.getText());
              pst.executeUpdate();
+             
+             JOptionPane.showMessageDialog(null,"Lote deletado com sucesso");
+             
             
             
         } catch (Exception e) {
