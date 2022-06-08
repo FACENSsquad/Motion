@@ -115,7 +115,7 @@ public class Jlogin extends javax.swing.JFrame {
             loginBean.setSenha(usuario_senha);
             
             int max = 0;
-            while (max < 2){
+            while (max <= 2){ //se adicionar mais um nível de acesso, prestar atenção neste trecho
                 loginBean.setNivel(max); //primeiro o sistema vai tentar logar como usuário normal
                 Login_dao loginDao = new Login_dao();
                 ResultSet rsLoginDao = loginDao.autenticaUsuario(loginBean);
