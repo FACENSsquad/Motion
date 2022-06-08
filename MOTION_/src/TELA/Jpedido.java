@@ -41,13 +41,13 @@ public class Jpedido extends javax.swing.JFrame {
         this.isAdmin = isAdmin;
         this.userName = userName;
         initComponents();
-        tabela_movimentacao();
+        //tabela_movimentacao();
         
         
     }
     
     
-    
+    /*
     private void tabela_movimentacao(){
         
         DefaultTableModel model = (DefaultTableModel) View_de_movimentacao.getModel(); //criando tabela
@@ -87,7 +87,7 @@ public class Jpedido extends javax.swing.JFrame {
             System.out.println("Erro tabela_estoque");
         }
     }
-
+    */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,10 +103,8 @@ public class Jpedido extends javax.swing.JFrame {
         produto = new javax.swing.JButton();
         lote = new javax.swing.JButton();
         quantidade = new javax.swing.JButton();
-        valor_un = new javax.swing.JButton();
-        alocacao = new javax.swing.JButton();
-        data_validade = new javax.swing.JButton();
         data_validade1 = new javax.swing.JButton();
+        data_validade2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_movimentacao = new javax.swing.JTable();
@@ -176,7 +174,7 @@ public class Jpedido extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         produto.setBackground(new java.awt.Color(255, 255, 255));
-        produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
+        produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_pedido.png"))); // NOI18N
         produto.setBorder(null);
         produto.setBorderPainted(false);
         produto.setContentAreaFilled(false);
@@ -186,10 +184,10 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(20, 20, 56, 15);
+        produto.setBounds(20, 20, 50, 15);
 
         lote.setBackground(new java.awt.Color(255, 255, 255));
-        lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
+        lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
         lote.setBorder(null);
         lote.setBorderPainted(false);
         lote.setContentAreaFilled(false);
@@ -199,7 +197,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(180, 20, 34, 15);
+        lote.setBounds(240, 20, 56, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -212,49 +210,10 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(quantidade);
-        quantidade.setBounds(340, 20, 80, 15);
-
-        valor_un.setBackground(new java.awt.Color(255, 255, 255));
-        valor_un.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valorUn.png"))); // NOI18N
-        valor_un.setBorder(null);
-        valor_un.setBorderPainted(false);
-        valor_un.setContentAreaFilled(false);
-        valor_un.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valor_unActionPerformed(evt);
-            }
-        });
-        jPanel1.add(valor_un);
-        valor_un.setBounds(500, 20, 57, 15);
-
-        alocacao.setBackground(new java.awt.Color(255, 255, 255));
-        alocacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_alocacao.png"))); // NOI18N
-        alocacao.setBorder(null);
-        alocacao.setBorderPainted(false);
-        alocacao.setContentAreaFilled(false);
-        alocacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alocacaoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(alocacao);
-        alocacao.setBounds(670, 20, 60, 15);
-
-        data_validade.setBackground(new java.awt.Color(255, 255, 255));
-        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_datavalidade.png"))); // NOI18N
-        data_validade.setBorder(null);
-        data_validade.setBorderPainted(false);
-        data_validade.setContentAreaFilled(false);
-        data_validade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                data_validadeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(data_validade);
-        data_validade.setBounds(830, 20, 90, 15);
+        quantidade.setBounds(470, 20, 80, 15);
 
         data_validade1.setBackground(new java.awt.Color(255, 255, 255));
-        data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
+        data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_descricao.png"))); // NOI18N
         data_validade1.setBorder(null);
         data_validade1.setBorderPainted(false);
         data_validade1.setContentAreaFilled(false);
@@ -264,7 +223,20 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade1);
-        data_validade1.setBounds(1000, 20, 82, 15);
+        data_validade1.setBounds(700, 20, 65, 15);
+
+        data_validade2.setBackground(new java.awt.Color(255, 255, 255));
+        data_validade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataSaida.png"))); // NOI18N
+        data_validade2.setBorder(null);
+        data_validade2.setBorderPainted(false);
+        data_validade2.setContentAreaFilled(false);
+        data_validade2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                data_validade2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(data_validade2);
+        data_validade2.setBounds(930, 20, 90, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -282,24 +254,23 @@ public class Jpedido extends javax.swing.JFrame {
         View_de_movimentacao.setTableHeader(null);
         View_de_movimentacao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {"8", "AGUA 2L", "10", "FRENTE DA LOJA", "08/06/22"},
+                {"7", "LEITE 1L", "50", "FRENTE DE LOJA", "08/06/22"},
+                {"6", "AÇUCAR 5KG", "25", "FRENTE DE LOJA", "08/06/22"},
+                {"5", "CAFE 500G", "40", "FRENTE DE LOJA", "08/06/22"},
+                {"4", "AGUA 2L", "150", "FRENTE DE LOJA", "08/06/22"},
+                {"3", "CAFE 500G", "90", "FRENTE DE LOJA", "08/06/22"},
+                {"2", "AGUA 2L", "20", "FRENTE DE LOJA", "08/06/22"},
+                {"1", null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "produto", "lote", "quantidade", "valor", "alocacao", "data_v", "data_e"
+                "codigo_produto", "produto", "quantidade", "descricao", "data_saida"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -331,8 +302,6 @@ public class Jpedido extends javax.swing.JFrame {
             View_de_movimentacao.getColumnModel().getColumn(2).setResizable(false);
             View_de_movimentacao.getColumnModel().getColumn(3).setResizable(false);
             View_de_movimentacao.getColumnModel().getColumn(4).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(5).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -352,6 +321,11 @@ public class Jpedido extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(235, 235, 235));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botão_inserir.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout barra_topLayout = new javax.swing.GroupLayout(barra_top);
         barra_top.setLayout(barra_topLayout);
@@ -418,21 +392,18 @@ public class Jpedido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_quantidadeActionPerformed
 
-    private void valor_unActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor_unActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_valor_unActionPerformed
-
-    private void alocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alocacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alocacaoActionPerformed
-
-    private void data_validadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_data_validadeActionPerformed
-
     private void data_validade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validade1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_data_validade1ActionPerformed
+
+    private void data_validade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validade2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_data_validade2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Jinserir_pedido jinserirPedido = new Jinserir_pedido();
+        jinserirPedido.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -477,10 +448,9 @@ public class Jpedido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable View_de_movimentacao;
-    private javax.swing.JButton alocacao;
     private javax.swing.JPanel barra_top;
-    private javax.swing.JButton data_validade;
     private javax.swing.JButton data_validade1;
+    private javax.swing.JButton data_validade2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -494,7 +464,6 @@ public class Jpedido extends javax.swing.JFrame {
     private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
     private javax.swing.JButton quantidade;
-    private javax.swing.JButton valor_un;
     // End of variables declaration//GEN-END:variables
 
     
