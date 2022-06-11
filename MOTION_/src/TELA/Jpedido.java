@@ -50,15 +50,16 @@ public class Jpedido extends javax.swing.JFrame {
     
     private void tabela_pedido(){
         
-        DefaultTableModel model = (DefaultTableModel) View_de_movimentacao.getModel(); //criando tabela
+        DefaultTableModel model = (DefaultTableModel) View_de_pedido.getModel(); //criando tabela
         model.setNumRows(0);   // listar tabela apartir de
         
-        View_de_movimentacao.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
-        View_de_movimentacao.getColumnModel().getColumn(1).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(2).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(3).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(4).setPreferredWidth(10);
-        
+        View_de_pedido.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
+        View_de_pedido.getColumnModel().getColumn(1).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(2).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(3).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(4).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(5).setPreferredWidth(10);
+
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
            PreparedStatement pst;  
@@ -75,6 +76,7 @@ public class Jpedido extends javax.swing.JFrame {
                    rs.getString(3),
                    rs.getString(4),
                    rs.getString(5),
+                   rs.getString(6),
 
                });
            // Fechar banco aqui
@@ -103,7 +105,7 @@ public class Jpedido extends javax.swing.JFrame {
         data_validade2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        View_de_movimentacao = new javax.swing.JTable();
+        View_de_pedido = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -244,56 +246,57 @@ public class Jpedido extends javax.swing.JFrame {
         jScrollPane1.setFocusTraversalPolicyProvider(true);
         jScrollPane1.setInheritsPopupMenu(true);
 
-        View_de_movimentacao.setAutoCreateRowSorter(true);
-        View_de_movimentacao.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        View_de_movimentacao.setTableHeader(null);
-        View_de_movimentacao.setModel(new javax.swing.table.DefaultTableModel(
+        View_de_pedido.setAutoCreateRowSorter(true);
+        View_de_pedido.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        View_de_pedido.setTableHeader(null);
+        View_de_pedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "codigo_produto", "produto", "quantidade", "descricao", "data_saida"
+                "codigo_produto", "lote", "produto", "quantidade", "descricao", "data_saida"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        View_de_movimentacao.setAlignmentY(2.0F);
-        View_de_movimentacao.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        View_de_movimentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        View_de_movimentacao.setDoubleBuffered(true);
-        View_de_movimentacao.setDragEnabled(true);
-        View_de_movimentacao.setFillsViewportHeight(true);
-        View_de_movimentacao.setFocusCycleRoot(true);
-        View_de_movimentacao.setFocusable(false);
-        View_de_movimentacao.setGridColor(new java.awt.Color(255, 255, 255));
-        View_de_movimentacao.setMaximumSize(new java.awt.Dimension(2147483647, 440));
-        View_de_movimentacao.setMinimumSize(new java.awt.Dimension(100, 1040));
-        View_de_movimentacao.setName(""); // NOI18N
-        View_de_movimentacao.setPreferredSize(new java.awt.Dimension(400, 384));
-        View_de_movimentacao.setRequestFocusEnabled(false);
-        View_de_movimentacao.setRowHeight(40);
-        View_de_movimentacao.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_movimentacao.setUpdateSelectionOnSort(false);
-        View_de_movimentacao.setVerifyInputWhenFocusTarget(false);
-        jScrollPane1.setViewportView(View_de_movimentacao);
-        if (View_de_movimentacao.getColumnModel().getColumnCount() > 0) {
-            View_de_movimentacao.getColumnModel().getColumn(0).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(1).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(2).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(3).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(4).setResizable(false);
+        View_de_pedido.setAlignmentY(2.0F);
+        View_de_pedido.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        View_de_pedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        View_de_pedido.setDoubleBuffered(true);
+        View_de_pedido.setDragEnabled(true);
+        View_de_pedido.setFillsViewportHeight(true);
+        View_de_pedido.setFocusCycleRoot(true);
+        View_de_pedido.setFocusable(false);
+        View_de_pedido.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_pedido.setMaximumSize(new java.awt.Dimension(2147483647, 440));
+        View_de_pedido.setMinimumSize(new java.awt.Dimension(100, 1040));
+        View_de_pedido.setName(""); // NOI18N
+        View_de_pedido.setPreferredSize(new java.awt.Dimension(400, 384));
+        View_de_pedido.setRequestFocusEnabled(false);
+        View_de_pedido.setRowHeight(40);
+        View_de_pedido.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_pedido.setUpdateSelectionOnSort(false);
+        View_de_pedido.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(View_de_pedido);
+        if (View_de_pedido.getColumnModel().getColumnCount() > 0) {
+            View_de_pedido.getColumnModel().getColumn(0).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(1).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(2).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(3).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(4).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -356,7 +359,7 @@ public class Jpedido extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         getContentPane().add(barra_top);
@@ -439,7 +442,7 @@ public class Jpedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable View_de_movimentacao;
+    private javax.swing.JTable View_de_pedido;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton data_validade1;
     private javax.swing.JButton data_validade2;
