@@ -208,7 +208,7 @@ public class Jhome extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(176, 216, 230));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText(String.valueOf(userName));
 
@@ -376,7 +376,6 @@ public class Jhome extends javax.swing.JFrame {
         titulo_dash1.setBounds(70, 40, 150, 19);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("R$:");
         dash_lote.add(jLabel3);
         jLabel3.setBounds(110, 140, 30, 30);
