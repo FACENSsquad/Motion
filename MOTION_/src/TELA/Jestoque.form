@@ -378,46 +378,19 @@
                 <Component class="javax.swing.JTable" name="View_de_estoque">
                   <Properties>
                     <Property name="autoCreateRowSorter" type="boolean" value="true"/>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="View_de_estoque.setTableHeader(null);">
                       <Font name="Dialog" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="11">
-                        <Column editable="true" title="produto" type="java.lang.String"/>
+                      <Table columnCount="3" rowCount="11">
                         <Column editable="true" title="lote" type="java.lang.String"/>
-                        <Column editable="true" title="quantidade" type="java.lang.String"/>
-                        <Column editable="true" title="valor" type="java.lang.String"/>
-                        <Column editable="true" title="alocacao" type="java.lang.String"/>
-                        <Column editable="true" title="data_v" type="java.lang.String"/>
-                        <Column editable="true" title="data_e" type="java.lang.String"/>
+                        <Column editable="true" title="nome do produto" type="java.lang.String"/>
+                        <Column editable="true" title="quantidade no estoque" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="alignmentY" type="float" value="2.0"/>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>

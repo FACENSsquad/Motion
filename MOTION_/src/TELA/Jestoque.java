@@ -56,17 +56,13 @@ public class Jestoque extends javax.swing.JFrame {
         View_de_estoque.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
         View_de_estoque.getColumnModel().getColumn(1).setPreferredWidth(10);
         View_de_estoque.getColumnModel().getColumn(2).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(3).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(4).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(5).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(6).setPreferredWidth(10);
-        
+
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
            PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from todos_lotes_quantidade");  // passando conexao para pst
+           pst = conn.prepareStatement("call tabela_de_estoque");  // passando conexao para pst
            rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
            while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
@@ -75,11 +71,7 @@ public class Jestoque extends javax.swing.JFrame {
                    rs.getString(1),
                    rs.getString(2),
                    rs.getString(3),
-                   rs.getString(4),
-                   rs.getString(5),
-                   rs.getString(6),
-                   rs.getString(7),
-                   
+
                });
            // Fechar banco aqui
            }
@@ -176,7 +168,7 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(20, 20, 56, 15);
+        produto.setBounds(20, 20, 57, 15);
 
         lote.setBackground(new java.awt.Color(255, 255, 255));
         lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
@@ -189,7 +181,7 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(180, 20, 34, 15);
+        lote.setBounds(180, 20, 35, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -254,7 +246,7 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade1);
-        data_validade1.setBounds(1000, 20, 82, 15);
+        data_validade1.setBounds(1000, 20, 83, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -268,29 +260,28 @@ public class Jestoque extends javax.swing.JFrame {
         jScrollPane1.setInheritsPopupMenu(true);
 
         View_de_estoque.setAutoCreateRowSorter(true);
-        View_de_estoque.setBackground(new java.awt.Color(255, 255, 255));
         View_de_estoque.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_estoque.setTableHeader(null);
         View_de_estoque.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "produto", "lote", "quantidade", "valor", "alocacao", "data_v", "data_e"
+                "lote", "nome do produto", "quantidade no estoque"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -322,10 +313,6 @@ public class Jestoque extends javax.swing.JFrame {
             View_de_estoque.getColumnModel().getColumn(0).setResizable(false);
             View_de_estoque.getColumnModel().getColumn(1).setResizable(false);
             View_de_estoque.getColumnModel().getColumn(2).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(3).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(4).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(5).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

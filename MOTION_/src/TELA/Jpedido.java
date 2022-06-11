@@ -41,14 +41,14 @@ public class Jpedido extends javax.swing.JFrame {
         this.isAdmin = isAdmin;
         this.userName = userName;
         initComponents();
-        //tabela_movimentacao();
+        tabela_pedido();
         
         
     }
     
     
-    /*
-    private void tabela_movimentacao(){
+    
+    private void tabela_pedido(){
         
         DefaultTableModel model = (DefaultTableModel) View_de_movimentacao.getModel(); //criando tabela
         model.setNumRows(0);   // listar tabela apartir de
@@ -58,15 +58,13 @@ public class Jpedido extends javax.swing.JFrame {
         View_de_movimentacao.getColumnModel().getColumn(2).setPreferredWidth(10);
         View_de_movimentacao.getColumnModel().getColumn(3).setPreferredWidth(10);
         View_de_movimentacao.getColumnModel().getColumn(4).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(5).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(6).setPreferredWidth(10);
         
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
            PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from vencimento");  // passando conexao para pst
+           pst = conn.prepareStatement("select * from pedidos");  // passando conexao para pst
            rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
            while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
@@ -77,9 +75,7 @@ public class Jpedido extends javax.swing.JFrame {
                    rs.getString(3),
                    rs.getString(4),
                    rs.getString(5),
-                   rs.getString(6),
-                   rs.getString(7),
-                   
+
                });
            // Fechar banco aqui
            }
@@ -87,7 +83,7 @@ public class Jpedido extends javax.swing.JFrame {
             System.out.println("Erro tabela_estoque");
         }
     }
-    */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -116,7 +112,6 @@ public class Jpedido extends javax.swing.JFrame {
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
         barra_top.setForeground(new java.awt.Color(235, 235, 235));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -197,7 +192,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(240, 20, 56, 15);
+        lote.setBounds(240, 20, 57, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -254,14 +249,11 @@ public class Jpedido extends javax.swing.JFrame {
         View_de_movimentacao.setTableHeader(null);
         View_de_movimentacao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8", "AGUA 2L", "10", "FRENTE DA LOJA", "08/06/22"},
-                {"7", "LEITE 1L", "50", "FRENTE DE LOJA", "08/06/22"},
-                {"6", "AÇUCAR 5KG", "25", "FRENTE DE LOJA", "08/06/22"},
-                {"5", "CAFE 500G", "40", "FRENTE DE LOJA", "08/06/22"},
-                {"4", "AGUA 2L", "150", "FRENTE DE LOJA", "08/06/22"},
-                {"3", "CAFE 500G", "90", "FRENTE DE LOJA", "08/06/22"},
-                {"2", "AGUA 2L", "20", "FRENTE DE LOJA", "08/06/22"},
-                {"1", null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
             },
