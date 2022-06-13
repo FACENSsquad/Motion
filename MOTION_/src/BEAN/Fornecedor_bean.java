@@ -2,9 +2,9 @@ package BEAN;
 
 public class Fornecedor_bean {
     private int id;
-    private String razão;
+    private String razao;
     private String nomefantasia;
-    private String cpf_cnpj;
+    private int cpf_cnpj;
     private String telefone;
     private String email;
     private String cep;
@@ -20,12 +20,12 @@ public class Fornecedor_bean {
         this.id = id;
     }
 
-    public String getRazão() {
-        return razão;
+    public String getRazao() {
+        return razao;
     }
 
-    public void setRazão(String razão) {
-        this.razão = razão;
+    public void setRazao(String razão) {
+        this.razao = razão;
     }
 
     public String getNomefantasia() {
@@ -36,11 +36,11 @@ public class Fornecedor_bean {
         this.nomefantasia = nomefantasia;
     }
 
-    public String getCpf_cnpj() {
+    public int getCpf_cnpj() {
         return cpf_cnpj;
     }
 
-    public void setCpf_cnpj(String cpf_cnpj) {
+    public void setCpf_cnpj(int cpf_cnpj) {
         this.cpf_cnpj = cpf_cnpj;
     }
 
