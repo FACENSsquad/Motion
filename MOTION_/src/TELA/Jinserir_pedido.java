@@ -1,9 +1,10 @@
 
 package TELA;
 
-import BEAN.Produtos_bean;
+import BEAN.Pedido_bean;
 import CONEXAO.Conexao;
-import DAO.Produtos_dao;
+import DAO.Pedido_dao;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -124,7 +125,7 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         produto1 = new javax.swing.JLabel();
         Caixa_produto1 = new javax.swing.JTextField();
         decrição = new javax.swing.JLabel();
-        descricao = new javax.swing.JTextField();
+        Caixa_descricao = new javax.swing.JTextField();
         produto = new javax.swing.JLabel();
         Caixa_produto = new javax.swing.JTextField();
         bt_cadastrar = new javax.swing.JButton();
@@ -176,9 +177,9 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         jPanel1.add(decrição);
         decrição.setBounds(100, 200, 70, 17);
 
-        descricao.setBorder(null);
-        jPanel1.add(descricao);
-        descricao.setBounds(100, 220, 310, 50);
+        Caixa_descricao.setBorder(null);
+        jPanel1.add(Caixa_descricao);
+        Caixa_descricao.setBounds(100, 220, 310, 50);
 
         produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         produto.setText("Código do produto:");
@@ -335,31 +336,37 @@ public class Jinserir_pedido extends javax.swing.JFrame {
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
         
         try {
-        String nome_produto, unidade, ncm;
-        nome_produto = Caixa_produto.getText();
-        //ncm = Caixa_ncm.getText();
-        //unidade = (String) Campo_unidade.getSelectedItem();
-        
-        Produtos_bean p_bean = new Produtos_bean();
-        p_bean.setProduto(nome_produto);
-        //p_bean.setUnidade(unidade);
-        //p_bean.setNcm(ncm);
-        
-        
-        
-        
-        Produtos_dao p_dao = new Produtos_dao();
-        p_dao.inserir(p_bean);
-        
-        //Limpando caixas de texto
-        Caixa_produto.setText("");
-        //Caixa_ncm.setText("");
-        
+            String codigo, lote, produto, quantidade, descricao, datasaida;
+            
+            codigo = Caixa_produto.getText();
+            lote = Caixa_produto1.getText();
+            produto = Caixa_produto2.getText();
+            quantidade = Caixa_produto3.getText();
+            descricao = Caixa_descricao.getText();
+            datasaida = Caixa_produto4.getText();
+
+             
+             Pedido_bean p_bean = new Pedido_bean();
+             p_bean.setCodigo(parseInt(codigo));
+             p_bean.setLote(parseInt(lote));
+             p_bean.setProduto(produto);
+             p_bean.setQuantidade(parseInt(quantidade));
+             p_bean.setDescricao(descricao);
+             p_bean.setDatasaida(datasaida);             
+             
+             Pedido_dao p_dao =  new Pedido_dao();
+             p_dao.inserir(p_bean);
+             
+             Caixa_produto.setText("");
+             Caixa_produto1.setText("");
+             Caixa_produto2.setText("");
+             Caixa_descricao.setText("");
+             Caixa_produto4.setText("");
+            
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "erro ao cadastrar produto");
-        } 
+       JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente");
+        }
         this.dispose();
-        
         
         
     }//GEN-LAST:event_bt_cadastrarActionPerformed
@@ -449,6 +456,7 @@ public class Jinserir_pedido extends javax.swing.JFrame {
     private javax.swing.JToggleButton Botton_consultar;
     private javax.swing.JButton Botton_deletar;
     private javax.swing.JTextField Caixa_codigo;
+    private javax.swing.JTextField Caixa_descricao;
     private javax.swing.JTextField Caixa_produto;
     private javax.swing.JTextField Caixa_produto1;
     private javax.swing.JTextField Caixa_produto2;
@@ -457,7 +465,6 @@ public class Jinserir_pedido extends javax.swing.JFrame {
     private javax.swing.JLabel Codigo;
     private javax.swing.JButton bt_cadastrar;
     private javax.swing.JLabel decrição;
-    private javax.swing.JTextField descricao;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel produto;
