@@ -146,18 +146,15 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         titulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo.setForeground(new java.awt.Color(0, 0, 0));
         titulo.setText("Atualizar ou Deletar ");
         jPanel1.add(titulo);
         titulo.setBounds(260, 290, 180, 22);
 
         produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        produto.setForeground(new java.awt.Color(0, 0, 0));
         produto.setText("Produto:");
         jPanel1.add(produto);
         produto.setBounds(100, 78, 54, 17);
 
-        Caixa_produto.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_produto.setBorder(null);
         Caixa_produto.setPreferredSize(new java.awt.Dimension(0, 25));
         Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
@@ -169,25 +166,21 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Caixa_produto.setBounds(100, 101, 313, 25);
 
         NCM1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        NCM1.setForeground(new java.awt.Color(0, 0, 0));
         NCM1.setText("NCM:");
         jPanel1.add(NCM1);
         NCM1.setBounds(100, 159, 34, 17);
 
-        Caixa_ncm.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_ncm.setBorder(null);
         Caixa_ncm.setPreferredSize(new java.awt.Dimension(0, 25));
         jPanel1.add(Caixa_ncm);
         Caixa_ncm.setBounds(100, 182, 128, 25);
 
         unidade.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        unidade.setForeground(new java.awt.Color(0, 0, 0));
         unidade.setText("Un:");
         jPanel1.add(unidade);
         unidade.setBounds(520, 78, 21, 17);
 
         Campo_unidade.setBackground(new java.awt.Color(153, 153, 255));
-        Campo_unidade.setForeground(new java.awt.Color(0, 0, 0));
         Campo_unidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CX", "UN", "EM", "PT" }));
         Campo_unidade.setSelectedItem(Unidades);
         Campo_unidade.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +189,7 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Campo_unidade);
-        Campo_unidade.setBounds(520, 101, 42, 24);
+        Campo_unidade.setBounds(520, 101, 44, 22);
 
         bt_cadastrar.setBackground(new java.awt.Color(196, 196, 196));
         bt_cadastrar.setForeground(new java.awt.Color(196, 196, 196));
@@ -209,14 +202,19 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bt_cadastrar);
-        bt_cadastrar.setBounds(490, 180, 85, 40);
+        bt_cadastrar.setBounds(490, 180, 85, 41);
 
         jButton1.setBackground(new java.awt.Color(208, 214, 216));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cancelar.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
-        jButton1.setBounds(390, 180, 80, 40);
+        jButton1.setBounds(390, 180, 81, 40);
 
         Botton_consultar.setBackground(new java.awt.Color(255, 255, 255));
         Botton_consultar.setForeground(new java.awt.Color(51, 51, 51));
@@ -236,12 +234,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Botton_consultar.setBounds(320, 375, 30, 20);
 
         Codigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Codigo.setForeground(new java.awt.Color(0, 0, 0));
         Codigo.setText("Codigo:");
         jPanel1.add(Codigo);
         Codigo.setBounds(100, 350, 60, 17);
 
-        Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_codigo.setBorder(null);
         Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +249,6 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Caixa_codigo.setBounds(100, 370, 249, 25);
 
         titulo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo1.setForeground(new java.awt.Color(0, 0, 0));
         titulo1.setText("CADASTRO DE PRODUTO");
         jPanel1.add(titulo1);
         titulo1.setBounds(239, 22, 225, 22);
@@ -271,7 +266,6 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
         Botton_Atualizar.setBounds(490, 420, 80, 40);
 
         Botton_deletar.setBackground(new java.awt.Color(209, 214, 216));
-        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
         Botton_deletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_deletar.png"))); // NOI18N
         Botton_deletar.setBorder(null);
         Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
@@ -350,6 +344,10 @@ public class Jcadastrar_produto extends javax.swing.JFrame {
          
          dispose();
     }//GEN-LAST:event_Botton_deletarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

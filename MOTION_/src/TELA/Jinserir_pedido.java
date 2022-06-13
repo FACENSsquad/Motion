@@ -135,6 +135,12 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         titulo1 = new javax.swing.JLabel();
         Botton_Atualizar = new javax.swing.JToggleButton();
         Botton_deletar = new javax.swing.JButton();
+        Caixa_produto2 = new javax.swing.JTextField();
+        produto2 = new javax.swing.JLabel();
+        Caixa_produto3 = new javax.swing.JTextField();
+        produto3 = new javax.swing.JLabel();
+        Caixa_produto4 = new javax.swing.JTextField();
+        produto4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(697, 515));
@@ -146,18 +152,15 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         titulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo.setForeground(new java.awt.Color(0, 0, 0));
         titulo.setText("Atualizar ou Deletar ");
         jPanel1.add(titulo);
-        titulo.setBounds(270, 290, 180, 22);
+        titulo.setBounds(280, 350, 180, 22);
 
         produto1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        produto1.setForeground(new java.awt.Color(0, 0, 0));
-        produto1.setText("Quantidade:");
+        produto1.setText("Lote:");
         jPanel1.add(produto1);
         produto1.setBounds(470, 80, 80, 17);
 
-        Caixa_produto1.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_produto1.setBorder(null);
         Caixa_produto1.setPreferredSize(new java.awt.Dimension(0, 25));
         Caixa_produto1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,24 +172,19 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         Caixa_produto1.setBounds(470, 100, 90, 25);
 
         decrição.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        decrição.setForeground(new java.awt.Color(0, 0, 0));
         decrição.setText("Descrição:");
         jPanel1.add(decrição);
-        decrição.setBounds(100, 140, 70, 17);
+        decrição.setBounds(100, 200, 70, 17);
 
-        descricao.setBackground(new java.awt.Color(255, 255, 255));
-        descricao.setForeground(new java.awt.Color(0, 0, 0));
         descricao.setBorder(null);
         jPanel1.add(descricao);
-        descricao.setBounds(100, 160, 310, 50);
+        descricao.setBounds(100, 220, 310, 50);
 
         produto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        produto.setForeground(new java.awt.Color(0, 0, 0));
-        produto.setText("Produto:");
+        produto.setText("Código do produto:");
         jPanel1.add(produto);
-        produto.setBounds(100, 78, 54, 17);
+        produto.setBounds(100, 78, 260, 17);
 
-        Caixa_produto.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_produto.setBorder(null);
         Caixa_produto.setPreferredSize(new java.awt.Dimension(0, 25));
         Caixa_produto.addActionListener(new java.awt.event.ActionListener() {
@@ -208,14 +206,19 @@ public class Jinserir_pedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bt_cadastrar);
-        bt_cadastrar.setBounds(490, 230, 85, 40);
+        bt_cadastrar.setBounds(500, 290, 85, 41);
 
         jButton1.setBackground(new java.awt.Color(208, 214, 216));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_cancelar.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
-        jButton1.setBounds(390, 230, 80, 40);
+        jButton1.setBounds(400, 290, 81, 40);
 
         Botton_consultar.setBackground(new java.awt.Color(255, 255, 255));
         Botton_consultar.setForeground(new java.awt.Color(51, 51, 51));
@@ -235,12 +238,10 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         Botton_consultar.setBounds(320, 375, 30, 20);
 
         Codigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Codigo.setForeground(new java.awt.Color(0, 0, 0));
         Codigo.setText("Codigo:");
         jPanel1.add(Codigo);
-        Codigo.setBounds(100, 350, 60, 17);
+        Codigo.setBounds(110, 410, 60, 17);
 
-        Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_codigo.setBorder(null);
         Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
@@ -249,10 +250,9 @@ public class Jinserir_pedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Caixa_codigo);
-        Caixa_codigo.setBounds(100, 370, 249, 25);
+        Caixa_codigo.setBounds(110, 430, 249, 25);
 
         titulo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo1.setForeground(new java.awt.Color(0, 0, 0));
         titulo1.setText("INSERIR PEDIDO");
         jPanel1.add(titulo1);
         titulo1.setBounds(280, 20, 150, 22);
@@ -267,10 +267,9 @@ public class Jinserir_pedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Botton_Atualizar);
-        Botton_Atualizar.setBounds(500, 420, 80, 40);
+        Botton_Atualizar.setBounds(510, 480, 80, 40);
 
         Botton_deletar.setBackground(new java.awt.Color(209, 214, 216));
-        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
         Botton_deletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_deletar.png"))); // NOI18N
         Botton_deletar.setBorder(null);
         Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +278,52 @@ public class Jinserir_pedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Botton_deletar);
-        Botton_deletar.setBounds(400, 420, 80, 40);
+        Botton_deletar.setBounds(410, 480, 80, 40);
+
+        Caixa_produto2.setBorder(null);
+        Caixa_produto2.setPreferredSize(new java.awt.Dimension(0, 25));
+        Caixa_produto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_produto2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_produto2);
+        Caixa_produto2.setBounds(100, 160, 313, 25);
+
+        produto2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        produto2.setText("Produto");
+        jPanel1.add(produto2);
+        produto2.setBounds(100, 140, 260, 17);
+
+        Caixa_produto3.setBorder(null);
+        Caixa_produto3.setPreferredSize(new java.awt.Dimension(0, 25));
+        Caixa_produto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_produto3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_produto3);
+        Caixa_produto3.setBounds(470, 160, 90, 25);
+
+        produto3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        produto3.setText("Quantidade:");
+        jPanel1.add(produto3);
+        produto3.setBounds(470, 140, 100, 17);
+
+        Caixa_produto4.setBorder(null);
+        Caixa_produto4.setPreferredSize(new java.awt.Dimension(0, 25));
+        Caixa_produto4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caixa_produto4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Caixa_produto4);
+        Caixa_produto4.setBounds(470, 240, 140, 25);
+
+        produto4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        produto4.setText("Data saída:");
+        jPanel1.add(produto4);
+        produto4.setBounds(470, 220, 100, 17);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 700, 550);
@@ -350,6 +394,22 @@ public class Jinserir_pedido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Caixa_produto1ActionPerformed
 
+    private void Caixa_produto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_produto2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_produto2ActionPerformed
+
+    private void Caixa_produto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_produto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_produto3ActionPerformed
+
+    private void Caixa_produto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_produto4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caixa_produto4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,6 +451,9 @@ public class Jinserir_pedido extends javax.swing.JFrame {
     private javax.swing.JTextField Caixa_codigo;
     private javax.swing.JTextField Caixa_produto;
     private javax.swing.JTextField Caixa_produto1;
+    private javax.swing.JTextField Caixa_produto2;
+    private javax.swing.JTextField Caixa_produto3;
+    private javax.swing.JTextField Caixa_produto4;
     private javax.swing.JLabel Codigo;
     private javax.swing.JButton bt_cadastrar;
     private javax.swing.JLabel decrição;
@@ -399,6 +462,9 @@ public class Jinserir_pedido extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel produto;
     private javax.swing.JLabel produto1;
+    private javax.swing.JLabel produto2;
+    private javax.swing.JLabel produto3;
+    private javax.swing.JLabel produto4;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel titulo1;
     // End of variables declaration//GEN-END:variables

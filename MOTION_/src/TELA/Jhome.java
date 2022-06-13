@@ -364,6 +364,11 @@ public class Jhome extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.setRequestFocusEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         dash_lote.setPreferredSize(new java.awt.Dimension(475, 265));
@@ -619,6 +624,16 @@ public class Jhome extends javax.swing.JFrame {
         jestoque.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    try {
+        String url = "https://appmotionfacens.herokuapp.com/contact.html";
+        java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+    } catch (java.io.IOException e) {
+        System.out.println(e.getMessage());
+    }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
         

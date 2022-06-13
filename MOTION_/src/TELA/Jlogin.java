@@ -24,6 +24,7 @@ public class Jlogin extends javax.swing.JFrame {
      * Creates new form Jlogin
      */
     public Jlogin() {
+        this.setUndecorated(true);
         initComponents();
     }
 

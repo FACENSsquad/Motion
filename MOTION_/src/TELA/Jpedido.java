@@ -98,11 +98,12 @@ public class Jpedido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        produto = new javax.swing.JButton();
         lote = new javax.swing.JButton();
         quantidade = new javax.swing.JButton();
         data_validade1 = new javax.swing.JButton();
         data_validade2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_pedido = new javax.swing.JTable();
@@ -170,19 +171,6 @@ public class Jpedido extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        produto.setBackground(new java.awt.Color(255, 255, 255));
-        produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_pedido.png"))); // NOI18N
-        produto.setBorder(null);
-        produto.setBorderPainted(false);
-        produto.setContentAreaFilled(false);
-        produto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                produtoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(produto);
-        produto.setBounds(20, 20, 50, 15);
-
         lote.setBackground(new java.awt.Color(255, 255, 255));
         lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
         lote.setBorder(null);
@@ -194,7 +182,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(240, 20, 57, 15);
+        lote.setBounds(410, 20, 57, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -207,7 +195,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(quantidade);
-        quantidade.setBounds(470, 20, 80, 15);
+        quantidade.setBounds(590, 20, 80, 15);
 
         data_validade1.setBackground(new java.awt.Color(255, 255, 255));
         data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_descricao.png"))); // NOI18N
@@ -220,7 +208,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade1);
-        data_validade1.setBounds(700, 20, 65, 15);
+        data_validade1.setBounds(780, 20, 65, 15);
 
         data_validade2.setBackground(new java.awt.Color(255, 255, 255));
         data_validade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataSaida.png"))); // NOI18N
@@ -233,7 +221,15 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade2);
-        data_validade2.setBounds(930, 20, 90, 15);
+        data_validade2.setBounds(970, 20, 90, 15);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(210, 20, 41, 15);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 20, 52, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -369,10 +365,6 @@ public class Jpedido extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_produtoActionPerformed
-
     private void produtos_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtos_inicioActionPerformed
         Jhome jhome = new Jhome(isAdmin, userName);
         jhome.setVisible(true);
@@ -397,6 +389,10 @@ public class Jpedido extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Jinserir_pedido jinserirPedido = new Jinserir_pedido();
+        jinserirPedido.dispose();
+        jinserirPedido.setSize(700, 600);
+        jinserirPedido.setUndecorated(true);
+        jinserirPedido.setLocationRelativeTo(null); 
         jinserirPedido.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -450,13 +446,14 @@ public class Jpedido extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lote;
-    private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
     private javax.swing.JButton quantidade;
     // End of variables declaration//GEN-END:variables

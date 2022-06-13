@@ -403,6 +403,10 @@ public class Jproduto extends javax.swing.JFrame {
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
         if (isAdmin == true){
         Jcadastrar_produto jcadastrar = new Jcadastrar_produto();
+        jcadastrar.dispose();
+        jcadastrar.setSize(700, 600);
+        jcadastrar.setUndecorated(true);
+        jcadastrar.setLocationRelativeTo(null); 
         jcadastrar.setVisible(true);
         }
         else{

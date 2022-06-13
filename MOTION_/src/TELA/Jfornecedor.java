@@ -482,6 +482,10 @@ public class Jfornecedor extends javax.swing.JFrame {
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
         if (isAdmin == true){
         Jcadastrar_fornecedores jcadastrar = new Jcadastrar_fornecedores();
+        jcadastrar.dispose();
+        jcadastrar.setSize(700, 600);
+        jcadastrar.setUndecorated(true);
+        jcadastrar.setLocationRelativeTo(null); 
         jcadastrar.setVisible(true);
         }
         else{
