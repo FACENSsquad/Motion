@@ -56,17 +56,13 @@ public class Jestoque extends javax.swing.JFrame {
         View_de_estoque.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
         View_de_estoque.getColumnModel().getColumn(1).setPreferredWidth(10);
         View_de_estoque.getColumnModel().getColumn(2).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(3).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(4).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(5).setPreferredWidth(10);
-        View_de_estoque.getColumnModel().getColumn(6).setPreferredWidth(10);
-        
+
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
            PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from todos_lotes_quantidade");  // passando conexao para pst
+           pst = conn.prepareStatement("call tabela_de_estoque");  // passando conexao para pst
            rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
            while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
@@ -75,11 +71,7 @@ public class Jestoque extends javax.swing.JFrame {
                    rs.getString(1),
                    rs.getString(2),
                    rs.getString(3),
-                   rs.getString(4),
-                   rs.getString(5),
-                   rs.getString(6),
-                   rs.getString(7),
-                   
+
                });
            // Fechar banco aqui
            }
@@ -100,11 +92,7 @@ public class Jestoque extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         produto = new javax.swing.JButton();
         lote = new javax.swing.JButton();
-        quantidade = new javax.swing.JButton();
-        valor_un = new javax.swing.JButton();
-        alocacao = new javax.swing.JButton();
-        data_validade = new javax.swing.JButton();
-        data_validade1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_de_estoque = new javax.swing.JTable();
@@ -176,7 +164,7 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(20, 20, 56, 15);
+        produto.setBounds(400, 20, 57, 15);
 
         lote.setBackground(new java.awt.Color(255, 255, 255));
         lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
@@ -189,72 +177,11 @@ public class Jestoque extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(180, 20, 34, 15);
+        lote.setBounds(20, 20, 35, 15);
 
-        quantidade.setBackground(new java.awt.Color(255, 255, 255));
-        quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
-        quantidade.setBorder(null);
-        quantidade.setBorderPainted(false);
-        quantidade.setContentAreaFilled(false);
-        quantidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quantidadeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(quantidade);
-        quantidade.setBounds(340, 20, 80, 15);
-
-        valor_un.setBackground(new java.awt.Color(255, 255, 255));
-        valor_un.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_valorUn.png"))); // NOI18N
-        valor_un.setBorder(null);
-        valor_un.setBorderPainted(false);
-        valor_un.setContentAreaFilled(false);
-        valor_un.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valor_unActionPerformed(evt);
-            }
-        });
-        jPanel1.add(valor_un);
-        valor_un.setBounds(500, 20, 57, 15);
-
-        alocacao.setBackground(new java.awt.Color(255, 255, 255));
-        alocacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_alocacao.png"))); // NOI18N
-        alocacao.setBorder(null);
-        alocacao.setBorderPainted(false);
-        alocacao.setContentAreaFilled(false);
-        alocacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alocacaoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(alocacao);
-        alocacao.setBounds(670, 20, 60, 15);
-
-        data_validade.setBackground(new java.awt.Color(255, 255, 255));
-        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_datavalidade.png"))); // NOI18N
-        data_validade.setBorder(null);
-        data_validade.setBorderPainted(false);
-        data_validade.setContentAreaFilled(false);
-        data_validade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                data_validadeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(data_validade);
-        data_validade.setBounds(830, 20, 90, 15);
-
-        data_validade1.setBackground(new java.awt.Color(255, 255, 255));
-        data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
-        data_validade1.setBorder(null);
-        data_validade1.setBorderPainted(false);
-        data_validade1.setContentAreaFilled(false);
-        data_validade1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                data_validade1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(data_validade1);
-        data_validade1.setBounds(1000, 20, 82, 15);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_estoque.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(780, 20, 150, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -268,29 +195,28 @@ public class Jestoque extends javax.swing.JFrame {
         jScrollPane1.setInheritsPopupMenu(true);
 
         View_de_estoque.setAutoCreateRowSorter(true);
-        View_de_estoque.setBackground(new java.awt.Color(255, 255, 255));
         View_de_estoque.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         View_de_estoque.setTableHeader(null);
         View_de_estoque.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "produto", "lote", "quantidade", "valor", "alocacao", "data_v", "data_e"
+                "lote", "nome do produto", "quantidade no estoque"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -322,10 +248,6 @@ public class Jestoque extends javax.swing.JFrame {
             View_de_estoque.getColumnModel().getColumn(0).setResizable(false);
             View_de_estoque.getColumnModel().getColumn(1).setResizable(false);
             View_de_estoque.getColumnModel().getColumn(2).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(3).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(4).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(5).setResizable(false);
-            View_de_estoque.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -390,26 +312,6 @@ public class Jestoque extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loteActionPerformed
 
-    private void quantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quantidadeActionPerformed
-
-    private void valor_unActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor_unActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_valor_unActionPerformed
-
-    private void alocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alocacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alocacaoActionPerformed
-
-    private void data_validadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_data_validadeActionPerformed
-
-    private void data_validade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_validade1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_data_validade1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -447,12 +349,10 @@ public class Jestoque extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable View_de_estoque;
-    private javax.swing.JButton alocacao;
     private javax.swing.JPanel barra_top;
-    private javax.swing.JButton data_validade;
-    private javax.swing.JButton data_validade1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -460,8 +360,6 @@ public class Jestoque extends javax.swing.JFrame {
     private javax.swing.JButton lote;
     private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
-    private javax.swing.JButton quantidade;
-    private javax.swing.JButton valor_un;
     // End of variables declaration//GEN-END:variables
 
     

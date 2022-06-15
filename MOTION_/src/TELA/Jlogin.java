@@ -24,6 +24,7 @@ public class Jlogin extends javax.swing.JFrame {
      * Creates new form Jlogin
      */
     public Jlogin() {
+        this.setUndecorated(true);
         initComponents();
     }
 
@@ -38,59 +39,65 @@ public class Jlogin extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Caixa_login = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         Caixa_senha = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Caixa_login = new javax.swing.JTextPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         Botton_entrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(235, 235, 235));
         setMinimumSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MotiON");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 70, 130, 43);
+        jLabel2.setBounds(30, 30, 170, 60);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 230, 60, 17);
+        jLabel3.setBounds(30, 260, 120, 30);
 
-        Caixa_login.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_login.setBorder(null);
-        Caixa_login.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Caixa_login.setCaretColor(new java.awt.Color(255, 255, 255));
-        Caixa_login.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        Caixa_login.setMinimumSize(new java.awt.Dimension(0, 25));
-        Caixa_login.setPreferredSize(new java.awt.Dimension(0, 25));
-        Caixa_login.setSelectionColor(new java.awt.Color(255, 255, 255));
-        getContentPane().add(Caixa_login);
-        Caixa_login.setBounds(30, 250, 370, 25);
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel4.setText("Senha:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 300, 60, 17);
+        jLabel4.setBounds(30, 330, 140, 28);
 
-        Caixa_senha.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_senha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Caixa_senha.setBorder(null);
-        Caixa_senha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        Caixa_senha.setForeground(new java.awt.Color(96, 131, 154));
         Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Caixa_senhaActionPerformed(evt);
             }
         });
         getContentPane().add(Caixa_senha);
-        Caixa_senha.setBounds(30, 320, 370, 25);
+        Caixa_senha.setBounds(30, 360, 370, 30);
+
+        Caixa_login.setForeground(new java.awt.Color(96, 131, 154));
+        jScrollPane1.setViewportView(Caixa_login);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 290, 370, 30);
+
+        jPanel1.setBackground(new java.awt.Color(174, 205, 253));
+        jPanel1.setForeground(new java.awt.Color(135, 127, 255));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(30, 310, 370, 20);
+
+        jPanel3.setBackground(new java.awt.Color(174, 205, 253));
+        jPanel3.setForeground(new java.awt.Color(135, 127, 255));
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(30, 380, 370, 20);
 
         Botton_entrar.setBackground(new java.awt.Color(235, 235, 235));
         Botton_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         Botton_entrar.setBorder(null);
         Botton_entrar.setContentAreaFilled(false);
-        Botton_entrar.setOpaque(false);
         Botton_entrar.setRequestFocusEnabled(false);
         Botton_entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +105,11 @@ public class Jlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Botton_entrar);
-        Botton_entrar.setBounds(310, 590, 90, 40);
+        Botton_entrar.setBounds(170, 440, 90, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/splash.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 450, 700);
 
         pack();
         setLocationRelativeTo(null);
@@ -187,8 +198,12 @@ public class Jlogin extends javax.swing.JFrame {
     private javax.swing.JButton Botton_entrar;
     private javax.swing.JTextPane Caixa_login;
     private javax.swing.JPasswordField Caixa_senha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

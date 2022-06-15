@@ -208,7 +208,7 @@ public class Jhome extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(176, 216, 230));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText(String.valueOf(userName));
 
@@ -364,6 +364,11 @@ public class Jhome extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.setRequestFocusEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         dash_lote.setBackground(new java.awt.Color(235, 235, 235));
         dash_lote.setPreferredSize(new java.awt.Dimension(475, 265));
@@ -376,7 +381,6 @@ public class Jhome extends javax.swing.JFrame {
         titulo_dash1.setBounds(70, 40, 150, 19);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("R$:");
         dash_lote.add(jLabel3);
         jLabel3.setBounds(110, 140, 30, 30);
@@ -620,6 +624,16 @@ public class Jhome extends javax.swing.JFrame {
         jestoque.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    try {
+        String url = "https://appmotionfacens.herokuapp.com/contact.html";
+        java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+    } catch (java.io.IOException e) {
+        System.out.println(e.getMessage());
+    }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {                                             
         

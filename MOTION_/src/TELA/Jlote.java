@@ -119,8 +119,8 @@ public final class Jlote extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1, 0));
-        setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 800));
+        setPreferredSize(new java.awt.Dimension(1200, 850));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -183,7 +183,6 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -213,7 +212,7 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(produto);
-        produto.setBounds(160, 20, 56, 15);
+        produto.setBounds(160, 20, 57, 15);
 
         unidade.setBackground(new java.awt.Color(255, 255, 255));
         unidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -427,7 +426,11 @@ public final class Jlote extends javax.swing.JFrame {
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
        if (isAdmin == true){
-        Jcadastrar_lote jcadastrar = new Jcadastrar_lote();
+       Jcadastrar_lote jcadastrar = new Jcadastrar_lote();
+       jcadastrar.dispose();
+        jcadastrar.setSize(700, 600);
+        jcadastrar.setUndecorated(true);
+        jcadastrar.setLocationRelativeTo(null); 
        jcadastrar.setVisible(true);}
        else{
        JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");

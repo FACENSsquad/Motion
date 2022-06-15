@@ -41,32 +41,31 @@ public class Jpedido extends javax.swing.JFrame {
         this.isAdmin = isAdmin;
         this.userName = userName;
         initComponents();
-        //tabela_movimentacao();
+        tabela_pedido();
         
         
     }
     
     
-    /*
-    private void tabela_movimentacao(){
+    
+    private void tabela_pedido(){
         
-        DefaultTableModel model = (DefaultTableModel) View_de_movimentacao.getModel(); //criando tabela
+        DefaultTableModel model = (DefaultTableModel) View_de_pedido.getModel(); //criando tabela
         model.setNumRows(0);   // listar tabela apartir de
         
-        View_de_movimentacao.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
-        View_de_movimentacao.getColumnModel().getColumn(1).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(2).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(3).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(4).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(5).setPreferredWidth(10);
-        View_de_movimentacao.getColumnModel().getColumn(6).setPreferredWidth(10);
-        
+        View_de_pedido.getColumnModel().getColumn(0).setPreferredWidth(10);  // colunas da tabela
+        View_de_pedido.getColumnModel().getColumn(1).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(2).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(3).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(4).setPreferredWidth(10);
+        View_de_pedido.getColumnModel().getColumn(5).setPreferredWidth(10);
+
         try {
            Connection conn = new Conexao().Bd_Conexao(); // estabelecendo conexao 
            PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from vencimento");  // passando conexao para pst
+           pst = conn.prepareStatement("select * from pedidos");  // passando conexao para pst
            rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
            while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
@@ -78,8 +77,7 @@ public class Jpedido extends javax.swing.JFrame {
                    rs.getString(4),
                    rs.getString(5),
                    rs.getString(6),
-                   rs.getString(7),
-                   
+
                });
            // Fechar banco aqui
            }
@@ -87,7 +85,7 @@ public class Jpedido extends javax.swing.JFrame {
             System.out.println("Erro tabela_estoque");
         }
     }
-    */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -100,14 +98,15 @@ public class Jpedido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        produto = new javax.swing.JButton();
         lote = new javax.swing.JButton();
         quantidade = new javax.swing.JButton();
         data_validade1 = new javax.swing.JButton();
         data_validade2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        View_de_movimentacao = new javax.swing.JTable();
+        View_de_pedido = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,7 +115,6 @@ public class Jpedido extends javax.swing.JFrame {
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
         barra_top.setForeground(new java.awt.Color(235, 235, 235));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -173,19 +171,6 @@ public class Jpedido extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        produto.setBackground(new java.awt.Color(255, 255, 255));
-        produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_pedido.png"))); // NOI18N
-        produto.setBorder(null);
-        produto.setBorderPainted(false);
-        produto.setContentAreaFilled(false);
-        produto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                produtoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(produto);
-        produto.setBounds(20, 20, 50, 15);
-
         lote.setBackground(new java.awt.Color(255, 255, 255));
         lote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_produto.png"))); // NOI18N
         lote.setBorder(null);
@@ -197,7 +182,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(240, 20, 56, 15);
+        lote.setBounds(410, 20, 57, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -210,7 +195,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(quantidade);
-        quantidade.setBounds(470, 20, 80, 15);
+        quantidade.setBounds(590, 20, 80, 15);
 
         data_validade1.setBackground(new java.awt.Color(255, 255, 255));
         data_validade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_descricao.png"))); // NOI18N
@@ -223,7 +208,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade1);
-        data_validade1.setBounds(700, 20, 65, 15);
+        data_validade1.setBounds(780, 20, 65, 15);
 
         data_validade2.setBackground(new java.awt.Color(255, 255, 255));
         data_validade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataSaida.png"))); // NOI18N
@@ -236,7 +221,15 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade2);
-        data_validade2.setBounds(930, 20, 90, 15);
+        data_validade2.setBounds(970, 20, 90, 15);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_lote.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(210, 20, 41, 15);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 20, 52, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -249,59 +242,57 @@ public class Jpedido extends javax.swing.JFrame {
         jScrollPane1.setFocusTraversalPolicyProvider(true);
         jScrollPane1.setInheritsPopupMenu(true);
 
-        View_de_movimentacao.setAutoCreateRowSorter(true);
-        View_de_movimentacao.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        View_de_movimentacao.setTableHeader(null);
-        View_de_movimentacao.setModel(new javax.swing.table.DefaultTableModel(
+        View_de_pedido.setAutoCreateRowSorter(true);
+        View_de_pedido.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        View_de_pedido.setTableHeader(null);
+        View_de_pedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8", "AGUA 2L", "10", "FRENTE DA LOJA", "08/06/22"},
-                {"7", "LEITE 1L", "50", "FRENTE DE LOJA", "08/06/22"},
-                {"6", "AÇUCAR 5KG", "25", "FRENTE DE LOJA", "08/06/22"},
-                {"5", "CAFE 500G", "40", "FRENTE DE LOJA", "08/06/22"},
-                {"4", "AGUA 2L", "150", "FRENTE DE LOJA", "08/06/22"},
-                {"3", "CAFE 500G", "90", "FRENTE DE LOJA", "08/06/22"},
-                {"2", "AGUA 2L", "20", "FRENTE DE LOJA", "08/06/22"},
-                {"1", null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "codigo_produto", "produto", "quantidade", "descricao", "data_saida"
+                "codigo_produto", "lote", "produto", "quantidade", "descricao", "data_saida"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        View_de_movimentacao.setAlignmentY(2.0F);
-        View_de_movimentacao.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        View_de_movimentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        View_de_movimentacao.setDoubleBuffered(true);
-        View_de_movimentacao.setDragEnabled(true);
-        View_de_movimentacao.setFillsViewportHeight(true);
-        View_de_movimentacao.setFocusCycleRoot(true);
-        View_de_movimentacao.setFocusable(false);
-        View_de_movimentacao.setGridColor(new java.awt.Color(255, 255, 255));
-        View_de_movimentacao.setMaximumSize(new java.awt.Dimension(2147483647, 440));
-        View_de_movimentacao.setMinimumSize(new java.awt.Dimension(100, 1040));
-        View_de_movimentacao.setName(""); // NOI18N
-        View_de_movimentacao.setPreferredSize(new java.awt.Dimension(400, 384));
-        View_de_movimentacao.setRequestFocusEnabled(false);
-        View_de_movimentacao.setRowHeight(40);
-        View_de_movimentacao.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        View_de_movimentacao.setUpdateSelectionOnSort(false);
-        View_de_movimentacao.setVerifyInputWhenFocusTarget(false);
-        jScrollPane1.setViewportView(View_de_movimentacao);
-        if (View_de_movimentacao.getColumnModel().getColumnCount() > 0) {
-            View_de_movimentacao.getColumnModel().getColumn(0).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(1).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(2).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(3).setResizable(false);
-            View_de_movimentacao.getColumnModel().getColumn(4).setResizable(false);
+        View_de_pedido.setAlignmentY(2.0F);
+        View_de_pedido.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        View_de_pedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        View_de_pedido.setDoubleBuffered(true);
+        View_de_pedido.setDragEnabled(true);
+        View_de_pedido.setFillsViewportHeight(true);
+        View_de_pedido.setFocusCycleRoot(true);
+        View_de_pedido.setFocusable(false);
+        View_de_pedido.setGridColor(new java.awt.Color(255, 255, 255));
+        View_de_pedido.setMaximumSize(new java.awt.Dimension(2147483647, 440));
+        View_de_pedido.setMinimumSize(new java.awt.Dimension(100, 1040));
+        View_de_pedido.setName(""); // NOI18N
+        View_de_pedido.setPreferredSize(new java.awt.Dimension(400, 384));
+        View_de_pedido.setRequestFocusEnabled(false);
+        View_de_pedido.setRowHeight(40);
+        View_de_pedido.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        View_de_pedido.setUpdateSelectionOnSort(false);
+        View_de_pedido.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(View_de_pedido);
+        if (View_de_pedido.getColumnModel().getColumnCount() > 0) {
+            View_de_pedido.getColumnModel().getColumn(0).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(1).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(2).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(3).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(4).setResizable(false);
+            View_de_pedido.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -364,7 +355,7 @@ public class Jpedido extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         getContentPane().add(barra_top);
@@ -373,10 +364,6 @@ public class Jpedido extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1218, 847));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_produtoActionPerformed
 
     private void produtos_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtos_inicioActionPerformed
         Jhome jhome = new Jhome(isAdmin, userName);
@@ -402,6 +389,10 @@ public class Jpedido extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Jinserir_pedido jinserirPedido = new Jinserir_pedido();
+        jinserirPedido.dispose();
+        jinserirPedido.setSize(700, 600);
+        jinserirPedido.setUndecorated(true);
+        jinserirPedido.setLocationRelativeTo(null); 
         jinserirPedido.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -447,7 +438,7 @@ public class Jpedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable View_de_movimentacao;
+    private javax.swing.JTable View_de_pedido;
     private javax.swing.JPanel barra_top;
     private javax.swing.JButton data_validade1;
     private javax.swing.JButton data_validade2;
@@ -455,13 +446,14 @@ public class Jpedido extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lote;
-    private javax.swing.JButton produto;
     private javax.swing.JButton produtos_inicio;
     private javax.swing.JButton quantidade;
     // End of variables declaration//GEN-END:variables

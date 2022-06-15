@@ -117,7 +117,6 @@ public class Jcliente extends javax.swing.JFrame {
         Botton_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(null);
 
         barra_top.setBackground(new java.awt.Color(235, 235, 235));
@@ -184,63 +183,54 @@ public class Jcliente extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("UF");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(820, 20, 30, 19);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Endereço");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(1060, 20, 80, 19);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("CPF / CNPJ");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(290, 20, 80, 19);
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Municipio");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(930, 20, 80, 19);
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("CEP");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(700, 20, 80, 19);
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("E-mail");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(560, 20, 80, 19);
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Código");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(40, 20, 80, 19);
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Telefone");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(420, 20, 80, 19);
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Nome");
         jPanel1.add(jLabel11);
         jLabel11.setBounds(170, 20, 80, 19);
@@ -282,7 +272,6 @@ public class Jcliente extends javax.swing.JFrame {
         View_de_cliente.setAlignmentY(2.0F);
         View_de_cliente.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
         View_de_cliente.setAutoscrolls(false);
-        View_de_cliente.setColumnSelectionAllowed(false);
         View_de_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         View_de_cliente.setDoubleBuffered(true);
         View_de_cliente.setDragEnabled(true);
@@ -364,14 +353,19 @@ public class Jcliente extends javax.swing.JFrame {
         getContentPane().add(barra_top);
         barra_top.setBounds(0, 0, 1200, 800);
 
-        setSize(new java.awt.Dimension(1200, 800));
+        setSize(new java.awt.Dimension(1218, 847));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_produtoActionPerformed
         if (isAdmin == true){
         Jcadastrar_cliente jcadastrar = new Jcadastrar_cliente();
-        jcadastrar.setVisible(true);}
+        jcadastrar.dispose();
+        jcadastrar.setSize(700, 600);
+        jcadastrar.setUndecorated(true);
+        jcadastrar.setLocationRelativeTo(null); 
+        jcadastrar.setVisible(true);
+        }
         else{
         JOptionPane.showMessageDialog(null, "Você não possui privilégios de admin para realizar essa ação!");
         }

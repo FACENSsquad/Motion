@@ -5,17 +5,111 @@
  */
 package TELA;
 
-/**
- *
- * @author Matheus
- */
-public class Jcadastrar_fornecedores extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jcadastrar_fornecedores
-     */
+import BEAN.Fornecedor_bean;
+import DAO.Fornecedor_dao;
+import CONEXAO.Conexao;
+import static java.lang.Integer.parseInt;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
+import javax.swing.JOptionPane;
+
+
+public class Jcadastrar_fornecedores extends javax.swing.JFrame {
+   
+    private Conexao conexao;
+    private Connection conn;
+
+        
+     public void conexao_cadastrar(){
+     this.conexao = new Conexao();
+     this.conn = this.conexao.Bd_Conexao();
+    }
+        
     public Jcadastrar_fornecedores() {
         initComponents();
+        conexao_cadastrar();
+    }
+
+    
+    public void delete(){
+    
+        int confirmar;
+        String message = "Deseja realmente remover este fornecedor?";
+        
+        confirmar = JOptionPane.showConfirmDialog(null, message);
+       
+        
+        if(confirmar == JOptionPane.YES_OPTION){
+            
+        String sql = "delete from fornecedores where id = ?";
+        try {
+             PreparedStatement pst = this.conn.prepareStatement(sql);
+             pst.setString(1, Caixa_codigo.getText());
+             pst.executeUpdate();
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null,"Erro em metodo DELETE de fornecedor");
+            if (e instanceof SQLIntegrityConstraintViolationException){
+            JOptionPane.showMessageDialog(null,"Você não pode remover um fornecedor ligado a um lote.");
+            }
+
+        }
+    } else if(confirmar == JOptionPane.NO_OPTION) {
+     dispose();
+        }
+
+    
+    }
+    
+    
+    
+    
+            public void consultar (){
+    
+        String sql = "select * from fornecedores where id = ?;";
+        ResultSet rs;
+        
+        try { 
+            PreparedStatement pst3 = this.conn.prepareStatement(sql);
+            pst3.setString(1, Caixa_codigo.getText());
+            rs = pst3.executeQuery();
+            
+            if (rs.next()) {
+             Caixa_razaoFornecedor.setText(rs.getString(2));
+             Caixa_nomeFornecedor.setText(rs.getString(3));
+             Caixa_cpfFornecedor.setText(rs.getString(4));
+             Caixa_telefoneFornecedor.setText(rs.getString(5));
+             Caixa_emailFornecedor.setText(rs.getString(6));
+             Caixa_cepFornecedor.setText(rs.getString(7));
+             Caixa_municipioFornecedor.setText(rs.getString(8));
+              Campo_uf.setSelectedItem(9);
+             Caixa_enderecoFornecedor.setText(rs.getString(10));             
+              
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null,"Cliente não encontrado");
+                
+             Caixa_razaoFornecedor.setText(null);
+             Caixa_nomeFornecedor.setText(null);
+             Caixa_cpfFornecedor.setText(null);
+             Caixa_telefoneFornecedor.setText(null);
+             Caixa_emailFornecedor.setText(null);
+             Caixa_cepFornecedor.setText(null);
+             Caixa_municipioFornecedor.setText(null);
+              Campo_uf.setSelectedItem(null);
+             Caixa_enderecoFornecedor.setText(null);             
+              
+            }            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erro em metodo CONSULTAR");
+    
+        }
     }
 
     /**
@@ -40,7 +134,7 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Caixa_municipioFornecedor = new javax.swing.JTextField();
         Caixa_nomeFornecedor = new javax.swing.JTextField();
-        Caixa_razãoFornecedor = new javax.swing.JTextField();
+        Caixa_razaoFornecedor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Caixa_enderecoFornecedor = new javax.swing.JTextField();
@@ -65,12 +159,10 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 550));
         jPanel1.setLayout(null);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("CPF / CNPJ");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(100, 60, 53, 15);
+        jLabel5.setBounds(100, 60, 120, 16);
 
-        Caixa_cpfFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_cpfFornecedor.setBorder(null);
         Caixa_cpfFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_cpfFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -81,23 +173,19 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.add(Caixa_cpfFornecedor);
         Caixa_cpfFornecedor.setBounds(100, 80, 210, 25);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Telefone");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(360, 110, 42, 15);
+        jLabel3.setBounds(360, 110, 80, 16);
 
-        Caixa_telefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_telefoneFornecedor.setBorder(null);
         Caixa_telefoneFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         jPanel1.add(Caixa_telefoneFornecedor);
         Caixa_telefoneFornecedor.setBounds(360, 130, 220, 25);
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("E-mail");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(100, 260, 28, 15);
+        jLabel4.setBounds(100, 260, 70, 16);
 
-        Caixa_emailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_emailFornecedor.setBorder(null);
         Caixa_emailFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_emailFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -108,28 +196,23 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.add(Caixa_emailFornecedor);
         Caixa_emailFornecedor.setBounds(100, 280, 310, 25);
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Razão");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(360, 60, 31, 15);
+        jLabel9.setBounds(360, 60, 80, 16);
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("CEP");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(370, 210, 19, 15);
+        jLabel6.setBounds(370, 210, 90, 16);
 
-        Caixa_cepFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_cepFornecedor.setBorder(null);
         Caixa_cepFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         jPanel1.add(Caixa_cepFornecedor);
         Caixa_cepFornecedor.setBounds(370, 230, 140, 25);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Municipio");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(100, 210, 44, 15);
+        jLabel2.setBounds(100, 210, 80, 16);
 
-        Caixa_municipioFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_municipioFornecedor.setBorder(null);
         Caixa_municipioFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_municipioFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +223,6 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.add(Caixa_municipioFornecedor);
         Caixa_municipioFornecedor.setBounds(100, 230, 210, 25);
 
-        Caixa_nomeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_nomeFornecedor.setBorder(null);
         Caixa_nomeFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_nomeFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -151,44 +233,38 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.add(Caixa_nomeFornecedor);
         Caixa_nomeFornecedor.setBounds(100, 130, 210, 25);
 
-        Caixa_razãoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        Caixa_razãoFornecedor.setBorder(null);
-        Caixa_razãoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
-        Caixa_razãoFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        Caixa_razaoFornecedor.setBorder(null);
+        Caixa_razaoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
+        Caixa_razaoFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_razãoFornecedorActionPerformed(evt);
+                Caixa_razaoFornecedorActionPerformed(evt);
             }
         });
-        jPanel1.add(Caixa_razãoFornecedor);
-        Caixa_razãoFornecedor.setBounds(360, 80, 220, 25);
+        jPanel1.add(Caixa_razaoFornecedor);
+        Caixa_razaoFornecedor.setBounds(360, 80, 220, 25);
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nome");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(100, 110, 27, 15);
+        jLabel1.setBounds(100, 110, 70, 16);
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Endereço");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(100, 160, 46, 15);
+        jLabel7.setBounds(100, 160, 80, 16);
 
-        Caixa_enderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_enderecoFornecedor.setBorder(null);
         Caixa_enderecoFornecedor.setPreferredSize(new java.awt.Dimension(4, 25));
         jPanel1.add(Caixa_enderecoFornecedor);
         Caixa_enderecoFornecedor.setBounds(100, 180, 300, 25);
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("UF");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(480, 180, 13, 15);
+        jLabel8.setBounds(480, 180, 15, 16);
 
         Campo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         jPanel1.add(Campo_uf);
-        Campo_uf.setBounds(510, 180, 44, 24);
+        Campo_uf.setBounds(510, 180, 45, 22);
 
         titulo2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo2.setForeground(new java.awt.Color(0, 0, 0));
         titulo2.setText("CADASTRO DE FORNECEDOR");
         jPanel1.add(titulo2);
         titulo2.setBounds(210, 20, 270, 22);
@@ -216,7 +292,6 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         Botton_cadastrar.setBounds(490, 330, 90, 40);
 
         Codigo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Codigo.setForeground(new java.awt.Color(0, 0, 0));
         Codigo.setText("Codigo:");
         jPanel1.add(Codigo);
         Codigo.setBounds(100, 420, 60, 17);
@@ -239,7 +314,6 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         Botton_consultar.setBounds(320, 440, 30, 20);
 
         Botton_deletar.setBackground(new java.awt.Color(209, 214, 216));
-        Botton_deletar.setForeground(new java.awt.Color(0, 0, 0));
         Botton_deletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_deletar.png"))); // NOI18N
         Botton_deletar.setBorder(null);
         Botton_deletar.addActionListener(new java.awt.event.ActionListener() {
@@ -262,7 +336,6 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         jPanel1.add(Botton_Atualizar);
         Botton_Atualizar.setBounds(500, 490, 80, 40);
 
-        Caixa_codigo.setBackground(new java.awt.Color(255, 255, 255));
         Caixa_codigo.setBorder(null);
         Caixa_codigo.setPreferredSize(new java.awt.Dimension(4, 25));
         Caixa_codigo.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +347,6 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         Caixa_codigo.setBounds(100, 440, 249, 25);
 
         titulo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titulo1.setForeground(new java.awt.Color(0, 0, 0));
         titulo1.setText("Atualizar ou Deletar");
         jPanel1.add(titulo1);
         titulo1.setBounds(260, 390, 170, 22);
@@ -306,9 +378,9 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Caixa_cpfFornecedorActionPerformed
 
-    private void Caixa_razãoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_razãoFornecedorActionPerformed
+    private void Caixa_razaoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_razaoFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Caixa_razãoFornecedorActionPerformed
+    }//GEN-LAST:event_Caixa_razaoFornecedorActionPerformed
 
     private void Caixa_municipioFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_municipioFornecedorActionPerformed
         // TODO add your handling code here:
@@ -319,6 +391,49 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     }//GEN-LAST:event_Botton_cancelarActionPerformed
 
     private void Botton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_cadastrarActionPerformed
+        try {
+             String razao, nomeFantasia, cpf_cnpj, telefone, email, cep, uf, municipio, endereco;
+            
+             razao = Caixa_razaoFornecedor.getText();
+             nomeFantasia = Caixa_nomeFornecedor.getText();
+             cpf_cnpj = Caixa_cpfFornecedor.getText();
+             telefone = Caixa_telefoneFornecedor.getText();
+             email = Caixa_emailFornecedor.getText();
+             cep = Caixa_cepFornecedor.getText();
+             uf = (String) Campo_uf.getSelectedItem();
+             municipio = Caixa_municipioFornecedor.getText();
+             endereco = Caixa_enderecoFornecedor.getText();
+
+             
+             Fornecedor_bean f_bean = new Fornecedor_bean();
+             f_bean.setRazao(razao);
+             f_bean.setNomefantasia(nomeFantasia);
+             f_bean.setCpf_cnpj(parseInt(cpf_cnpj));
+             f_bean.setTelefone(telefone);
+             f_bean.setEmail(email);
+             f_bean.setCep(cep);
+             f_bean.setUf(uf);
+             f_bean.setMunicipio(municipio);
+             f_bean.setEndereco(endereco);             
+             
+             Fornecedor_dao f_dao =  new Fornecedor_dao();
+             f_dao.inserir(f_bean);
+             
+             Caixa_razaoFornecedor.setText("");
+             Caixa_nomeFornecedor.setText("");
+             Caixa_cpfFornecedor.setText("");
+             Caixa_telefoneFornecedor.setText("");
+             Caixa_emailFornecedor.setText("");
+             Caixa_cepFornecedor.setText("");
+             Caixa_municipioFornecedor.setText("");
+             Campo_uf.setSelectedItem("");
+             Caixa_enderecoFornecedor.setText("");
+
+            
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente");
+        }
+        this.dispose();
 
     }//GEN-LAST:event_Botton_cadastrarActionPerformed
 
@@ -327,11 +442,12 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     }//GEN-LAST:event_Caixa_codigoActionPerformed
 
     private void Botton_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_consultarActionPerformed
-
+consultar();
     }//GEN-LAST:event_Botton_consultarActionPerformed
 
     private void Botton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_deletarActionPerformed
-
+      delete();
+      dispose();
     }//GEN-LAST:event_Botton_deletarActionPerformed
 
     private void Botton_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botton_AtualizarActionPerformed
@@ -387,7 +503,7 @@ public class Jcadastrar_fornecedores extends javax.swing.JFrame {
     private javax.swing.JTextField Caixa_enderecoFornecedor;
     private javax.swing.JTextField Caixa_municipioFornecedor;
     private javax.swing.JTextField Caixa_nomeFornecedor;
-    private javax.swing.JTextField Caixa_razãoFornecedor;
+    private javax.swing.JTextField Caixa_razaoFornecedor;
     private javax.swing.JTextField Caixa_telefoneFornecedor;
     private javax.swing.JComboBox<String> Campo_uf;
     private javax.swing.JLabel Codigo;
