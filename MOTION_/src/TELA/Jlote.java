@@ -253,7 +253,7 @@ public final class Jlote extends javax.swing.JFrame {
         fornecedor.setBounds(1010, 20, 80, 15);
 
         data_validade.setBackground(new java.awt.Color(255, 255, 255));
-        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_dataEntrada.png"))); // NOI18N
+        data_validade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_datavalidade.png"))); // NOI18N
         data_validade.setBorder(null);
         data_validade.setBorderPainted(false);
         data_validade.setContentAreaFilled(false);
@@ -263,7 +263,7 @@ public final class Jlote extends javax.swing.JFrame {
             }
         });
         jPanel1.add(data_validade);
-        data_validade.setBounds(730, 20, 80, 15);
+        data_validade.setBounds(730, 20, 87, 15);
 
         fornecedor1.setBackground(new java.awt.Color(255, 255, 255));
         fornecedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_fornecedor.png"))); // NOI18N
