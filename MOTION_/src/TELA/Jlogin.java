@@ -43,8 +43,6 @@ public class Jlogin extends javax.swing.JFrame {
         Caixa_senha = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Caixa_login = new javax.swing.JTextPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
         Botton_entrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -53,21 +51,23 @@ public class Jlogin extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(450, 700));
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("MotiON");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 30, 170, 60);
+        jLabel2.setBounds(130, 100, 170, 60);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 260, 120, 30);
+        jLabel3.setBounds(30, 270, 80, 20);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Senha:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 330, 140, 28);
+        jLabel4.setBounds(30, 340, 70, 22);
 
         Caixa_senha.setForeground(new java.awt.Color(96, 131, 154));
         Caixa_senha.addActionListener(new java.awt.event.ActionListener() {
@@ -84,16 +84,6 @@ public class Jlogin extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(30, 290, 370, 30);
 
-        jPanel1.setBackground(new java.awt.Color(174, 205, 253));
-        jPanel1.setForeground(new java.awt.Color(135, 127, 255));
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(30, 310, 370, 20);
-
-        jPanel3.setBackground(new java.awt.Color(174, 205, 253));
-        jPanel3.setForeground(new java.awt.Color(135, 127, 255));
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(30, 380, 370, 20);
-
         Botton_entrar.setBackground(new java.awt.Color(235, 235, 235));
         Botton_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/botao_login.png"))); // NOI18N
         Botton_entrar.setBorder(null);
@@ -105,9 +95,9 @@ public class Jlogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Botton_entrar);
-        Botton_entrar.setBounds(170, 440, 90, 40);
+        Botton_entrar.setBounds(310, 560, 90, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/splash.png"))); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(235, 235, 235));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 450, 700);
 
@@ -202,8 +192,6 @@ public class Jlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

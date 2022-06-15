@@ -10,21 +10,12 @@ package BEAN;
  * @author eduar
  */
 public class Pedido_bean {
-    int codigo;
     int lote;
-    String produto;
+    int produto;
     int quantidade;
     String descricao;
-    String datasaida;
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
+ 
     public int getLote() {
         return lote;
     }
@@ -33,11 +24,11 @@ public class Pedido_bean {
         this.lote = lote;
     }
 
-    public String getProduto() {
+    public int getProduto() {
         return produto;
     }
 
-    public void setProduto(String produto) {
+    public void setProduto(int produto) {
         this.produto = produto;
     }
 
@@ -55,14 +46,6 @@ public class Pedido_bean {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public String getDatasaida() {
-        return datasaida;
-    }
-
-    public void setDatasaida(String datasaida) {
-        this.datasaida = datasaida;
     }
     
 }

@@ -26,17 +26,15 @@ public class Pedido_dao {
         this.conn = this.conexao.Bd_Conexao();     
      }
     public void inserir(Pedido_bean pedido){
-        String sql = "insert into pedidos(codigo, lote, produto, quantidade, descricao, dataSaida)"
-        + " values(?,?,?,?,?,?)";
+        String sql = "insert into pedidos(lote, produto, quantidade, descricao)"
+        + " values(?,?,?,?)";
         try {
             PreparedStatement pst = this.conn.prepareStatement(sql);
             
-            pst.setInt(1, pedido.getCodigo());
-            pst.setInt(2, pedido.getLote());
-            pst.setString(3, pedido.getProduto());
-            pst.setInt(4, pedido.getQuantidade());
-            pst.setString(5, pedido.getDescricao());
-            pst.setString(6, pedido.getDatasaida());
+            pst.setInt(1, pedido.getLote());
+            pst.setInt(2, pedido.getProduto());
+            pst.setInt(3, pedido.getQuantidade());
+            pst.setString(4, pedido.getDescricao());
             pst.execute();
             
             

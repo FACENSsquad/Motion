@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -65,7 +64,7 @@ public class Jpedido extends javax.swing.JFrame {
            PreparedStatement pst;  
            ResultSet rs;
            
-           pst = conn.prepareStatement("select * from pedidos");  // passando conexao para pst
+           pst = conn.prepareStatement("select * from pedido");  // passando conexao para pst
            rs = pst.executeQuery();      //executando  os valores da conexao com result set
            
            while (rs.next()){   // lendo os valores do banco, utilizando netx para percorrer os dados
@@ -182,7 +181,7 @@ public class Jpedido extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lote);
-        lote.setBounds(410, 20, 57, 15);
+        lote.setBounds(410, 20, 56, 15);
 
         quantidade.setBackground(new java.awt.Color(255, 255, 255));
         quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_quantidade.png"))); // NOI18N
@@ -227,9 +226,9 @@ public class Jpedido extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(210, 20, 41, 15);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_codigo.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/filtro_pedido.png"))); // NOI18N
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 20, 52, 15);
+        jLabel4.setBounds(20, 20, 48, 15);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
